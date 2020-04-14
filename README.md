@@ -150,37 +150,37 @@ HoServer 是开箱即用的后台服务和管理平台脚手架，可视化对�
 
 ## 系统功能截图
 
-![01_dict.webp](http://assets.helloreact.cn/screens/webp/01_dict.webp)
+![01_dict.png](http://assets.helloreact.cn/screens/webp/ori/01_dict.png)
 
-![02_model.webp](http://assets.helloreact.cn/screens/webp/02_model.webp)
+![02_model.png](http://assets.helloreact.cn/screens/webp/ori/02_model.png)
 
-![03_model_properties.webp](http://assets.helloreact.cn/screens/webp/03_model_properties.webp)
+![03_model_properties.png](http://assets.helloreact.cn/screens/webp/ori/03_model_properties.png)
 
-![04_api_list.webp](http://assets.helloreact.cn/screens/webp/04_api_list.webp)
+![04_api_list.png](http://assets.helloreact.cn/screens/webp/ori/04_api_list.png)
 
-![05_sys_announce.webp](http://assets.helloreact.cn/screens/webp/05_sys_announce.webp)
+![05_sys_announce.png](http://assets.helloreact.cn/screens/webp/ori/05_sys_announce.png)
 
-![06_log.webp](http://assets.helloreact.cn/screens/webp/06_log.webp)
+![06_log.png](http://assets.helloreact.cn/screens/webp/ori/06_log.png)
 
-![07_config.webp](http://assets.helloreact.cn/screens/webp/07_config.webp)
+![07_config.png](http://assets.helloreact.cn/screens/webp/ori/07_config.png)
 
-![08_users.webp](http://assets.helloreact.cn/screens/webp/08_users.webp)
+![08_users.png](http://assets.helloreact.cn/screens/webp/ori/08_users.png)
 
-![09_permission.webp](http://assets.helloreact.cn/screens/webp/09_permission.webp)
+![09_permission.png](http://assets.helloreact.cn/screens/webp/ori/09_permission.png)
 
-![10_role.webp](http://assets.helloreact.cn/screens/webp/10_role.webp)
+![10_role.png](http://assets.helloreact.cn/screens/webp/ori/10_role.png)
 
-![20_api_doc.webp](http://assets.helloreact.cn/screens/webp/20_api_doc.webp)
+![20_api_doc.png](http://assets.helloreact.cn/screens/webp/ori/20_api_doc.png)
 
-![21_postman.webp](http://assets.helloreact.cn/screens/webp/21_postman.webp)
+![21_postman.png](http://assets.helloreact.cn/screens/webp/ori/21_postman.png)
 
-![22_sdk.webp](http://assets.helloreact.cn/screens/webp/22_sdk.webp)
+![22_sdk.png](http://assets.helloreact.cn/screens/webp/ori/22_sdk.png)
 
-![23_content.webp](http://assets.helloreact.cn/screens/webp/23_content.webp)
+![23_content.png](http://assets.helloreact.cn/screens/webp/ori/23_content.png)
 
-![24_payment.webp](http://assets.helloreact.cn/screens/webp/24_payment.webp)
+![24_payment.png](http://assets.helloreact.cn/screens/webp/ori/24_payment.png)
 
-![25_monitor1.webp](http://assets.helloreact.cn/screens/webp/25_monitor1.webp)
+![25_monitor1.png](http://assets.helloreact.cn/screens/webp/ori/25_monitor1.png)
 
-![26_monitor2.webp](http://assets.helloreact.cn/screens/webp/26_monitor2.webp)
+![26_monitor2.png](http://assets.helloreact.cn/screens/webp/ori/26_monitor2.png)
 
