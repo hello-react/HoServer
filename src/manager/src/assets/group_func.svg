@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="32px" viewBox="0 0 50 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <rect id="矩形" stroke="#1296DB" stroke-width="2.5" x="1.25" y="1.25" width="29.5" height="29.5" rx="14.75"></rect>
+                <text id="P" font-family="PingFangSC-Semibold, PingFang SC" font-size="20" font-weight="500" letter-spacing="1.08823518" fill="#1296DB">
+                    <tspan x="10" y="24">P</tspan>
+                </text>
+            </g>
+            <g id="sort_func" transform="translate(34.000000, 0.000000)" fill="#1296DB" fill-rule="nonzero">
+                <polygon id="形状" points="2.07407407 7.66816143 5.92592593 4.17040359 5.92592593 29.058296 8.44444444 30 16 23.2735426 14.962963 22.3318386 13.9259259 21.3901345 8.88888889 25.8295964 8.88888889 0.941704036 6.37037037 0 0 5.78475336 1.03703704 6.7264574"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

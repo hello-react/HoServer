@@ -1,0 +1,14 @@
+node_modules
+.umi
+.idea
+*.log
+*/umitest/pages/.umi/
+/src/server/config/*.pem
+*/server/public/export/*
+*/server/public/postman/*
+*/server/public/sdks/*
+*/server/public/uploads/*
+*/server/public/docs/files/*
+*/server/public/docs/_sidebar.md
+*/server/public/*/*version.json
+!*/server/public/*/.gitkeep

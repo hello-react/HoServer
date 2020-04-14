@@ -1,0 +1,70 @@
+:global {
+    .ho_pro_table {
+        background-color: white;
+        padding: 20px;
+        height: 100%;
+        width: 100%;
+    }
+
+    .ho_tbl_header {
+        flex: 1 1;
+        color: #000;
+        font-size: 16px;
+        line-height: 24px;
+        opacity: .85;
+    }
+
+    .ho_tbl_header_sub {
+        color: #999;
+        font-size: 12px;
+        line-height: 25px;
+        padding-bottom: 10px;
+    }
+
+    .ho_tbl_search {
+        margin-bottom: 20px;
+    }
+
+    .ho_tbl_toolbar {
+        text-align: right;
+        margin-bottom: 10px;
+    }
+
+    .ho_tbl_toolbar button {
+        margin-left: 10px;
+    }
+
+    .ho_tbl_toolbar .iconbtn {
+        margin-left: 16px;
+        font-size: 16px;
+        cursor: pointer
+    }
+
+    .ho_tbl_setting_list {
+        display: flex;
+        flex-direction: column;
+        width: 168px;
+    }
+
+    .ho_tbl_setting_list_group {
+        margin-bottom: 10px;
+    }
+
+    .ho_tbl_setting_list_item {
+        display: block;
+        width: 100%;
+        margin-bottom: 5px;
+        &:hover {
+            .ho_tbl_setting_list_item_option {
+                display: block;
+            }
+        }
+    }
+
+    .ho_tbl_setting_list_item_option {
+        display: none;
+        float: right;
+        cursor: pointer;
+        margin-left: 5px;
+    }
+}
