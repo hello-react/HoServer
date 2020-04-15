@@ -140,7 +140,7 @@ class Container {
         app.use(this.createContext)
 
         // system default routes
-        SystemRoutes.init(app, this, this.routeCreator(''))
+        SystemRoutes.init(this, this.routeCreator(''), app)
 
         // register manual router if needed
         for (const controllerName in this.controllers) {

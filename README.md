@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://gitee.com/hello-react/HoServer/raw/master/src/server/public/branding/logo_with_text.png" />
+    <img src="http://assets.helloreact.cn/images/logo_with_text.png" />
 </p>
 
 <p align="center">
@@ -28,6 +28,8 @@ HoServer 是基于Node.js开发开箱即用的后台服务和管理平台脚手�
 :book: 使用文档: [开发文档](http://hos.helloreact.cn/docs) | [部署文档](http://hos.helloreact.cn/docs/#deploy)
 
 :arrow_forward: 视频教程: [HoServer 视频教程](http://hos.helloreact.cn/docs/tutorials_video.html)
+
+![04_api_list.png](http://assets.helloreact.cn/screens/webp/ori/04_api_list.png)
 
 ## 功能特性
 
@@ -104,9 +106,14 @@ HoServer 是基于Node.js开发开箱即用的后台服务和管理平台脚手�
 
 ## 支持
 
-官方QQ群: 720338887
+QQ 交流群: 720338887
 
-![输入图片说明](https://images.gitee.com/uploads/images/2020/0323/082908_2d6976e5_5512828.png "qq_qr.png")
+![输入图片说明](http://assets.helloreact.cn/images/qq_qr.png "qq_qr.png")
+
+微信交流群: 
+
+![输入图片说明](http://assets.helloreact.cn/images/wx_qr.png "wx_qr.png")
+
 
 ## 开源版使用须知
 
@@ -155,8 +162,6 @@ HoServer 是基于Node.js开发开箱即用的后台服务和管理平台脚手�
 ![02_model.png](http://assets.helloreact.cn/screens/webp/ori/02_model.png)
 
 ![03_model_properties.png](http://assets.helloreact.cn/screens/webp/ori/03_model_properties.png)
-
-![04_api_list.png](http://assets.helloreact.cn/screens/webp/ori/04_api_list.png)
 
 ![05_sys_announce.png](http://assets.helloreact.cn/screens/webp/ori/05_sys_announce.png)
 

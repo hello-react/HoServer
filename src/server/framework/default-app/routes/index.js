@@ -8,7 +8,7 @@
 const Constants = require('../../base/constants/constants')
 
 module.exports = {
-    init: (app, container, router) => {
+    init: (container, router, app) => {
         // prettier-ignore
         router.get('/', '版本信息', async context => {
             return `Welcome! HoServer API Service (ver${Constants.SERVER_VERSION})`
