@@ -12,3 +12,4 @@ node_modules
 */server/public/docs/_sidebar.md
 */server/public/*/*version.json
 !*/server/public/*/.gitkeep
+/docs/
