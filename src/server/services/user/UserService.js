@@ -29,7 +29,11 @@ class UserService {
      */
     async login(args) {
         const password = args.password
-        const user_name = args.user_name.toLowerCase()
+        const user_name = (args.user_name || '').toLowerCase()
+        if (!(user_name && password)) {
+            return Promise.reject({ message: '请输入用户名和密码', code: ErrorCodes.GENERAL_ERR_PARAM })
+        }
+
         // prettier-ignore
         const userInfo = await User.findOne({
             user_name: user_name

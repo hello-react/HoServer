@@ -431,23 +431,23 @@ class DefaultApiHandler {
         // 设置属性值
         const existRecord = records[0]
 
-        let subProperty = model
-        let subRecord = existRecord
+        let targetProperty = model
+        let targetRecord = existRecord
         if (this._isSubModel(api.model)) {
             const modelNames = api.model.split('.')
             modelNames.splice(0, 1)
 
-            subProperty = BaseHelper.getSubProperty(model, api.model)
-            subRecord = this._getObjectChild(existRecord, model, modelNames, query)
-            if (subProperty.prop_type.indexOf('array') > -1 && subProperty.properties && subProperty.properties.length > 0) {
-                const { idField } = BaseHelper.getModelIdField(subProperty)
+            targetProperty = BaseHelper.getSubProperty(model, api.model)
+            targetRecord = this._getObjectChild(existRecord, model, modelNames, query)
+            if (targetProperty.prop_type.indexOf('array') > -1 && targetProperty.properties && targetProperty.properties.length > 0) {
+                const { idField } = BaseHelper.getModelIdField(targetProperty)
                 const inputId = query[`${modelNames.join('.')}.${idField}`] + ''
-                subRecord = subRecord.find(sr => String(sr[idField]) == inputId)
+                targetRecord = targetRecord.find(sr => String(sr[idField]) == inputId)
             }
         }
 
         // 设置属性值
-        this._setModelProperties('', subProperty, subRecord, inputObj, inputObj.replace || false)
+        this._setModelProperties('', targetProperty, targetRecord, inputObj, inputObj.replace || false)
 
         // 输入检查
         const inputModel = _.clone(existRecord)
@@ -1194,6 +1194,18 @@ class DefaultApiHandler {
 
         for (const prop of property.properties) {
             const queryKey = prop.name // parentName ? parentName + '.' + prop.name : prop.name
+
+            // 数组检查 id
+            if (prop.prop_type.indexOf('array') > -1 && prop.properties && prop.properties.length > 0 && inputObj[queryKey] instanceof Array) {
+                const { idField, propType } = BaseHelper.getModelIdField(prop)
+                if (propType === Constants.API_FIELD_TYPE.objectId) {
+                    for (const row of inputObj[queryKey]) {
+                        if (!row[idField]) {
+                            row[idField] = mongoose.Types.ObjectId()
+                        }
+                    }
+                }
+            }
 
             if (replace === true) {
                 // 子属性忽略 unique

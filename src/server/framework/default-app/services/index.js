@@ -8,11 +8,9 @@
  **/
 
 const ApiService = require('./api/ApiService')
-const ModelService = require('./api/ModelService')
 const SysUserService = require('./user/SysUserService')
 
 module.exports = {
     ApiService,
-    ModelService,
     SysUserService
 }

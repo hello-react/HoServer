@@ -3544,6 +3544,13 @@ multer@^1.4.2:
     type-is "^1.6.4"
     xtend "^4.0.0"
 
+multistream@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.npmjs.org/multistream/-/multistream-4.0.0.tgz#c771b6d17d169138b6abcb15f0061170e3c09cea"
+  integrity sha512-t0C8MAtH/d3Y+5nooEtUMWli92lVw9Jhx4uOhRl5GAwS5vc+YTmp/VXNJNsCBAMeEyK/6zhbk6x9JE3AiCvo4g==
+  dependencies:
+    readable-stream "^3.4.0"
+
 mute-stream@0.0.7:
   version "0.0.7"
   resolved "http://registry.npm.taobao.org/mute-stream/download/mute-stream-0.0.7.tgz#3075ce93bc21b8fab43e1bc4da7e8115ed1e7bab"

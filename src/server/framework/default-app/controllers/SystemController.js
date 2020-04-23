@@ -30,6 +30,9 @@ class SystemController {
         router.get('/system/maintain', '获取系统维护信息', async ctx => SystemService.getSiteMaintainInfo(), { permissions: [] })
         router.post('/system/maintain', '设置系统维护信息', async ctx => SystemService.setSiteMaintainInfo(ctx.body), { name: 'setSystemMaintainInfo', public: false })
 
+        // 客户端启动准备完毕上报
+        router.post('/system/client/ready', '客户端启动完毕', async ctx => SystemService.clientReadyMsg(ctx.currentUserId, ctx.body))
+
         // 系统配置接口
         router.get('/system/configs', '获取系统配置列表', async ctx => this._getSystemConfigs(), { public: false })
     }

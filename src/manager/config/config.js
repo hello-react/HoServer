@@ -134,6 +134,42 @@ export default {
                                     name: 'router',
                                     component: './interface/api'
                                 },
+                                {
+                                    path: '/apimanage/apidoc',
+                                    name: 'apidoc',
+                                    component: 'Pro'
+                                },
+                                {
+                                    path: '/apimanage/sdk',
+                                    name: 'sdk',
+                                    component: 'Pro'
+                                },
+                            ],
+                        },
+                        {
+                            path: '/content',
+                            name: 'content',
+                            icon: 'profile',
+                            authority: 'content:manage',
+                            routes: [
+                                {
+                                    path: '/content/post',
+                                    name: 'post',
+                                    component: './content/post'
+                                }
+                            ],
+                        },
+                        {
+                            path: '/payment',
+                            name: 'payment',
+                            icon: 'pay-circle',
+                            authority: 'payment:manage',
+                            routes: [
+                                {
+                                    path: '/payment/payment',
+                                    name: 'payment',
+                                    component: 'Pro',
+                                }
                             ],
                         },
                         {
@@ -151,6 +187,11 @@ export default {
                                     path: '/system/logs',
                                     name: 'logs',
                                     component: './system/logs'
+                                },
+                                {
+                                    path: '/system/monitor',
+                                    name: 'monitor',
+                                    component: 'Pro'
                                 },
                                 {
                                     path: '/system/settings',

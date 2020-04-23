@@ -11,7 +11,7 @@ export default {
     'menu.apimanage.sdk': 'SDK 生成 💎',
 
     'menu.content': '内容管理',
-    'menu.content.post': '内容列表 💎',
+    'menu.content.post': '内容列表',
 
     'menu.payment': '支付管理',
     'menu.payment.payment': '订单列表 💎',

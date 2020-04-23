@@ -55,7 +55,7 @@ const UserLayout = props => {
                                 </span>
                             </Link>
                         </div>
-                        <div className={styles.desc}>极速开发高质量 RESTfull Api 后台服务和管理平台</div>
+                        <div className={styles.desc}>极速开发高质量 RESTful Api 后台服务和管理平台</div>
                     </div>
                     {children}
                 </div>
@@ -63,7 +63,7 @@ const UserLayout = props => {
                     copyright="2019 乐橙"
                     links={[
                         {
-                            key: '快速[RESTfull Api + 管理平台]开发脚手架',
+                            key: '快速[RESTful Api + 管理平台]开发脚手架',
                             title: 'HO SERVER 官网',
                             href: 'http://hos.helloreact.cn',
                             blankTarget: true,

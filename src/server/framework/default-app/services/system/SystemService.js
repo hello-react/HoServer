@@ -5,9 +5,12 @@
  * create: 2018/11/18
  * author: Jack Zhang
  **/
+const fileUtils = require('../../../../framework/utils/file-utils')
+const moment = require('moment')
 const mongoose = require('mongoose')
 const { ApiService } = require('../../services')
 const { Content, SiteMaintain } = require('../../../models')
+const { ErrorCodes } = require('../../../base')
 
 /**
  * 对应后台系统管理中的相关功能接口
@@ -76,6 +79,43 @@ class SystemService {
             const result = await SiteMaintain.create(args)
             return result.id
         }
+    }
+
+    /**
+     * 客户端初始化完毕，服务端发送相关信息
+     */
+    async clientReadyMsg(user_id, args) {
+        const { build, platform, client_type } = args
+        if (!(user_id && build && platform && client_type)) {
+            return Promise.reject({ msg: '参数错误', code: ErrorCodes.GENERAL_ERR_PARAM })
+        }
+
+        const clientVersion = await this.getClientVersion(client_type, build)
+
+        return {
+            serverTime: moment().format('YYYY-MM-DD HH:mm:ss'),
+            clientVer: clientVersion,
+            announce: {}
+        }
+    }
+
+    /**
+     * 客户端版本更新信息
+     */
+    async getClientVersion(clientType, clientVersion) {
+        if (!clientType) {
+            return Promise.reject({ msg: '版本信息未指定', code: ErrorCodes.GENERAL_ERR_PARAM })
+        }
+
+        if (!this.clientVersion) {
+            this.clientVersion = {}
+        }
+
+        if (!this.clientVersion[clientType]) {
+            this.clientVersion[clientType] = fileUtils.getJsonFile(`${clientType}_version`)
+        }
+
+        return this.clientVersion[clientType]
     }
 }
 

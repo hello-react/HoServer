@@ -44,7 +44,7 @@ const defaultFooterDom = (
         copyright="2019 乐橙"
         links={[
             {
-                key: '快速[RESTfull Api + 管理平台]开发脚手架',
+                key: '快速[RESTful Api + 管理平台]开发脚手架',
                 title: 'HO SERVER 官网',
                 href: 'http://hos.helloreact.cn',
                 blankTarget: true,

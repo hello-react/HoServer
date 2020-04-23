@@ -15,9 +15,10 @@ class UserController {
     // prettier-ignore
     initRoutes(container, router) {
         // 用户不支持删除，默认路由仅用于管理员操作，普通用户操作调用独立接口
-        router.def('User', ['create', 'detail', 'batch_update'], {permissions: 'user:manage'})
+        router.def('User', ['create', 'batch_update'], {permissions: 'user:manage'})
         router.def('User', 'list', {permissions: 'user:manage'}).outFields('location real_name mobile email is_admin is_active has_login verified disabled')
         router.def('User', 'update').beforeDbProcess((ctx, userInfo) => this._removeUnexpectedFields(ctx, userInfo))
+        router.get('/user/users/:user_id', '通过user_id获取用户信息', ctx => UserService.getUserByUserId(ctx.params.user_id))
         router.get('/user/current', '获取当前用户信息', ctx => UserService.getUserByUserId(ctx.currentUserId))
         router.get('/user/wechat', '获取微信登录用户信息', ctx => UserService.getThirdUserInfo(ctx.query), {permissions: []})
 

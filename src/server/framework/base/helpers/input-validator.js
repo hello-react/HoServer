@@ -199,8 +199,10 @@ const wrapper = {
         }
 
         let dt
+        let isArray = -1 // -1: 不确定, 0: 不是, 1: 是
         switch (prop.prop_type) {
             case Constants.API_FIELD_TYPE.boolean:
+                isArray = 0
                 if (val === true || val === false) {
                     return true
                 }
@@ -216,6 +218,7 @@ const wrapper = {
                     return false
                 }
             case Constants.API_FIELD_TYPE.char:
+                isArray = 0
                 if (typeof val !== 'string' && typeof val !== 'number') {
                     wrapper._makeError(invalidFields, 'type', { prop: prop.name, name: prop.dis_name, val: val })
                     return false
@@ -227,6 +230,7 @@ const wrapper = {
                 }
                 break
             case Constants.API_FIELD_TYPE.date:
+                isArray = 0
                 dt = moment(val)
                 if (!dt.isValid()) {
                     wrapper._makeError(invalidFields, 'type', { prop: prop.name, name: prop.dis_name, val: val })
@@ -236,6 +240,7 @@ const wrapper = {
                 inputObj[prop.name] = dt.toDate()
                 break
             case Constants.API_FIELD_TYPE.number:
+                isArray = 0
                 if (isNaN(val / 1)) {
                     wrapper._makeError(invalidFields, 'type', { prop: prop.name, name: prop.dis_name, val: val })
                     return false
@@ -248,6 +253,7 @@ const wrapper = {
 
                 break
             case Constants.API_FIELD_TYPE.objectId:
+                isArray = 0
                 if (typeof val === 'string' && val.trim().length === 24) {
                     inputObj[prop.name] = mongoose.Types.ObjectId(val.trim())
                 } else if (!mongoose.Types.ObjectId.isValid(val)) {
@@ -256,10 +262,12 @@ const wrapper = {
                 }
                 break
             case Constants.API_FIELD_TYPE['array-of-boolean']:
+                isArray = 1
                 if (!(val instanceof Array)) {
                     wrapper._makeError(invalidFields, 'type', { prop: prop.name, name: prop.dis_name, val: val })
                     return false
                 }
+
                 for (let i = 0; i < val.length; i++) {
                     const v = val[i]
                     if (v === 'true') {
@@ -275,6 +283,7 @@ const wrapper = {
                 }
                 break
             case Constants.API_FIELD_TYPE['array-of-char']:
+                isArray = 1
                 if (!(val instanceof Array)) {
                     wrapper._makeError(invalidFields, 'type', { prop: prop.name, name: prop.dis_name, val: val })
                     return false
@@ -292,6 +301,7 @@ const wrapper = {
                 }
                 break
             case Constants.API_FIELD_TYPE['array-of-number']:
+                isArray = 1
                 if (!(val instanceof Array)) {
                     wrapper._makeError(invalidFields, 'type', { prop: prop.name, name: prop.dis_name, val: val })
                     return false
@@ -305,6 +315,7 @@ const wrapper = {
                 }
                 break
             case Constants.API_FIELD_TYPE['array-of-objectId']:
+                isArray = 1
                 if (!(val instanceof Array)) {
                     wrapper._makeError(invalidFields, 'type', { prop: prop.name, name: prop.dis_name, val: val })
                     return false
@@ -320,6 +331,13 @@ const wrapper = {
                     }
                 }
                 break
+            default:
+                break
+        }
+
+        if (isArray === 0 && inputObj[prop.name] && inputObj[prop.name] instanceof Array) {
+            wrapper._makeError(invalidFields, 'type', { prop: prop.name, name: prop.dis_name, val: val })
+            return false
         }
 
         return true

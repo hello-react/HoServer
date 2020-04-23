@@ -46,7 +46,7 @@ const before = async context => {
 
     // parse user info from token
     const token = req.body.token || req.query.token || req.headers.token
-    if (token) {
+    if (token && token !== 'undefined') {
         try {
             const decoded = await jwt.verify(token, config.get('jwt.secret'))
             context.currentUserId = mongoose.Types.ObjectId(decoded.id)

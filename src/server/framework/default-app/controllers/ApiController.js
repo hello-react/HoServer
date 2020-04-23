@@ -10,7 +10,6 @@
 const _ = require('lodash')
 
 const ApiService = require('../services/api/ApiService')
-const ModelService = require('../services/api/ModelService')
 
 const { Constants, BaseHelper, ErrorCodes } = require('../../base')
 const { processModel } = require('../../models')
@@ -24,11 +23,6 @@ class ApiController {
         router.post('/api/sys_category', '修改分类名称(服务、Api等)', async ctx => ApiService.setSysCategoryName(ctx.body), { model: 'Api' })
 
         // Model 相关路由
-        router.get('/api/models/import/template', '下载批量导入模板', this._createModelTemplate, { model: 'Model' })
-        router.post('/api/models/import/prepare', '导入数据预处理', async ctx => ModelService.prepareImportModelData(ctx.body), { model: 'Model' })
-        router.post('/api/models/import', '批量导入数据', async ctx => ModelService.importModelData(ctx.body, true), { model: 'Model' })
-        router.post('/api/models/export', '批量导出数据', async ctx => this._exportModelData(ctx), { model: 'Model' })
-
         router.def('Model', 'detail').beforeProcess(this._getServiceMeta).afterProcess(async ctx => this._fillModeldetail(_.get(ctx, 'result')))
         router.def('Model', 'list')
             .beforeDbProcess(async (_, query) => this._removeUnpublicModel(query))
@@ -51,37 +45,6 @@ class ApiController {
         // Service 路由
         router.get('/api/services', '获取服务列表', async ctx => ApiService.getServiceList(ctx.query), { model: 'Service' })
 
-    }
-
-    _createModelTemplate(ctx) {
-        const { model_name } = ctx.query
-        const model = BaseHelper.getModel(model_name)
-        if (!model) {
-            return Promise.reject({ message: `模型定义未找到: ${model_name}`, code: ErrorCodes.GENERAL_ERR_PARAM })
-        }
-
-        return new Promise(async (resolve, reject) => {
-            const result = await ModelService.exportModelData({
-                model_name,
-                scope: 2,
-                fields: {},
-                data: [],
-                format: 'xlsx'
-            })
-
-            ctx.res.download(result.file, model.dis_name + '_导入模板.xlsx', err => {
-                if (err) {
-                    reject(err)
-                } else {
-                    resolve()
-                }
-            })
-        })
-    }
-
-    async _exportModelData(ctx) {
-        const result = await ModelService.exportModelData(ctx.body)
-        return result.url
     }
 
     async _getServiceMeta(ctx) {

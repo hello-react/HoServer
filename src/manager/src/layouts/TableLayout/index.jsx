@@ -19,7 +19,6 @@ import JsonViewModal from '@/components/Modals/JsonViewModal'
 import ProTable from '@/components/ProTable'
 
 import ModelService from '../../services/model'
-import ImExportMenu from './ImExportMenu'
 
 class TableLayout extends Component {
     constructor() {
@@ -173,14 +172,6 @@ class TableLayout extends Component {
                                     <Button icon={<PlusOutlined />} type="primary">新建</Button>
                                 </FormComp>
                             ) : null,
-                            options.import !== false || options.export !== false ? (
-                                <ImExportMenu
-                                    key="imexport"
-                                    options={{import: options.import, export: options.export}}
-                                    modelMeta={this.state.modelMeta}
-                                    data={selectedRows}
-                                />
-                            ) : null
                         ]
                     }}
                     tableAlertRender={selectedRowKeys => (
