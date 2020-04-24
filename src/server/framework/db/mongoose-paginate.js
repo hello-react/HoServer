@@ -28,7 +28,7 @@ function paginate(query, options, callback) {
     const collation = options.collation
     const populate = options.populate
     const lean = options.lean || false
-    const leanWithId = options.hasOwnProperty('leanWithId') ? options.leanWithId : true
+    const leanWithId = options.hasOwnProperty('leanWithId') ? options.leanWithId : false
 
     const limit = options.hasOwnProperty('limit') ? options.limit : 10
     let skip

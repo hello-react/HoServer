@@ -56,7 +56,7 @@ mongoose.connect(dbConnectionUrl, { useUnifiedTopology: true, useNewUrlParser: t
 const db = mongoose.connection
 db.on('error', err => console.error('connection error:', err))
 db.once('open', async () => {
-    // global.logger.debug('connected to db success: ' + dbConnectionUrl)
+    global.logger.debug('connected to db success: ' + dbConnectionUrl)
 
     // init global models
     global.DB_MODELS = await Model.find({})

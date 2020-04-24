@@ -133,7 +133,7 @@ const _processDbModel = dbModel => {
     }
 
     const modelObj = _getDbSchema(dbModel)
-    const modelSchema = new mongoose.Schema(modelObj)
+    const modelSchema = new mongoose.Schema(modelObj, { id: false, _id: true })
     modelSchema.plugin(mongoosePaginate)
 
     // special user table
@@ -209,7 +209,7 @@ const _processDbProperty = (parentName, property, isSubProp, arrayLevel) => {
             arrayProp.id = _processDbProperty(parentName, idProp, true, arrayLevel)
         }
 
-        prop = [mongoose.Schema(arrayProp, { _id: false })] // 不使用默认 id
+        prop = [mongoose.Schema(arrayProp, { noId: true, id: false, _id: false })] // 不使用默认 id
     } else {
         prop.unique = isSubProp || arrayLevel > 0 ? false : property.unique || false // 子属性 unique 仅用于代码层面检查文档内唯一
         prop.type = _convertType(property.prop_type)

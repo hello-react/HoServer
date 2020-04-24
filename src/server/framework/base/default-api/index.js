@@ -447,7 +447,7 @@ class DefaultApiHandler {
         }
 
         // 设置属性值
-        this._setModelProperties('', targetProperty, targetRecord, inputObj, inputObj.replace || false)
+        this._setModelProperties(false, targetProperty, targetRecord, inputObj, inputObj.replace || false)
 
         // 输入检查
         const inputModel = _.clone(existRecord)
@@ -1155,9 +1155,13 @@ class DefaultApiHandler {
             if (!inputObj[idField]) {
                 inputObj[idField] = mongoose.Types.ObjectId()
             }
-
-            inputObj._id = inputObj[idField]
         }
+
+        if (inputObj[idField]) {
+            inputObj._id = inputObj[idField] // 不使用自动生成的
+        }
+
+        this._setModelIdField(model, inputObj)
 
         // 检查 unique 字段，字典 key，数据类型，数据宽度等
         const invalidFields = await InputValidator.validateInputFields(context, model, api, inputObj, null)
@@ -1189,7 +1193,31 @@ class DefaultApiHandler {
         }
     }
 
-    _setModelProperties(parentName, property, existRecord, inputObj, replace) {
+    _setModelIdField(model, inputObj) {
+        if (!inputObj) return
+
+        for (const prop of model.properties) {
+            const queryKey = prop.name
+
+            if (prop.prop_type.indexOf('array') > -1 && prop.properties && prop.properties.length > 0 && inputObj[queryKey] instanceof Array) {
+                const { idField, propType } = BaseHelper.getModelIdField(prop)
+                if (propType === Constants.API_FIELD_TYPE.objectId) {
+                    for (const row of inputObj[queryKey]) {
+                        if (!row[idField]) {
+                            row[idField] = mongoose.Types.ObjectId()
+                        }
+                    }
+                }
+            }
+
+            // 嵌套数组不处理
+            if (prop.properties && prop.properties.length > 0 && prop.prop_type.indexOf('array') < 0) {
+                this._setModelIdField(prop, inputObj[queryKey])
+            }
+        }
+    }
+
+    _setModelProperties(hasParent, property, existRecord, inputObj, replace) {
         if (!inputObj) return
 
         for (const prop of property.properties) {
@@ -1209,13 +1237,13 @@ class DefaultApiHandler {
 
             if (replace === true) {
                 // 子属性忽略 unique
-                if ((prop.input_flag !== 2 || inputObj[queryKey]) && (!prop.unique || (parentName && inputObj[queryKey]))) {
+                if ((prop.input_flag !== 2 || inputObj[queryKey]) && (!prop.unique || (hasParent && inputObj[queryKey]))) {
                     existRecord[prop.name] = inputObj[queryKey]
                 }
             } else if (prop.properties && prop.properties.length > 0 && prop.prop_type.indexOf('array') < 0) {
                 const subModel = existRecord[prop.name]
                 if (subModel) {
-                    this._setModelProperties(queryKey, prop, subModel, inputObj[queryKey], replace)
+                    this._setModelProperties(true, prop, subModel, inputObj[queryKey], replace)
                 }
             } else if (inputObj[queryKey] !== undefined) {
                 if (prop.prop_type.indexOf('array') < 0 || inputObj[queryKey] instanceof Array) {

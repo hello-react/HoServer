@@ -878,9 +878,9 @@ cli-width@^2.0.0:
   integrity sha1-/xnt6Kml5XkyQUewwR8PvLq+1jk=
 
 clipboard@^2.0.0:
-  version "2.0.4"
-  resolved "https://registry.npmjs.org/clipboard/-/clipboard-2.0.4.tgz#836dafd66cf0fea5d71ce5d5b0bf6e958009112d"
-  integrity sha512-Vw26VSLRpJfBofiVaFb/I8PVfdI1OxKcYShe6fm0sP/DtmiWQNCjhM/okTvdCo0G+lMMm1rMYbk4IK4x1X+kgQ==
+  version "2.0.6"
+  resolved "https://registry.npmjs.org/clipboard/-/clipboard-2.0.6.tgz#52921296eec0fdf77ead1749421b21c968647376"
+  integrity sha512-g5zbiixBRk/wyKakSwCKd7vQXDjFnAMGHoEyBogG/bw9kTD9GvdAvaoRR1ALcEzt3pVKxZR0pViekPMIS0QyGg==
   dependencies:
     good-listener "^1.2.2"
     select "^1.1.2"
@@ -1342,14 +1342,15 @@ dlv@^1.1.0:
     resolve-pathname "^3.0.0"
 
 docsify@^4.8.0:
-  version "4.10.2"
-  resolved "https://registry.npmjs.org/docsify/-/docsify-4.10.2.tgz#0e4e7efad511b75680c69a4d648253e63c8cf647"
-  integrity sha512-Y1LbI29X9c4uRVEp7wGOYhy8lDrn47o96or0Dbj+pElxWk1cLYQ5CVYPHnf75P3oM1CrEGIrazac6AjYXaD1kw==
+  version "4.11.3"
+  resolved "https://registry.npmjs.org/docsify/-/docsify-4.11.3.tgz#d79af6f92d48d2c1857b7f76df333db4fd6d19ec"
+  integrity sha512-o9AvGb4vZOlmorg/58Kj6tNdfBaoSQUJZSFC6fJsfLjGFt45kiXhA2UmALnnVk5sol0WgSzxZlcZw6tu1gVu4Q==
   dependencies:
     marked "^0.7.0"
-    medium-zoom "^1.0.4"
+    medium-zoom "^1.0.5"
     opencollective-postinstall "^2.0.2"
-    prismjs "^1.15.0"
+    prismjs "^1.19.0"
+    strip-indent "^3.0.0"
     tinydate "^1.0.0"
     tweezer.js "^1.4.0"
 
@@ -3224,7 +3225,7 @@ media-typer@0.3.0:
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
   integrity sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g=
 
-medium-zoom@^1.0.4:
+medium-zoom@^1.0.5:
   version "1.0.5"
   resolved "https://registry.npmjs.org/medium-zoom/-/medium-zoom-1.0.5.tgz#81413dda20ccdd857141ff420cfab788dd32e20e"
   integrity sha512-aLGa6WlTuFKWvH88bqTrY5ztJMN+D0hd8UX6BYc4YSoPayppzETjZUcdVcksgaoQEMg4cZSmXPg846fTp2rjRQ==
@@ -3289,6 +3290,11 @@ mimic-response@^2.0.0:
   version "2.1.0"
   resolved "https://registry.npmjs.org/mimic-response/-/mimic-response-2.1.0.tgz#d13763d35f613d09ec37ebb30bac0469c0ee8f43"
   integrity sha512-wXqjST+SLt7R009ySCglWBCFpjUygmCIfD790/kVbiGmUgfYGuB14PiTd5DwVxSV4NcYHjzMkoj5LjQZwTQLEA==
+
+min-indent@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/min-indent/-/min-indent-1.0.0.tgz#cfc45c37e9ec0d8f0a0ec3dd4ef7f7c3abe39256"
+  integrity sha1-z8RcN+nsDY8KDsPdTvf3w6vjklY=
 
 minimatch@3.0.4, minimatch@^3.0.4:
   version "3.0.4"
@@ -4065,10 +4071,10 @@ pretty-format@^23.0.1:
     ansi-regex "^3.0.0"
     ansi-styles "^3.2.0"
 
-prismjs@^1.15.0:
-  version "1.19.0"
-  resolved "https://registry.npmjs.org/prismjs/-/prismjs-1.19.0.tgz#713afbd45c3baca4b321569f2df39e17e729d4dc"
-  integrity sha512-IVFtbW9mCWm9eOIaEkNyo2Vl4NnEifis2GQ7/MLRG5TQe6t+4Sj9J5QWI9i3v+SS43uZBlCAOn+zYTVYQcPXJw==
+prismjs@^1.19.0:
+  version "1.20.0"
+  resolved "https://registry.npmjs.org/prismjs/-/prismjs-1.20.0.tgz#9b685fc480a3514ee7198eac6a3bf5024319ff03"
+  integrity sha512-AEDjSrVNkynnw6A+B1DsFkd6AVdTnp+/WoUixFRULlCLZVRZlVQMVWio/16jv7G1FscUxQxOQhWwApgbnxr6kQ==
   optionalDependencies:
     clipboard "^2.0.0"
 
@@ -4631,7 +4637,7 @@ shebang-regex@^1.0.0:
   resolved "http://registry.npm.taobao.org/shebang-regex/download/shebang-regex-1.0.0.tgz#da42f49740c0b42db2ca9728571cb190c98efea3"
   integrity sha1-2kL0l0DAtC2yypcoVxyxkMmO/qM=
 
-"shortid@^,2.2.15":
+shortid@^2.2.15:
   version "2.2.15"
   resolved "https://registry.npmjs.org/shortid/-/shortid-2.2.15.tgz#2b902eaa93a69b11120373cd42a1f1fe4437c122"
   integrity sha512-5EaCy2mx2Jgc/Fdn9uuDuNIIfWBpzY4XIlhoqtXF6qsf+/+SGZ+FxDdX/ZsMZiWupIWNqAEmiNY4RC+LSmCeOw==
@@ -4905,6 +4911,13 @@ strip-eof@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/strip-eof/-/strip-eof-1.0.0.tgz#bb43ff5598a6eb05d89b59fcd129c983313606bf"
   integrity sha1-u0P/VZim6wXYm1n80SnJgzE2Br8=
+
+strip-indent@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.npmjs.org/strip-indent/-/strip-indent-3.0.0.tgz#c32e1cee940b6b3432c771bc2c54bcce73cd3001"
+  integrity sha512-laJTa3Jb+VQpaC6DseHhF7dXVqHTfJPCRDaEbid/drOhgitgYku/letMUqOXFoWV0zIIUbjpdH2t+tYj4bQMRQ==
+  dependencies:
+    min-indent "^1.0.0"
 
 strip-json-comments@2.0.1, strip-json-comments@^2.0.1, strip-json-comments@~2.0.1:
   version "2.0.1"
