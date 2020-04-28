@@ -1155,9 +1155,7 @@ class DefaultApiHandler {
             if (!inputObj[idField]) {
                 inputObj[idField] = mongoose.Types.ObjectId()
             }
-        }
 
-        if (inputObj[idField]) {
             inputObj._id = inputObj[idField] // 不使用自动生成的
         }
 
