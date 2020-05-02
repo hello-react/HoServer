@@ -1,6 +1,7 @@
 node_modules
 .umi
 .idea
+.vscode
 *.log
 */umitest/pages/.umi/
 /src/server/config/*.pem
