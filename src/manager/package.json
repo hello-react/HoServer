@@ -19,7 +19,7 @@
         "lint:prettier": "check-prettier lint",
         "lint:style": "stylelint --fix \"src/**/*.less\" --syntax less",
         "prettier": "prettier -c --write \"**/*\"",
-        "start": "UMI_UI=none MOCK=none umi dev",
+        "start": "cross-env UMI_UI=none MOCK=none umi dev",
         "tsc": "tsc",
         "ui": "umi ui"
     },
