@@ -23,11 +23,7 @@ export default {
     menu: {
         locale: true,
     },
-    title: (
-        <span>{PRODUCT_NAME}
-            <img src={`${IMAGE_URL}/${IS_HOS_PRO ? 'pro' : 'std'}_${THEME_COLOR}.svg`} style={{width: '40px', marginLeft: '5px', marginBottom: '5px'}} />
-        </span>
-    ),
+    title:'HoServer',
     pwa: false,
 
     // 产品名称，主要用于登录等页面显示
