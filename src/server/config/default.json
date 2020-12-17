@@ -28,7 +28,7 @@
     "version": "1.0"
   },
   "db": {
-    "url": "mongodb://hosguest:HoGuest2020@atsproduction.mongodb.rds.aliyuncs.com:3717/hoserver"
+    "url": "mongodb://hosguest:HoGuest2020@mongo.helloreact.cn:3716/hoserver"
   },
   "jwt": {
     "secret": "server2h3o53o4bl534bl5",
