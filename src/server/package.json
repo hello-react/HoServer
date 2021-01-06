@@ -12,7 +12,7 @@
     "alipay-node-sdk": "^1.1.9",
     "alipay-sdk": "^3.0.8",
     "archiver": "^3.1.1",
-    "axios": "^0.19.1",
+    "axios": "^0.21.1",
     "bluebird": "^3.7.2",
     "body-parser": "^1.19.0",
     "body-parser-xml": "^1.1.0",
