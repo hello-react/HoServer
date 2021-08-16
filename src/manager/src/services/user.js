@@ -1,8 +1,5 @@
+import {Constants, getToken, request} from '@hosoft/hos-admin-common'
 import {message} from 'antd'
-
-import { getToken } from '@/utils/authority'
-import Constants from "@/utils/constants"
-import request from '@/utils/request'
 
 /**
  * 获取当前用户

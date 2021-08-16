@@ -1,0 +1,10 @@
+{
+  "deleteFriend": "取消关注",
+  "getFriendPost": "获取关注好友发表的内容",
+  "deleteFavorite": "取消收藏",
+  "toggleLike": "点赞/取消点赞",
+  "getUserSnsStat": "用户社交统计数据",
+  "favoriteItemNotFound": "收藏条目未找到",
+  "errFriendNotFound": "关注对象未找到",
+  "errContentNotFound": "内容未找到"
+}

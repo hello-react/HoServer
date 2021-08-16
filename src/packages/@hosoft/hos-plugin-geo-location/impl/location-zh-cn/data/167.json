@@ -1,0 +1,259 @@
+{
+    "province": "河南省",
+    "prov_code": "41",
+    "city": "鹤壁市",
+    "city_code": "4106",
+    "districts": [
+        {
+            "_id": "5c18605e2722b75024b9cfeb",
+            "code": "410622",
+            "district": "淇县",
+            "subdistricts": [
+                {
+                    "_id": "5c18605e2722b75024b9cff4",
+                    "code": "410622001",
+                    "subdistrict": "朝歌街道办事处"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cff3",
+                    "code": "410622002",
+                    "subdistrict": "桥盟街道办事处"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cff2",
+                    "code": "410622003",
+                    "subdistrict": "卫都街道办事处"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cff1",
+                    "code": "410622004",
+                    "subdistrict": "灵山街道办事处"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cff0",
+                    "code": "410622101",
+                    "subdistrict": "高村镇"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cfef",
+                    "code": "410622102",
+                    "subdistrict": "北阳镇"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cfee",
+                    "code": "410622103",
+                    "subdistrict": "西岗镇"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cfed",
+                    "code": "410622104",
+                    "subdistrict": "庙口镇"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cfec",
+                    "code": "410622202",
+                    "subdistrict": "黄洞乡"
+                }
+            ]
+        },
+        {
+            "_id": "5c18605e2722b75024b9cfe3",
+            "code": "410602",
+            "district": "鹤山区",
+            "subdistricts": [
+                {
+                    "_id": "5c18605e2722b75024b9cfea",
+                    "code": "410602001",
+                    "subdistrict": "中北街道"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cfe9",
+                    "code": "410602002",
+                    "subdistrict": "中山路街道"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cfe8",
+                    "code": "410602003",
+                    "subdistrict": "新华街街道"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cfe7",
+                    "code": "410602004",
+                    "subdistrict": "鹤山街街道"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cfe6",
+                    "code": "410602005",
+                    "subdistrict": "九矿广场街道"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cfe5",
+                    "code": "410602100",
+                    "subdistrict": "鹤壁集镇"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cfe4",
+                    "code": "410602201",
+                    "subdistrict": "姬家山乡"
+                }
+            ]
+        },
+        {
+            "_id": "5c18605e2722b75024b9cfda",
+            "code": "410603",
+            "district": "山城区",
+            "subdistricts": [
+                {
+                    "_id": "5c18605e2722b75024b9cfe2",
+                    "code": "410603001",
+                    "subdistrict": "红旗街道"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cfe1",
+                    "code": "410603002",
+                    "subdistrict": "长风中路街道"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cfe0",
+                    "code": "410603003",
+                    "subdistrict": "山城路街道"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cfdf",
+                    "code": "410603004",
+                    "subdistrict": "汤河街街道"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cfde",
+                    "code": "410603005",
+                    "subdistrict": "鹿楼街道"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cfdd",
+                    "code": "410603006",
+                    "subdistrict": "宝山街道办事处"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cfdc",
+                    "code": "410603007",
+                    "subdistrict": "大胡街道办事处"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cfdb",
+                    "code": "410603100",
+                    "subdistrict": "石林镇"
+                }
+            ]
+        },
+        {
+            "_id": "5c18605e2722b75024b9cfd1",
+            "code": "410611",
+            "district": "淇滨区",
+            "subdistricts": [
+                {
+                    "_id": "5c18605e2722b75024b9cfd9",
+                    "code": "410611001",
+                    "subdistrict": "金山办事处"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cfd8",
+                    "code": "410611002",
+                    "subdistrict": "九州路街道"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cfd7",
+                    "code": "410611003",
+                    "subdistrict": "黎阳路街道"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cfd6",
+                    "code": "410611100",
+                    "subdistrict": "大赉店镇"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cfd5",
+                    "code": "410611101",
+                    "subdistrict": "钜桥镇"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cfd4",
+                    "code": "410611200",
+                    "subdistrict": "上峪乡"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cfd3",
+                    "code": "410611201",
+                    "subdistrict": "大河涧乡"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cfd2",
+                    "code": "410611562",
+                    "subdistrict": "长江路街道"
+                }
+            ]
+        },
+        {
+            "_id": "5c18605e2722b75024b9cfc5",
+            "code": "410621",
+            "district": "浚县",
+            "subdistricts": [
+                {
+                    "_id": "5c18605e2722b75024b9cfd0",
+                    "code": "410621001",
+                    "subdistrict": "卫溪街道办事处"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cfcf",
+                    "code": "410621002",
+                    "subdistrict": "浚州街道办事处"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cfce",
+                    "code": "410621003",
+                    "subdistrict": "黎阳街道办事处"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cfcd",
+                    "code": "410621004",
+                    "subdistrict": "伾山街道办事处"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cfcc",
+                    "code": "410621101",
+                    "subdistrict": "善堂镇"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cfcb",
+                    "code": "410621102",
+                    "subdistrict": "屯子镇"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cfca",
+                    "code": "410621104",
+                    "subdistrict": "新镇镇"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cfc9",
+                    "code": "410621105",
+                    "subdistrict": "小河镇"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cfc8",
+                    "code": "410621107",
+                    "subdistrict": "卫贤镇"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cfc7",
+                    "code": "410621108",
+                    "subdistrict": "王庄镇"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9cfc6",
+                    "code": "410621201",
+                    "subdistrict": "白寺乡"
+                }
+            ]
+        }
+    ],
+    "id": 167
+}

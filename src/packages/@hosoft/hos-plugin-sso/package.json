@@ -1,0 +1,12 @@
+{
+  "name": "@hosoft/hos-plugin-sso",
+  "version": "1.0.0",
+  "description": "HoServer plugin for single sign on",
+  "main": "index.js",
+  "devDependencies": {
+    "@hosoft/config": "^1.0.2",
+    "@hosoft/restful-api-framework": "^1.4.1",
+    "lodash": "^4.17.20",
+    "moment": "^2.29.1"
+  }
+}

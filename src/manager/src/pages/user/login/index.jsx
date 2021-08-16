@@ -107,7 +107,7 @@ class Login extends Component {
                             name="user_name"
                             placeholder={`${formatMessage({
                                 id: 'userandlogin.login.userName',
-                            })}: admin`}
+                            })}`}
                             rules={[
                                 {
                                     required: true,
@@ -121,7 +121,7 @@ class Login extends Component {
                             name="password"
                             placeholder={`${formatMessage({
                                 id: 'userandlogin.login.password',
-                            })}: 123456`}
+                            })}`}
                             rules={[
                                 {
                                     required: true,
@@ -226,7 +226,9 @@ class Login extends Component {
     }
 }
 
-export default connect(({ userAndlogin, loading }) => ({
+export default connect(({ userAndlogin, loading, plugin }) => ({
     userAndlogin,
     submitting: loading.effects['userAndlogin/login'],
+    serverPlugins: plugin.serverPlugins,
+    managerPlugins: plugin.managerPlugins
 }))(Login)

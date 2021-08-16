@@ -1,0 +1,38 @@
+{
+  "////////// apis": "//////////",
+  "errNotAdminUser": "非管理员用户",
+  "errNotEditable": "不允许修改",
+
+  "getMessageList": "获取消息列表",
+  "setMessageReadStatus": "设置消息阅读状态",
+  "getRolePermCategories": "获取权限角色分类列表",
+  "getUserByUserId": "通过User Id获取用户信息",
+  "getCurrentUserInfo": "获取当前用户信息",
+  "register": "用户注册",
+  "login": "用户登录",
+  "loginAdmin": "管理员登录",
+  "changePassword": "修改密码",
+  "changeUserName": "修改用户名",
+  "resetPassword": "重置密码",
+
+  "////////// services": "//////////",
+  "minute": "分钟",
+  "hour": "小时",
+  "day": "天",
+  "week": "周",
+  "month": "月",
+
+  "errNoUserOrPass": "请输入用户名和密码",
+  "errUserNotExists": "用户不存在",
+  "errUserFreezed": "用户已冻结，请联系客服",
+  "errWrongUserOrPassword": "用户名或密码错误",
+  "errPluginNotInstall": "请先安装{{name}}插件",
+  "errValidateSMS": "验证码验证失败",
+  "errMobileExists": "手机号{{mobile}}已经绑定过用户",
+  "errUserExists": "用户{{name}}已经存在",
+  "errMobileNotBind": "用户未绑定此手机，请确认号码",
+  "errOldPassword": "旧密码输入错误",
+  "errPasswordLengthMin": "密码长度不得少于{{min}}个字符",
+  "errPasswordLengthMax": "密码长度不得大于{{max}}个字符",
+  "errPasswordNoSpaces": "密码不能包含空格"
+}

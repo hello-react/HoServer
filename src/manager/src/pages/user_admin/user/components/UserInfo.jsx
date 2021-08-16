@@ -1,24 +1,24 @@
 /* eslint-disable jsx-a11y/alt-text */
 /**
- * HoServer Manager Ver 1.0
+ * HoServer Manager Ver 2.0
  * Copyright http://hos.helloreact.cn
  *
  * create: 2020/01/20
- * author: Jack Zhang
- * */
+ */
 import '@ant-design/compatible/assets/index.css'
 
-import { Icon} from "@ant-design/compatible"
-import {Avatar, Button, Card, Col, Modal, Row, Tag, Tooltip} from 'antd'
+import { Icon } from "@ant-design/compatible"
+import { Common } from '@hosoft/hos-admin-common'
+import { Avatar, Button, Card, Col, Modal, Row, Tag, Tooltip } from 'antd'
 import moment from 'moment'
 import React, {useEffect, useRef, useState} from 'react'
 
-import alipayIcon from '@/assets/alipay.svg'
-import qqIcon from '@/assets/qq.svg'
 import vipIcon from '@/assets/vip.svg'
-import wechatIcon from '@/assets/wechat.svg'
-import weiboIcon from '@/assets/weibo.svg'
-import {formatLocation, ossProcessImg} from '@/utils/utils'
+// TODO: third login plugin
+// import alipayIcon from '@/assets/alipay.svg'
+// import qqIcon from '@/assets/qq.svg'
+// import wechatIcon from '@/assets/wechat.svg'
+// import weiboIcon from '@/assets/weibo.svg'
 
 import UserService from '../../service'
 
@@ -85,7 +85,7 @@ const UserInfo = props => {
 
     const renderContactlForm = () => {
         const thirContact = userInfo.third_contact || []
-        const wxInfo = thirContact.find(t => t.type === 'wechat')
+        const wxInfo = thirContact.find(t => t.type === 'wx')
         const weiboInfo = thirContact.find(t => t.type === 'weibo')
         const qqInfo = thirContact.find(t => t.type === 'qq')
         const alipayInfo = thirContact.find(t => t.type === 'alipay')
@@ -102,7 +102,7 @@ const UserInfo = props => {
                 </Row>
                 <Row gutter={[10, 20]}>
                     <Col span={6} align="right">地区：</Col>
-                    <Col span={18}>{formatLocation(userInfo.location_rel)}</Col>
+                    <Col span={18}>{Common.formatLocation(userInfo.location_rel)}</Col>
                 </Row>
                 <Row gutter={[10, 20]}>
                     <Col span={6} align="right">三方账号：</Col>
@@ -197,7 +197,7 @@ const UserInfo = props => {
                         </Col>
                         <Col span={8} align="center">
                             <Avatar
-                                src={ossProcessImg(userInfo.avatar, 250, 0, true)}
+                                src={Common.ossProcessImg(userInfo.avatar, 250, 0, true)}
                                 size={128}
                                 icon={userInfo.avatar ? undefined : <Icon type="user" />}
                                 style={{marginTop: 50, cursor: 'pointer'}}

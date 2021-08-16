@@ -1,0 +1,154 @@
+{
+  "id" : "5c0daa6b79fe2159682bbcd6",
+  "name" : "Area",
+  "dis_name" : "区域代码",
+  "db_table" : "sys_areas",
+  "route_name" : "area",
+  "description" : "2018年12月最新全国省市区/县镇代码",
+  "created_at" : "2020-12-08T02:51:05.726Z",
+  "updated_at" : "2020-12-08T02:51:05.726Z",
+  "timestamp" : false,
+  "category_name" : "app",
+  "properties" : [
+    {
+      "relations" : {
+        "rel_type" : "4",
+        "name" : "PROVINCE"
+      },
+      "unique" : false,
+      "index" : false,
+      "require" : true,
+      "width" : 64,
+      "input_flag" : 1,
+      "search_flag" : 1,
+      "output_flag" : 1,
+      "name" : "province",
+      "dis_name" : "省",
+      "prop_type" : "char",
+      "order" : 10
+    },
+    {
+      "unique" : true,
+      "index" : false,
+      "require" : false,
+      "width" : 64,
+      "input_flag" : 1,
+      "search_flag" : 1,
+      "output_flag" : 1,
+      "name" : "prov_code",
+      "dis_name" : "省份编码",
+      "prop_type" : "char",
+      "order" : 20
+    },
+    {
+      "relations" : {
+        "rel_type" : "4",
+        "name" : "CITY"
+      },
+      "unique" : false,
+      "index" : false,
+      "require" : false,
+      "width" : 64,
+      "input_flag" : 1,
+      "search_flag" : 1,
+      "output_flag" : 1,
+      "name" : "city",
+      "dis_name" : "市",
+      "prop_type" : "char",
+      "order" : 30
+    },
+    {
+      "unique" : true,
+      "index" : false,
+      "require" : false,
+      "width" : 64,
+      "input_flag" : 1,
+      "search_flag" : 1,
+      "output_flag" : 1,
+      "name" : "city_code",
+      "dis_name" : "城市编码",
+      "prop_type" : "char",
+      "order" : 40
+    },
+    {
+      "unique" : false,
+      "index" : false,
+      "require" : false,
+      "width" : 64,
+      "input_flag" : 1,
+      "search_flag" : 1,
+      "output_flag" : 1,
+      "name" : "districts",
+      "dis_name" : "区/县列表",
+      "prop_type" : "array-of-object",
+      "order" : 50,
+      "properties" : [
+        {
+          "relations" : {
+            "rel_type" : "4",
+            "name" : "DISTRICT"
+          },
+          "unique" : false,
+          "require" : false,
+          "width" : 64,
+          "input_flag" : 1,
+          "output_flag" : 1,
+          "name" : "district",
+          "dis_name" : "区/县",
+          "prop_type" : "char",
+          "order" : 10
+        },
+        {
+          "unique" : true,
+          "require" : false,
+          "width" : 64,
+          "input_flag" : 1,
+          "output_flag" : 1,
+          "name" : "code",
+          "dis_name" : "区/县编码",
+          "prop_type" : "char",
+          "order" : 20
+        },
+        {
+          "unique" : false,
+          "require" : false,
+          "width" : 64,
+          "input_flag" : 1,
+          "output_flag" : 1,
+          "name" : "subdistricts",
+          "dis_name" : "街道/镇列表",
+          "prop_type" : "array-of-object",
+          "order" : 30,
+          "properties" : [
+            {
+              "relations" : {
+                "rel_type" : "4",
+                "name" : "SUBDISTRICT"
+              },
+              "unique" : false,
+              "require" : false,
+              "width" : 64,
+              "input_flag" : 1,
+              "output_flag" : 1,
+              "name" : "subdistrict",
+              "dis_name" : "街道/镇",
+              "prop_type" : "char",
+              "order" : 10
+            },
+            {
+              "unique" : true,
+              "require" : false,
+              "width" : 64,
+              "input_flag" : 1,
+              "output_flag" : 1,
+              "name" : "code",
+              "dis_name" : "编码",
+              "prop_type" : "char",
+              "order" : 20
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

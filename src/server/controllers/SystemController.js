@@ -1,18 +1,17 @@
 /**
- * HoServer API Server Ver 1.0
- * Copyright http://hos.helloreact.cn
- *
- * create: 2020/01/15
- * author: Jack Zhang
- **/
-const SMSService = require('../services/system/SMSService')
-
-/**
- * 系统服务接口
+ * System manage apis
  */
 class SystemController {
     initRoutes(container, router) {
-        router.get('/system/sms', '获取验证码', context => SMSService.sendSMS(context.query), { permissions: [] })
+        // tags
+        router.def('Tags')
+        router.def('Tags', 'list').beforeDbProcess((ctx, query, options) => {
+            // user_id null is system tags
+            query.user_id = { $in: [null, ctx.currentUserId] }
+        })
+
+        // TODO: feedback plugin
+        // router.def('Feedback', ['create', 'list', 'delete'])
     }
 }
 

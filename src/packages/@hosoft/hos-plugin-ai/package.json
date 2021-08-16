@@ -1,0 +1,13 @@
+{
+  "name": "@hosoft/hos-plugin-ai",
+  "version": "1.0.0",
+  "description": "HoServer AI plugin",
+  "main": "index.js",
+  "devDependencies": {
+    "@hosoft/config": "^1.0.2",
+    "@hosoft/restful-api-framework": "^1.5.3",
+    "crypto-js": "^4.1.1",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1"
+  }
+}

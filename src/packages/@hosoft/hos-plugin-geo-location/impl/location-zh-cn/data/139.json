@@ -1,0 +1,218 @@
+{
+    "province": "江西省",
+    "prov_code": "36",
+    "city": "新余市",
+    "city_code": "3605",
+    "districts": [
+        {
+            "_id": "5c18605c2722b75024b9bfe2",
+            "code": "360521",
+            "district": "分宜县",
+            "subdistricts": [
+                {
+                    "_id": "5c18605c2722b75024b9bff4",
+                    "code": "360521001",
+                    "subdistrict": "钤东街道办事处"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bff3",
+                    "code": "360521100",
+                    "subdistrict": "分宜镇"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bff2",
+                    "code": "360521101",
+                    "subdistrict": "杨桥镇"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bff1",
+                    "code": "360521102",
+                    "subdistrict": "湖泽镇"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bff0",
+                    "code": "360521103",
+                    "subdistrict": "双林镇"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bfef",
+                    "code": "360521104",
+                    "subdistrict": "钤山镇"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bfee",
+                    "code": "360521105",
+                    "subdistrict": "洋江镇"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bfed",
+                    "code": "360521106",
+                    "subdistrict": "凤阳镇"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bfec",
+                    "code": "360521201",
+                    "subdistrict": "洞村乡"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bfeb",
+                    "code": "360521202",
+                    "subdistrict": "高岚乡"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bfea",
+                    "code": "360521203",
+                    "subdistrict": "操场乡"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bfe9",
+                    "code": "360521405",
+                    "subdistrict": "分宜县工业园管理委员会"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bfe8",
+                    "code": "360521500",
+                    "subdistrict": "分宜县芳山林场"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bfe7",
+                    "code": "360521501",
+                    "subdistrict": "年珠林场"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bfe6",
+                    "code": "360521502",
+                    "subdistrict": "山下林场"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bfe5",
+                    "code": "360521503",
+                    "subdistrict": "上村林场"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bfe4",
+                    "code": "360521504",
+                    "subdistrict": "长埠林场"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bfe3",
+                    "code": "360521505",
+                    "subdistrict": "东坑林场"
+                }
+            ]
+        },
+        {
+            "_id": "5c18605c2722b75024b9bfcc",
+            "code": "360502",
+            "district": "渝水区",
+            "subdistricts": [
+                {
+                    "_id": "5c18605c2722b75024b9bfe1",
+                    "code": "360502001",
+                    "subdistrict": "城南街道办事处"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bfe0",
+                    "code": "360502002",
+                    "subdistrict": "城北街道办事处"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bfdf",
+                    "code": "360502003",
+                    "subdistrict": "袁河街道办事处"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bfde",
+                    "code": "360502004",
+                    "subdistrict": "新钢街道办事处"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bfdd",
+                    "code": "360502100",
+                    "subdistrict": "水北镇"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bfdc",
+                    "code": "360502101",
+                    "subdistrict": "下村镇"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bfdb",
+                    "code": "360502102",
+                    "subdistrict": "良山镇"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bfda",
+                    "code": "360502103",
+                    "subdistrict": "罗坊镇"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bfd9",
+                    "code": "360502104",
+                    "subdistrict": "姚圩镇"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bfd8",
+                    "code": "360502105",
+                    "subdistrict": "珠珊镇"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bfd7",
+                    "code": "360502170",
+                    "subdistrict": "河下镇"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bfd6",
+                    "code": "360502180",
+                    "subdistrict": "观巢镇"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bfd5",
+                    "code": "360502181",
+                    "subdistrict": "欧里镇"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bfd4",
+                    "code": "360502190",
+                    "subdistrict": "水西镇"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bfd3",
+                    "code": "360502200",
+                    "subdistrict": "鹄山乡"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bfd2",
+                    "code": "360502201",
+                    "subdistrict": "人和乡"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bfd1",
+                    "code": "360502202",
+                    "subdistrict": "界水乡"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bfd0",
+                    "code": "360502203",
+                    "subdistrict": "南安乡"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bfcf",
+                    "code": "360502204",
+                    "subdistrict": "新溪乡"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bfce",
+                    "code": "360502271",
+                    "subdistrict": "九龙山乡"
+                },
+                {
+                    "_id": "5c18605c2722b75024b9bfcd",
+                    "code": "360502401",
+                    "subdistrict": "仙来办事处"
+                }
+            ]
+        }
+    ],
+    "id": 139
+}

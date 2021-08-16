@@ -1,10 +1,11 @@
 import React from 'react'
+
 import CheckPermissions from './CheckPermissions'
+
 /**
  * 默认不能访问任何页面
  * default is "NULL"
  */
-
 const Exception403 = () => 403
 
 export const isComponentClass = component => {
@@ -12,11 +13,12 @@ export const isComponentClass = component => {
     const proto = Object.getPrototypeOf(component)
     if (proto === React.Component || proto === Function.prototype) return true
     return isComponentClass(proto)
-} // Determine whether the incoming component has been instantiated
+}
+
+// Determine whether the incoming component has been instantiated
 // AuthorizedRoute is already instantiated
 // Authorized  render is already instantiated, children is no instantiated
 // Secured is not instantiated
-
 const checkIsInstantiation = target => {
     if (isComponentClass(target)) {
         const Target = target
@@ -29,6 +31,7 @@ const checkIsInstantiation = target => {
 
     return () => target
 }
+
 /**
  * 用于判断是否拥有权限访问此 view 权限
  * authority 支持传入 string, () => boolean | Promise
@@ -44,7 +47,6 @@ const checkIsInstantiation = target => {
  * @param {string | function | Promise} authority
  * @param {ReactNode} error 非必需参数
  */
-
 const authorize = (authority, error) => {
     /**
      * conversion into a class

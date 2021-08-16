@@ -1,8 +1,7 @@
+import { Common } from "@hosoft/hos-admin-common"
 import { Avatar, List } from 'antd'
 import classNames from 'classnames'
 import React from 'react'
-
-import {ossProcessImg} from "@/utils/utils"
 
 import styles from './NoticeList.less'
 
@@ -39,7 +38,7 @@ const NoticeList = ({
 
                     const leftIcon = item.avatar ? (
                         typeof item.avatar === 'string' ? (
-                            <Avatar className={styles.avatar} src={ossProcessImg(item.avatar, 50, 0, true)} />
+                            <Avatar className={styles.avatar} src={Common.ossProcessImg(item.avatar, 50, 0, true)} />
                         ) : (
                             <span className={styles.iconElement}>{item.avatar}</span>
                         )

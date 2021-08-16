@@ -1,0 +1,491 @@
+{
+    "province": "湖北省",
+    "prov_code": "42",
+    "city": "咸宁市",
+    "city_code": "4212",
+    "districts": [
+        {
+            "_id": "5c18605f2722b75024b9dc04",
+            "code": "421281",
+            "district": "赤壁市",
+            "subdistricts": [
+                {
+                    "_id": "5c18605f2722b75024b9dc17",
+                    "code": "421281001",
+                    "subdistrict": "蒲圻街道办事处"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dc16",
+                    "code": "421281002",
+                    "subdistrict": "赤马港街道办事处"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dc15",
+                    "code": "421281003",
+                    "subdistrict": "陆水湖街道办事处"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dc14",
+                    "code": "421281100",
+                    "subdistrict": "新店镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dc13",
+                    "code": "421281101",
+                    "subdistrict": "赵李桥镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dc12",
+                    "code": "421281102",
+                    "subdistrict": "茶庵岭镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dc11",
+                    "code": "421281103",
+                    "subdistrict": "车埠镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dc10",
+                    "code": "421281104",
+                    "subdistrict": "赤壁镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dc0f",
+                    "code": "421281105",
+                    "subdistrict": "柳山湖镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dc0e",
+                    "code": "421281106",
+                    "subdistrict": "神山镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dc0d",
+                    "code": "421281107",
+                    "subdistrict": "中伙铺镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dc0c",
+                    "code": "421281108",
+                    "subdistrict": "官塘驿镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dc0b",
+                    "code": "421281109",
+                    "subdistrict": "黄盖湖镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dc0a",
+                    "code": "421281200",
+                    "subdistrict": "余家桥乡"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dc09",
+                    "code": "421281400",
+                    "subdistrict": "蒲纺工业园"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dc08",
+                    "code": "421281401",
+                    "subdistrict": "官塘驿林场"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dc07",
+                    "code": "421281402",
+                    "subdistrict": "羊楼洞茶场"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dc06",
+                    "code": "421281403",
+                    "subdistrict": "沧湖开发区"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dc05",
+                    "code": "421281404",
+                    "subdistrict": "赤壁市经济开发区"
+                }
+            ]
+        },
+        {
+            "_id": "5c18605f2722b75024b9dbf3",
+            "code": "421202",
+            "district": "咸安区",
+            "subdistricts": [
+                {
+                    "_id": "5c18605f2722b75024b9dc03",
+                    "code": "421202001",
+                    "subdistrict": "温泉办事处"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dc02",
+                    "code": "421202002",
+                    "subdistrict": "浮山办事处"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dc01",
+                    "code": "421202003",
+                    "subdistrict": "永安办事处"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dc00",
+                    "code": "421202100",
+                    "subdistrict": "汀泗桥镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbff",
+                    "code": "421202101",
+                    "subdistrict": "向阳湖镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbfe",
+                    "code": "421202102",
+                    "subdistrict": "官埠桥镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbfd",
+                    "code": "421202103",
+                    "subdistrict": "横沟桥镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbfc",
+                    "code": "421202104",
+                    "subdistrict": "贺胜桥镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbfb",
+                    "code": "421202105",
+                    "subdistrict": "双溪桥镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbfa",
+                    "code": "421202106",
+                    "subdistrict": "马桥镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbf9",
+                    "code": "421202107",
+                    "subdistrict": "桂花镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbf8",
+                    "code": "421202108",
+                    "subdistrict": "高桥镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbf7",
+                    "code": "421202200",
+                    "subdistrict": "大幕乡"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbf6",
+                    "code": "421202450",
+                    "subdistrict": "向阳湖奶牛良种场"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbf5",
+                    "code": "421202570",
+                    "subdistrict": "咸宁市经济技术开发区"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbf4",
+                    "code": "421202571",
+                    "subdistrict": "湖北咸安经济开发区"
+                }
+            ]
+        },
+        {
+            "_id": "5c18605f2722b75024b9dbe8",
+            "code": "421221",
+            "district": "嘉鱼县",
+            "subdistricts": [
+                {
+                    "_id": "5c18605f2722b75024b9dbf2",
+                    "code": "421221100",
+                    "subdistrict": "陆溪镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbf1",
+                    "code": "421221101",
+                    "subdistrict": "高铁岭镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbf0",
+                    "code": "421221102",
+                    "subdistrict": "官桥镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbef",
+                    "code": "421221103",
+                    "subdistrict": "鱼岳镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbee",
+                    "code": "421221104",
+                    "subdistrict": "新街镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbed",
+                    "code": "421221105",
+                    "subdistrict": "渡普镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbec",
+                    "code": "421221106",
+                    "subdistrict": "潘家湾镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbeb",
+                    "code": "421221107",
+                    "subdistrict": "牌洲湾镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbea",
+                    "code": "421221450",
+                    "subdistrict": "头墩农场"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbe9",
+                    "code": "421221570",
+                    "subdistrict": "嘉鱼县经济开发区"
+                }
+            ]
+        },
+        {
+            "_id": "5c18605f2722b75024b9dbd7",
+            "code": "421222",
+            "district": "通城县",
+            "subdistricts": [
+                {
+                    "_id": "5c18605f2722b75024b9dbe7",
+                    "code": "421222100",
+                    "subdistrict": "隽水镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbe6",
+                    "code": "421222101",
+                    "subdistrict": "麦市镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbe5",
+                    "code": "421222102",
+                    "subdistrict": "塘湖镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbe4",
+                    "code": "421222103",
+                    "subdistrict": "关刀镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbe3",
+                    "code": "421222104",
+                    "subdistrict": "沙堆镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbe2",
+                    "code": "421222105",
+                    "subdistrict": "五里镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbe1",
+                    "code": "421222106",
+                    "subdistrict": "石南镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbe0",
+                    "code": "421222107",
+                    "subdistrict": "北港镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbdf",
+                    "code": "421222108",
+                    "subdistrict": "马港镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbde",
+                    "code": "421222200",
+                    "subdistrict": "四庄乡"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbdd",
+                    "code": "421222201",
+                    "subdistrict": "大坪乡"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbdc",
+                    "code": "421222500",
+                    "subdistrict": "鹿角山林场"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbdb",
+                    "code": "421222501",
+                    "subdistrict": "锡山森林公园管理处"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbda",
+                    "code": "421222502",
+                    "subdistrict": "黄龙林场"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbd9",
+                    "code": "421222503",
+                    "subdistrict": "黄袍林场"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbd8",
+                    "code": "421222504",
+                    "subdistrict": "药姑林场"
+                }
+            ]
+        },
+        {
+            "_id": "5c18605f2722b75024b9dbc9",
+            "code": "421223",
+            "district": "崇阳县",
+            "subdistricts": [
+                {
+                    "_id": "5c18605f2722b75024b9dbd6",
+                    "code": "421223100",
+                    "subdistrict": "天城镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbd5",
+                    "code": "421223101",
+                    "subdistrict": "沙坪镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbd4",
+                    "code": "421223102",
+                    "subdistrict": "石城镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbd3",
+                    "code": "421223103",
+                    "subdistrict": "桂花泉镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbd2",
+                    "code": "421223104",
+                    "subdistrict": "白霓镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbd1",
+                    "code": "421223105",
+                    "subdistrict": "路口镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbd0",
+                    "code": "421223106",
+                    "subdistrict": "金塘镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbcf",
+                    "code": "421223107",
+                    "subdistrict": "青山镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbce",
+                    "code": "421223200",
+                    "subdistrict": "肖岭乡"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbcd",
+                    "code": "421223201",
+                    "subdistrict": "铜钟乡"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbcc",
+                    "code": "421223202",
+                    "subdistrict": "港口乡"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbcb",
+                    "code": "421223203",
+                    "subdistrict": "高枧乡"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbca",
+                    "code": "421223570",
+                    "subdistrict": "崇阳县工业园区"
+                }
+            ]
+        },
+        {
+            "_id": "5c18605f2722b75024b9dbba",
+            "code": "421224",
+            "district": "通山县",
+            "subdistricts": [
+                {
+                    "_id": "5c18605f2722b75024b9dbc8",
+                    "code": "421224100",
+                    "subdistrict": "通羊镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbc7",
+                    "code": "421224101",
+                    "subdistrict": "南林桥镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbc6",
+                    "code": "421224102",
+                    "subdistrict": "黄沙铺镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbc5",
+                    "code": "421224103",
+                    "subdistrict": "厦铺镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbc4",
+                    "code": "421224104",
+                    "subdistrict": "九宫山镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbc3",
+                    "code": "421224105",
+                    "subdistrict": "闯王镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbc2",
+                    "code": "421224106",
+                    "subdistrict": "洪港镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbc1",
+                    "code": "421224107",
+                    "subdistrict": "大畈镇"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbc0",
+                    "code": "421224200",
+                    "subdistrict": "大路乡"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbbf",
+                    "code": "421224201",
+                    "subdistrict": "杨芳林乡"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbbe",
+                    "code": "421224202",
+                    "subdistrict": "燕厦乡"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbbd",
+                    "code": "421224203",
+                    "subdistrict": "慈口乡"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbbc",
+                    "code": "421224450",
+                    "subdistrict": "九宫山自然保护管理局"
+                },
+                {
+                    "_id": "5c18605f2722b75024b9dbbb",
+                    "code": "421224570",
+                    "subdistrict": "开发区"
+                }
+            ]
+        }
+    ],
+    "id": 190
+}

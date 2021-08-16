@@ -1,0 +1,197 @@
+{
+    "province": "青海省",
+    "prov_code": "63",
+    "city": "黄南藏族自治州",
+    "city_code": "6323",
+    "districts": [
+        {
+            "_id": "5c1860652722b75024ba2ab9",
+            "code": "632324",
+            "district": "河南蒙古族自治县",
+            "subdistricts": [
+                {
+                    "_id": "5c1860652722b75024ba2abe",
+                    "code": "632324100",
+                    "subdistrict": "优干宁镇"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2abd",
+                    "code": "632324101",
+                    "subdistrict": "宁木特镇"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2abc",
+                    "code": "632324201",
+                    "subdistrict": "多松乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2abb",
+                    "code": "632324202",
+                    "subdistrict": "赛尔龙乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2aba",
+                    "code": "632324203",
+                    "subdistrict": "柯生乡"
+                }
+            ]
+        },
+        {
+            "_id": "5c1860652722b75024ba2aad",
+            "code": "632321",
+            "district": "同仁县",
+            "subdistricts": [
+                {
+                    "_id": "5c1860652722b75024ba2ab8",
+                    "code": "632321100",
+                    "subdistrict": "隆务镇"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2ab7",
+                    "code": "632321101",
+                    "subdistrict": "保安镇"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2ab6",
+                    "code": "632321102",
+                    "subdistrict": "多哇镇"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2ab5",
+                    "code": "632321200",
+                    "subdistrict": "兰采乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2ab4",
+                    "code": "632321201",
+                    "subdistrict": "双朋西乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2ab3",
+                    "code": "632321202",
+                    "subdistrict": "扎毛乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2ab2",
+                    "code": "632321203",
+                    "subdistrict": "黄乃亥乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2ab1",
+                    "code": "632321204",
+                    "subdistrict": "曲库乎乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2ab0",
+                    "code": "632321205",
+                    "subdistrict": "年都乎乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2aaf",
+                    "code": "632321207",
+                    "subdistrict": "瓜什则乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2aae",
+                    "code": "632321208",
+                    "subdistrict": "加吾乡"
+                }
+            ]
+        },
+        {
+            "_id": "5c1860652722b75024ba2aa3",
+            "code": "632322",
+            "district": "尖扎县",
+            "subdistricts": [
+                {
+                    "_id": "5c1860652722b75024ba2aac",
+                    "code": "632322100",
+                    "subdistrict": "马克堂镇"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2aab",
+                    "code": "632322101",
+                    "subdistrict": "康扬镇"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2aaa",
+                    "code": "632322102",
+                    "subdistrict": "坎布拉镇"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2aa9",
+                    "code": "632322200",
+                    "subdistrict": "贾加乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2aa8",
+                    "code": "632322201",
+                    "subdistrict": "措周乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2aa7",
+                    "code": "632322202",
+                    "subdistrict": "昂拉乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2aa6",
+                    "code": "632322203",
+                    "subdistrict": "能科乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2aa5",
+                    "code": "632322204",
+                    "subdistrict": "当顺乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2aa4",
+                    "code": "632322205",
+                    "subdistrict": "尖扎滩乡"
+                }
+            ]
+        },
+        {
+            "_id": "5c1860652722b75024ba2a9b",
+            "code": "632323",
+            "district": "泽库县",
+            "subdistricts": [
+                {
+                    "_id": "5c1860652722b75024ba2aa2",
+                    "code": "632323100",
+                    "subdistrict": "泽曲镇"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2aa1",
+                    "code": "632323101",
+                    "subdistrict": "麦秀镇"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2aa0",
+                    "code": "632323102",
+                    "subdistrict": "和日镇"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2a9f",
+                    "code": "632323200",
+                    "subdistrict": "宁秀乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2a9e",
+                    "code": "632323202",
+                    "subdistrict": "王加乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2a9d",
+                    "code": "632323203",
+                    "subdistrict": "西卜沙乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2a9c",
+                    "code": "632323204",
+                    "subdistrict": "多禾茂乡"
+                }
+            ]
+        }
+    ],
+    "id": 329
+}

@@ -1,0 +1,182 @@
+{
+    "province": "云南省",
+    "prov_code": "53",
+    "city": "怒江傈僳族自治州",
+    "city_code": "5333",
+    "districts": [
+        {
+            "_id": "5c1860632722b75024ba1af6",
+            "code": "533325",
+            "district": "兰坪白族普米族自治县",
+            "subdistricts": [
+                {
+                    "_id": "5c1860632722b75024ba1afe",
+                    "code": "533325101",
+                    "subdistrict": "金顶镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1afd",
+                    "code": "533325102",
+                    "subdistrict": "啦井镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1afc",
+                    "code": "533325103",
+                    "subdistrict": "营盘镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1afb",
+                    "code": "533325104",
+                    "subdistrict": "通甸镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1afa",
+                    "code": "533325201",
+                    "subdistrict": "河西乡"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1af9",
+                    "code": "533325202",
+                    "subdistrict": "中排乡"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1af8",
+                    "code": "533325203",
+                    "subdistrict": "石登乡"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1af7",
+                    "code": "533325204",
+                    "subdistrict": "兔峨乡"
+                }
+            ]
+        },
+        {
+            "_id": "5c1860632722b75024ba1aec",
+            "code": "533301",
+            "district": "泸水市",
+            "subdistricts": [
+                {
+                    "_id": "5c1860632722b75024ba1af5",
+                    "code": "533301101",
+                    "subdistrict": "六库镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1af4",
+                    "code": "533301102",
+                    "subdistrict": "鲁掌镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1af3",
+                    "code": "533301103",
+                    "subdistrict": "片马镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1af2",
+                    "code": "533301104",
+                    "subdistrict": "上江镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1af1",
+                    "code": "533301105",
+                    "subdistrict": "老窝镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1af0",
+                    "code": "533301106",
+                    "subdistrict": "大兴地镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1aef",
+                    "code": "533301204",
+                    "subdistrict": "称杆乡"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1aee",
+                    "code": "533301205",
+                    "subdistrict": "古登乡"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1aed",
+                    "code": "533301206",
+                    "subdistrict": "洛本卓乡"
+                }
+            ]
+        },
+        {
+            "_id": "5c1860632722b75024ba1ae4",
+            "code": "533323",
+            "district": "福贡县",
+            "subdistricts": [
+                {
+                    "_id": "5c1860632722b75024ba1aeb",
+                    "code": "533323101",
+                    "subdistrict": "上帕镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1aea",
+                    "code": "533323201",
+                    "subdistrict": "匹河乡"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ae9",
+                    "code": "533323202",
+                    "subdistrict": "子里甲乡"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ae8",
+                    "code": "533323203",
+                    "subdistrict": "架科底乡"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ae7",
+                    "code": "533323204",
+                    "subdistrict": "鹿马登乡"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ae6",
+                    "code": "533323205",
+                    "subdistrict": "石月亮乡"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ae5",
+                    "code": "533323206",
+                    "subdistrict": "马吉乡"
+                }
+            ]
+        },
+        {
+            "_id": "5c1860632722b75024ba1ade",
+            "code": "533324",
+            "district": "贡山独龙族怒族自治县",
+            "subdistricts": [
+                {
+                    "_id": "5c1860632722b75024ba1ae3",
+                    "code": "533324101",
+                    "subdistrict": "茨开镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ae2",
+                    "code": "533324102",
+                    "subdistrict": "丙中洛镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ae1",
+                    "code": "533324202",
+                    "subdistrict": "捧当乡"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ae0",
+                    "code": "533324203",
+                    "subdistrict": "普拉底乡"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1adf",
+                    "code": "533324204",
+                    "subdistrict": "独龙江乡"
+                }
+            ]
+        }
+    ],
+    "id": 293
+}

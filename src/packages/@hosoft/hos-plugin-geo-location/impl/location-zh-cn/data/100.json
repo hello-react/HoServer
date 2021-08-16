@@ -1,0 +1,876 @@
+{
+    "province": "浙江省",
+    "prov_code": "33",
+    "city": "宁波市",
+    "city_code": "3302",
+    "districts": [
+        {
+            "_id": "5c18605b2722b75024b9adc7",
+            "code": "330283",
+            "district": "奉化市",
+            "subdistricts": [
+                {
+                    "_id": "5c18605b2722b75024b9add2",
+                    "code": "330283001",
+                    "subdistrict": "锦屏街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9add1",
+                    "code": "330283002",
+                    "subdistrict": "岳林街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9add0",
+                    "code": "330283003",
+                    "subdistrict": "江口街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9adcf",
+                    "code": "330283004",
+                    "subdistrict": "西坞街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9adce",
+                    "code": "330283005",
+                    "subdistrict": "萧王庙街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9adcd",
+                    "code": "330283100",
+                    "subdistrict": "溪口镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9adcc",
+                    "code": "330283103",
+                    "subdistrict": "尚田镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9adcb",
+                    "code": "330283104",
+                    "subdistrict": "莼湖镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9adca",
+                    "code": "330283106",
+                    "subdistrict": "裘村镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9adc9",
+                    "code": "330283107",
+                    "subdistrict": "大堰镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9adc8",
+                    "code": "330283108",
+                    "subdistrict": "松岙镇"
+                }
+            ]
+        },
+        {
+            "_id": "5c18605b2722b75024b9adbe",
+            "code": "330203",
+            "district": "海曙区",
+            "subdistricts": [
+                {
+                    "_id": "5c18605b2722b75024b9adc6",
+                    "code": "330203001",
+                    "subdistrict": "南门街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9adc5",
+                    "code": "330203002",
+                    "subdistrict": "江厦街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9adc4",
+                    "code": "330203003",
+                    "subdistrict": "西门街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9adc3",
+                    "code": "330203004",
+                    "subdistrict": "月湖街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9adc2",
+                    "code": "330203005",
+                    "subdistrict": "鼓楼街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9adc1",
+                    "code": "330203006",
+                    "subdistrict": "白云街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9adc0",
+                    "code": "330203007",
+                    "subdistrict": "段塘街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9adbf",
+                    "code": "330203008",
+                    "subdistrict": "望春街道"
+                }
+            ]
+        },
+        {
+            "_id": "5c18605b2722b75024b9adb5",
+            "code": "330204",
+            "district": "江东区",
+            "subdistricts": [
+                {
+                    "_id": "5c18605b2722b75024b9adbd",
+                    "code": "330204001",
+                    "subdistrict": "百丈街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9adbc",
+                    "code": "330204002",
+                    "subdistrict": "东胜街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9adbb",
+                    "code": "330204003",
+                    "subdistrict": "明楼街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9adba",
+                    "code": "330204004",
+                    "subdistrict": "白鹤街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9adb9",
+                    "code": "330204005",
+                    "subdistrict": "东柳街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9adb8",
+                    "code": "330204006",
+                    "subdistrict": "东郊街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9adb7",
+                    "code": "330204007",
+                    "subdistrict": "福明街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9adb6",
+                    "code": "330204008",
+                    "subdistrict": "新明街道"
+                }
+            ]
+        },
+        {
+            "_id": "5c18605b2722b75024b9adac",
+            "code": "330205",
+            "district": "江北区",
+            "subdistricts": [
+                {
+                    "_id": "5c18605b2722b75024b9adb4",
+                    "code": "330205001",
+                    "subdistrict": "中马街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9adb3",
+                    "code": "330205002",
+                    "subdistrict": "白沙街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9adb2",
+                    "code": "330205003",
+                    "subdistrict": "孔浦街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9adb1",
+                    "code": "330205004",
+                    "subdistrict": "文教街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9adb0",
+                    "code": "330205005",
+                    "subdistrict": "甬江街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9adaf",
+                    "code": "330205006",
+                    "subdistrict": "庄桥街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9adae",
+                    "code": "330205007",
+                    "subdistrict": "洪塘街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9adad",
+                    "code": "330205103",
+                    "subdistrict": "慈城镇"
+                }
+            ]
+        },
+        {
+            "_id": "5c18605b2722b75024b9ad9f",
+            "code": "330206",
+            "district": "北仑区",
+            "subdistricts": [
+                {
+                    "_id": "5c18605b2722b75024b9adab",
+                    "code": "330206001",
+                    "subdistrict": "大榭街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9adaa",
+                    "code": "330206002",
+                    "subdistrict": "新碶街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ada9",
+                    "code": "330206003",
+                    "subdistrict": "小港街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ada8",
+                    "code": "330206004",
+                    "subdistrict": "大碶街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ada7",
+                    "code": "330206005",
+                    "subdistrict": "霞浦街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ada6",
+                    "code": "330206006",
+                    "subdistrict": "柴桥街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ada5",
+                    "code": "330206007",
+                    "subdistrict": "戚家山街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ada4",
+                    "code": "330206008",
+                    "subdistrict": "春晓街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ada3",
+                    "code": "330206009",
+                    "subdistrict": "梅山街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ada2",
+                    "code": "330206010",
+                    "subdistrict": "郭巨街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ada1",
+                    "code": "330206011",
+                    "subdistrict": "白峰街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ada0",
+                    "code": "330206401",
+                    "subdistrict": "保税区"
+                }
+            ]
+        },
+        {
+            "_id": "5c18605b2722b75024b9ad97",
+            "code": "330211",
+            "district": "镇海区",
+            "subdistricts": [
+                {
+                    "_id": "5c18605b2722b75024b9ad9e",
+                    "code": "330211001",
+                    "subdistrict": "招宝山街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad9d",
+                    "code": "330211002",
+                    "subdistrict": "蛟川街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad9c",
+                    "code": "330211003",
+                    "subdistrict": "骆驼街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad9b",
+                    "code": "330211004",
+                    "subdistrict": "庄市街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad9a",
+                    "code": "330211005",
+                    "subdistrict": "贵驷街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad99",
+                    "code": "330211100",
+                    "subdistrict": "澥浦镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad98",
+                    "code": "330211101",
+                    "subdistrict": "九龙湖镇"
+                }
+            ]
+        },
+        {
+            "_id": "5c18605b2722b75024b9ad7d",
+            "code": "330212",
+            "district": "鄞州区",
+            "subdistricts": [
+                {
+                    "_id": "5c18605b2722b75024b9ad96",
+                    "code": "330212001",
+                    "subdistrict": "下应街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad95",
+                    "code": "330212002",
+                    "subdistrict": "钟公庙街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad94",
+                    "code": "330212003",
+                    "subdistrict": "石碶街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad93",
+                    "code": "330212004",
+                    "subdistrict": "梅墟街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad92",
+                    "code": "330212005",
+                    "subdistrict": "中河街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad91",
+                    "code": "330212006",
+                    "subdistrict": "首南街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad90",
+                    "code": "330212007",
+                    "subdistrict": "潘火街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad8f",
+                    "code": "330212100",
+                    "subdistrict": "瞻岐镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad8e",
+                    "code": "330212101",
+                    "subdistrict": "咸祥镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad8d",
+                    "code": "330212102",
+                    "subdistrict": "塘溪镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad8c",
+                    "code": "330212103",
+                    "subdistrict": "东钱湖镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad8b",
+                    "code": "330212104",
+                    "subdistrict": "东吴镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad8a",
+                    "code": "330212105",
+                    "subdistrict": "五乡镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad89",
+                    "code": "330212106",
+                    "subdistrict": "邱隘镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad88",
+                    "code": "330212108",
+                    "subdistrict": "云龙镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad87",
+                    "code": "330212109",
+                    "subdistrict": "横溪镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad86",
+                    "code": "330212110",
+                    "subdistrict": "姜山镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad85",
+                    "code": "330212113",
+                    "subdistrict": "高桥镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad84",
+                    "code": "330212114",
+                    "subdistrict": "横街镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad83",
+                    "code": "330212115",
+                    "subdistrict": "集士港镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad82",
+                    "code": "330212116",
+                    "subdistrict": "古林镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad81",
+                    "code": "330212118",
+                    "subdistrict": "洞桥镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad80",
+                    "code": "330212119",
+                    "subdistrict": "鄞江镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad7f",
+                    "code": "330212120",
+                    "subdistrict": "章水镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad7e",
+                    "code": "330212200",
+                    "subdistrict": "龙观乡"
+                }
+            ]
+        },
+        {
+            "_id": "5c18605b2722b75024b9ad6a",
+            "code": "330225",
+            "district": "象山县",
+            "subdistricts": [
+                {
+                    "_id": "5c18605b2722b75024b9ad7c",
+                    "code": "330225001",
+                    "subdistrict": "丹东街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad7b",
+                    "code": "330225002",
+                    "subdistrict": "丹西街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad7a",
+                    "code": "330225003",
+                    "subdistrict": "爵溪街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad79",
+                    "code": "330225101",
+                    "subdistrict": "石浦镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad78",
+                    "code": "330225102",
+                    "subdistrict": "西周镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad77",
+                    "code": "330225103",
+                    "subdistrict": "鹤浦镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad76",
+                    "code": "330225104",
+                    "subdistrict": "贤庠镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad75",
+                    "code": "330225105",
+                    "subdistrict": "墙头镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad74",
+                    "code": "330225106",
+                    "subdistrict": "泗洲头镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad73",
+                    "code": "330225107",
+                    "subdistrict": "定塘镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad72",
+                    "code": "330225108",
+                    "subdistrict": "涂茨镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad71",
+                    "code": "330225109",
+                    "subdistrict": "大徐镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad70",
+                    "code": "330225110",
+                    "subdistrict": "新桥镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad6f",
+                    "code": "330225200",
+                    "subdistrict": "东陈乡"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad6e",
+                    "code": "330225201",
+                    "subdistrict": "晓塘乡"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad6d",
+                    "code": "330225202",
+                    "subdistrict": "黄避岙乡"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad6c",
+                    "code": "330225203",
+                    "subdistrict": "茅洋乡"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad6b",
+                    "code": "330225204",
+                    "subdistrict": "高塘岛乡"
+                }
+            ]
+        },
+        {
+            "_id": "5c18605b2722b75024b9ad57",
+            "code": "330226",
+            "district": "宁海县",
+            "subdistricts": [
+                {
+                    "_id": "5c18605b2722b75024b9ad69",
+                    "code": "330226001",
+                    "subdistrict": "跃龙街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad68",
+                    "code": "330226002",
+                    "subdistrict": "桃源街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad67",
+                    "code": "330226003",
+                    "subdistrict": "梅林街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad66",
+                    "code": "330226004",
+                    "subdistrict": "桥头胡街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad65",
+                    "code": "330226101",
+                    "subdistrict": "长街镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad64",
+                    "code": "330226102",
+                    "subdistrict": "力洋镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad63",
+                    "code": "330226104",
+                    "subdistrict": "一市镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad62",
+                    "code": "330226105",
+                    "subdistrict": "岔路镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad61",
+                    "code": "330226106",
+                    "subdistrict": "前童镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad60",
+                    "code": "330226107",
+                    "subdistrict": "桑洲镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad5f",
+                    "code": "330226108",
+                    "subdistrict": "黄坛镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad5e",
+                    "code": "330226109",
+                    "subdistrict": "大佳何镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad5d",
+                    "code": "330226110",
+                    "subdistrict": "强蛟镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad5c",
+                    "code": "330226111",
+                    "subdistrict": "西店镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad5b",
+                    "code": "330226112",
+                    "subdistrict": "深甽镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad5a",
+                    "code": "330226200",
+                    "subdistrict": "胡陈乡"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad59",
+                    "code": "330226201",
+                    "subdistrict": "茶院乡"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad58",
+                    "code": "330226202",
+                    "subdistrict": "越溪乡"
+                }
+            ]
+        },
+        {
+            "_id": "5c18605b2722b75024b9ad41",
+            "code": "330281",
+            "district": "余姚市",
+            "subdistricts": [
+                {
+                    "_id": "5c18605b2722b75024b9ad56",
+                    "code": "330281001",
+                    "subdistrict": "梨洲街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad55",
+                    "code": "330281002",
+                    "subdistrict": "凤山街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad54",
+                    "code": "330281003",
+                    "subdistrict": "兰江街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad53",
+                    "code": "330281004",
+                    "subdistrict": "阳明街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad52",
+                    "code": "330281005",
+                    "subdistrict": "低塘街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad51",
+                    "code": "330281006",
+                    "subdistrict": "朗霞街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad50",
+                    "code": "330281100",
+                    "subdistrict": "临山镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad4f",
+                    "code": "330281101",
+                    "subdistrict": "黄家埠镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad4e",
+                    "code": "330281102",
+                    "subdistrict": "小曹娥镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad4d",
+                    "code": "330281103",
+                    "subdistrict": "泗门镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad4c",
+                    "code": "330281106",
+                    "subdistrict": "马渚镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad4b",
+                    "code": "330281108",
+                    "subdistrict": "牟山镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad4a",
+                    "code": "330281109",
+                    "subdistrict": "丈亭镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad49",
+                    "code": "330281110",
+                    "subdistrict": "三七市镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad48",
+                    "code": "330281111",
+                    "subdistrict": "河姆渡镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad47",
+                    "code": "330281112",
+                    "subdistrict": "大隐镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad46",
+                    "code": "330281113",
+                    "subdistrict": "陆埠镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad45",
+                    "code": "330281114",
+                    "subdistrict": "梁弄镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad44",
+                    "code": "330281115",
+                    "subdistrict": "大岚镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad43",
+                    "code": "330281116",
+                    "subdistrict": "四明山镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad42",
+                    "code": "330281201",
+                    "subdistrict": "鹿亭乡"
+                }
+            ]
+        },
+        {
+            "_id": "5c18605b2722b75024b9ad2a",
+            "code": "330282",
+            "district": "慈溪市",
+            "subdistricts": [
+                {
+                    "_id": "5c18605b2722b75024b9ad40",
+                    "code": "330282002",
+                    "subdistrict": "宗汉街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad3f",
+                    "code": "330282003",
+                    "subdistrict": "坎墩街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad3e",
+                    "code": "330282004",
+                    "subdistrict": "浒山街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad3d",
+                    "code": "330282005",
+                    "subdistrict": "白沙路街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad3c",
+                    "code": "330282006",
+                    "subdistrict": "古塘街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad3b",
+                    "code": "330282104",
+                    "subdistrict": "掌起镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad3a",
+                    "code": "330282107",
+                    "subdistrict": "观海卫镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad39",
+                    "code": "330282108",
+                    "subdistrict": "附海镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad38",
+                    "code": "330282109",
+                    "subdistrict": "桥头镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad37",
+                    "code": "330282110",
+                    "subdistrict": "匡堰镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad36",
+                    "code": "330282111",
+                    "subdistrict": "逍林镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad35",
+                    "code": "330282112",
+                    "subdistrict": "新浦镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad34",
+                    "code": "330282113",
+                    "subdistrict": "胜山镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad33",
+                    "code": "330282114",
+                    "subdistrict": "横河镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad32",
+                    "code": "330282116",
+                    "subdistrict": "崇寿镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad31",
+                    "code": "330282118",
+                    "subdistrict": "庵东镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad30",
+                    "code": "330282120",
+                    "subdistrict": "长河镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad2f",
+                    "code": "330282121",
+                    "subdistrict": "周巷镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad2e",
+                    "code": "330282123",
+                    "subdistrict": "龙山镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad2d",
+                    "code": "330282400",
+                    "subdistrict": "慈溪市农垦场"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad2c",
+                    "code": "330282401",
+                    "subdistrict": "慈溪市林场"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ad2b",
+                    "code": "330282402",
+                    "subdistrict": "慈东工业区"
+                }
+            ]
+        }
+    ],
+    "id": 100
+}

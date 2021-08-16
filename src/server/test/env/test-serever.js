@@ -1,57 +1,30 @@
-const bodyParser = require('body-parser')
-const config = require('config')
-const Model = require('../../framework/models/Model')
-const mongoose = require('mongoose')
-const path = require('path')
+const Bootstrap = require('@hosoft/restful-api-framework')()
 
-require('body-parser-xml')(bodyParser)
+module.exports = async (app) => {
+    const config = require('@hosoft/config')
+    const port = process.env.PORT || config.get('server.port')
 
-module.exports = async app => {
-    const db_connection_url = config.get('db.url')
     return new Promise((resolve, reject) => {
-        mongoose.connect(db_connection_url, async err => {
-            if (err) reject(err)
-            console.log('connected to db success')
-
-            // init global models
-            global.DB_MODELS = await Model.find({}).lean()
-            await require('../../framework/models')
-
-            const { BaseHelper } = require('../../framework/base')
-
-            app.set('views', path.join(__dirname, 'views'))
-            app.set('view engine', 'ejs')
-
-            app.use(bodyParser.json({ limit: '1mb' }))
-            app.use(bodyParser.urlencoded({ extended: true }))
-            app.use(
-                bodyParser.xml({
-                    limit: '1mb',
-                    xmlParseOptions: {
-                        normalize: true,
-                        normalizeTags: true,
-                        explicitArray: false
+        // prettier-ignore
+        Bootstrap.startServer(app, port, async (status, container) => {
+            if (status === 'beforeStart') {
+                container.setHook('initialize', () => {
+                    container.controllers.test = {
+                        name: 'Test',
+                        category_name: 'test',
+                        instance: require('./TestController')
                     }
                 })
-            )
 
-            const container = BaseHelper.getContainer()
-            container.setHook('initialize', () => {
-                container.controllers.test = {
-                    name: 'Test',
-                    category_name: 'test',
-                    instance: require('./TestController')
-                }
-            })
+                return
+            }
 
-            container.initialize(app, async () => {
-                // clear test db
-                const { Test } = require('../../framework/models')
-                await Test.deleteMany({})
+            // clear test db
+            const {Test} = require('@hosoft/restful-api-framework/models')
+            await Test.deleteMany({}, true)
 
-                console.log('Test app started!')
-                resolve('success')
-            })
+            console.log('Test app started!')
+            resolve('success')
         })
     })
 }

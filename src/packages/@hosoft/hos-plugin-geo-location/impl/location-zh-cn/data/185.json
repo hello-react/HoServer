@@ -1,0 +1,165 @@
+{
+    "province": "湖北省",
+    "prov_code": "42",
+    "city": "鄂州市",
+    "city_code": "4207",
+    "districts": [
+        {
+            "_id": "5c18605e2722b75024b9d9ae",
+            "code": "420704",
+            "district": "鄂城区",
+            "subdistricts": [
+                {
+                    "_id": "5c18605e2722b75024b9d9bc",
+                    "code": "420704001",
+                    "subdistrict": "凤凰街道"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9d9bb",
+                    "code": "420704002",
+                    "subdistrict": "古楼街道"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9d9ba",
+                    "code": "420704003",
+                    "subdistrict": "西山街道"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9d9b9",
+                    "code": "420704100",
+                    "subdistrict": "泽林镇"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9d9b8",
+                    "code": "420704101",
+                    "subdistrict": "杜山镇"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9d9b7",
+                    "code": "420704102",
+                    "subdistrict": "新庙镇"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9d9b6",
+                    "code": "420704103",
+                    "subdistrict": "碧石镇"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9d9b5",
+                    "code": "420704104",
+                    "subdistrict": "汀祖镇"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9d9b4",
+                    "code": "420704105",
+                    "subdistrict": "燕矶镇"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9d9b3",
+                    "code": "420704106",
+                    "subdistrict": "杨叶镇"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9d9b2",
+                    "code": "420704107",
+                    "subdistrict": "花湖镇"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9d9b1",
+                    "code": "420704108",
+                    "subdistrict": "长港镇"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9d9b0",
+                    "code": "420704200",
+                    "subdistrict": "沙窝乡"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9d9af",
+                    "code": "420704400",
+                    "subdistrict": "鄂州经济开发区"
+                }
+            ]
+        },
+        {
+            "_id": "5c18605e2722b75024b9d9a7",
+            "code": "420702",
+            "district": "梁子湖区",
+            "subdistricts": [
+                {
+                    "_id": "5c18605e2722b75024b9d9ad",
+                    "code": "420702100",
+                    "subdistrict": "太和镇"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9d9ac",
+                    "code": "420702101",
+                    "subdistrict": "东沟镇"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9d9ab",
+                    "code": "420702102",
+                    "subdistrict": "梁子生态管理区（镇）"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9d9aa",
+                    "code": "420702103",
+                    "subdistrict": "涂家垴镇"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9d9a9",
+                    "code": "420702104",
+                    "subdistrict": "沼山镇"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9d9a8",
+                    "code": "420702400",
+                    "subdistrict": "梧桐湖新区"
+                }
+            ]
+        },
+        {
+            "_id": "5c18605e2722b75024b9d99f",
+            "code": "420703",
+            "district": "华容区",
+            "subdistricts": [
+                {
+                    "_id": "5c18605e2722b75024b9d9a6",
+                    "code": "420703100",
+                    "subdistrict": "华容镇"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9d9a5",
+                    "code": "420703101",
+                    "subdistrict": "葛店镇"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9d9a4",
+                    "code": "420703102",
+                    "subdistrict": "庙岭镇"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9d9a3",
+                    "code": "420703103",
+                    "subdistrict": "段店镇"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9d9a2",
+                    "code": "420703200",
+                    "subdistrict": "临江乡"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9d9a1",
+                    "code": "420703201",
+                    "subdistrict": "蒲团乡"
+                },
+                {
+                    "_id": "5c18605e2722b75024b9d9a0",
+                    "code": "420703400",
+                    "subdistrict": "葛店开发区"
+                }
+            ]
+        }
+    ],
+    "id": 185
+}

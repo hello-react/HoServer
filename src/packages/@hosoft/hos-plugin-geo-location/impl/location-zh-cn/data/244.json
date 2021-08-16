@@ -1,0 +1,84 @@
+{
+    "province": "海南省",
+    "prov_code": "46",
+    "city": "三亚市",
+    "city_code": "4602",
+    "districts": [
+        {
+            "_id": "5c1860612722b75024b9f5ce",
+            "code": "460205",
+            "district": "崖州区",
+            "subdistricts": [
+                {
+                    "_id": "5c1860612722b75024b9f5cf",
+                    "code": "460205198",
+                    "subdistrict": "崖城镇"
+                }
+            ]
+        },
+        {
+            "_id": "5c1860612722b75024b9f5c9",
+            "code": "460201",
+            "district": "市辖区",
+            "subdistricts": [
+                {
+                    "_id": "5c1860612722b75024b9f5cd",
+                    "code": "460201400",
+                    "subdistrict": "国营南田农场"
+                },
+                {
+                    "_id": "5c1860612722b75024b9f5cc",
+                    "code": "460201401",
+                    "subdistrict": "国营南新农场"
+                },
+                {
+                    "_id": "5c1860612722b75024b9f5cb",
+                    "code": "460201403",
+                    "subdistrict": "国营立才农场"
+                },
+                {
+                    "_id": "5c1860612722b75024b9f5ca",
+                    "code": "460201404",
+                    "subdistrict": "国营南滨农场"
+                }
+            ]
+        },
+        {
+            "_id": "5c1860612722b75024b9f5c7",
+            "code": "460202",
+            "district": "海棠区",
+            "subdistricts": [
+                {
+                    "_id": "5c1860612722b75024b9f5c8",
+                    "code": "460202198",
+                    "subdistrict": "海棠湾镇"
+                }
+            ]
+        },
+        {
+            "_id": "5c1860612722b75024b9f5c5",
+            "code": "460203",
+            "district": "吉阳区",
+            "subdistricts": [
+                {
+                    "_id": "5c1860612722b75024b9f5c6",
+                    "code": "460203198",
+                    "subdistrict": "吉阳镇"
+                }
+            ]
+        },
+        {
+            "_id": "5c1860612722b75024b9f5c3",
+            "code": "460204",
+            "district": "天涯区",
+            "subdistricts": [
+                {
+                    "_id": "5c1860612722b75024b9f5c4",
+                    "code": "460204198",
+                    "subdistrict": "天涯镇"
+                }
+            ]
+        }
+    ],
+    "id": 244
+}

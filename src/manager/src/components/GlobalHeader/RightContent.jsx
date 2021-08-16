@@ -5,7 +5,7 @@ import React from 'react'
 
 // import HeaderSearch from '../HeaderSearch'
 // import NoticeIconView from './NoticeIconView'
-import SelectLang from '../SelectLang'
+// import SelectLang from '../SelectLang'
 import Avatar from './AvatarDropdown'
 import styles from './index.less'
 
@@ -58,7 +58,7 @@ const GlobalHeaderRight = props => {
             </Tooltip>
             */ }
             <Avatar menu />
-            <SelectLang className={styles.action} />
+            {/* <SelectLang className={styles.action} /> */}
         </div>
     );
 };

@@ -1,18 +1,15 @@
 /* eslint-disable no-underscore-dangle */
 /**
- * HoServer Manager Ver 1.0
+ * HoServer Manager Ver 2.0
  * Copyright http://hos.helloreact.cn
  *
  * create: 2020/01/20
- * author: Jack Zhang
- * */
-import {Form as LegacyForm} from "@ant-design/compatible"
-import {Popover,Tag} from "antd";
+ */
+import { Form as LegacyForm } from "@ant-design/compatible"
+import { Common, TableLayout } from '@hosoft/hos-admin-common'
+import { Popover,Tag } from "antd";
 import _ from "lodash";
 import React from 'react'
-
-import TableLayout from "@/layouts/TableLayout"
-import {setDefaultColumn} from "@/utils/utils"
 
 const getLogColor = level => {
     switch(level) {
@@ -27,7 +24,7 @@ const getLogColor = level => {
     }
 }
 
-const defTableColumns = setDefaultColumn([
+const defTableColumns = Common.setDefaultColumn([
     {
         valueType: 'dateTime',
         searchFlag: 1,

@@ -1,0 +1,82 @@
+{
+    "configServer": "",
+    "configVersion": 1,
+    "log": {
+        "file": "info",
+        "console": "debug",
+        "elasticsearch": "",
+        "mongo": "persist"
+    },
+    "server": {
+        "port": 3001,
+        "version": "1.0.0",
+        "apiPrefix": "/api/v1",
+        "enableJob": false,
+        "enableCache": true,
+        "serverUrl": "http://127.0.0.1:3001",
+        "productName": "HoServer",
+        "language": "zh-CN",
+        "accessKey": ""
+    },
+    "jwt": {
+        "secret": "HosKQlp29COIdbmpo0l",
+        "expire": "365d"
+    },
+    "db": {
+        "mongo": {
+            "default": true,
+            "url": "mongodb://readonly:Hos2021Abc@mongo.helloreact.cn:3716/hoserver2_demo",
+            "url_local": "mongodb://admin:123456@127.0.0.1:27017/hoserver2?authSource=admin"
+        },
+        "elasticsearch": {
+            "host": ""
+        },
+        "redis": {
+            "host": "",
+            "port": 6379
+        }
+    },
+    "plugins": {
+        "sms": {
+            "accessKeyId": "",
+            "secretAccessKey": "",
+            "templateCode": "",
+            "signName": ""
+        },
+        "storage": {
+            "oss": {
+                "accessKeyId": "",
+                "accessKeySecret": "",
+                "roleArn": "",
+                "bucket": "",
+                "region": "",
+                "baseurl": "",
+                "uploadCallback": "",
+                "tokenExpireTime": 3600
+            }
+        },
+        "payment": {
+            "wechat": {
+                "appId": "",
+                "mchId": "",
+                "notifyUrl": "",
+                "apiKey": ""
+            },
+            "alipay": {
+                "appId": "",
+                "partner": "",
+                "sellerId": "",
+                "notifyUrl": ""
+            }
+        },
+        "qq": {
+            "oauthConsumerKey": ""
+        },
+        "wechat": {
+            "menu": false,
+            "appId": "",
+            "appSecret": "",
+            "token": ""
+        }
+    }
+}

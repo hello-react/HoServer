@@ -1,0 +1,22 @@
+{
+  "downloadModelTemplate": "下载批量导入模板",
+  "prepareImportModelData": "导入数据预处理",
+  "importModelData": "批量导入数据",
+  "exportModelData": "批量导出数据",
+  "noMatchProperty": "未找到匹配属性，此列不导入",
+  "rowNum": "{{row}} 行",
+  "importSuccess": "导入成功",
+  "validatePass": "数据校验通过",
+  "recordUpdated": "覆盖更新",
+  "skipExists": "记录已存在，跳过",
+
+  "errRecordExist": "记录已存在",
+  "errModelNotFound": "模型定义未找到:{{name}}",
+  "errFileNotFound": "文件未找到:{{file}}",
+  "errInvalidFile": "不是有效的{{type}}文件",
+  "errNoValidData": "未找到有效数据",
+  "errConvertJsonFail": "转换对象JSON失败:{{message}}",
+  "errValidateData": "数据校验失败",
+  "errSaveFile": "文件保存失败",
+  "errWriteFile": "写入文件失败:{{message}}"
+}

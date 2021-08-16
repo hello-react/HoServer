@@ -1,0 +1,531 @@
+{
+    "province": "江苏省",
+    "prov_code": "32",
+    "city": "扬州市",
+    "city_code": "3210",
+    "districts": [
+        {
+            "_id": "5c18605b2722b75024b9aac6",
+            "code": "321084",
+            "district": "高邮市",
+            "subdistricts": [
+                {
+                    "_id": "5c18605b2722b75024b9aad4",
+                    "code": "321084001",
+                    "subdistrict": "高邮街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aad3",
+                    "code": "321084101",
+                    "subdistrict": "龙虬镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aad2",
+                    "code": "321084106",
+                    "subdistrict": "汤庄镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aad1",
+                    "code": "321084107",
+                    "subdistrict": "卸甲镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aad0",
+                    "code": "321084108",
+                    "subdistrict": "三垛镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aacf",
+                    "code": "321084109",
+                    "subdistrict": "甘垛镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aace",
+                    "code": "321084112",
+                    "subdistrict": "界首镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aacd",
+                    "code": "321084113",
+                    "subdistrict": "周山镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aacc",
+                    "code": "321084115",
+                    "subdistrict": "临泽镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aacb",
+                    "code": "321084116",
+                    "subdistrict": "送桥镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aaca",
+                    "code": "321084200",
+                    "subdistrict": "菱塘回族乡"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aac9",
+                    "code": "321084401",
+                    "subdistrict": "城南经济新区（车逻镇）"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aac8",
+                    "code": "321084406",
+                    "subdistrict": "经济开发区（马棚街道）"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aac7",
+                    "code": "321084451",
+                    "subdistrict": "菱塘光电科技园"
+                }
+            ]
+        },
+        {
+            "_id": "5c18605b2722b75024b9aab9",
+            "code": "321002",
+            "district": "广陵区",
+            "subdistricts": [
+                {
+                    "_id": "5c18605b2722b75024b9aac5",
+                    "code": "321002001",
+                    "subdistrict": "东关街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aac4",
+                    "code": "321002002",
+                    "subdistrict": "汶河街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aac3",
+                    "code": "321002003",
+                    "subdistrict": "文峰街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aac2",
+                    "code": "321002004",
+                    "subdistrict": "曲江街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aac1",
+                    "code": "321002102",
+                    "subdistrict": "李典镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aac0",
+                    "code": "321002103",
+                    "subdistrict": "沙头镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aabf",
+                    "code": "321002104",
+                    "subdistrict": "头桥镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aabe",
+                    "code": "321002106",
+                    "subdistrict": "湾头镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aabd",
+                    "code": "321002200",
+                    "subdistrict": "汤汪乡"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aabc",
+                    "code": "321002400",
+                    "subdistrict": "产业园"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aabb",
+                    "code": "321002401",
+                    "subdistrict": "扬州市生态科技新城杭集镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aaba",
+                    "code": "321002402",
+                    "subdistrict": "扬州市生态科技新城泰安镇"
+                }
+            ]
+        },
+        {
+            "_id": "5c18605b2722b75024b9aaa2",
+            "code": "321003",
+            "district": "邗江区",
+            "subdistricts": [
+                {
+                    "_id": "5c18605b2722b75024b9aab8",
+                    "code": "321003001",
+                    "subdistrict": "邗上街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aab7",
+                    "code": "321003002",
+                    "subdistrict": "蒋王街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aab6",
+                    "code": "321003003",
+                    "subdistrict": "汊河街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aab5",
+                    "code": "321003005",
+                    "subdistrict": "双桥街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aab4",
+                    "code": "321003006",
+                    "subdistrict": "梅岭街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aab3",
+                    "code": "321003007",
+                    "subdistrict": "甘泉街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aab2",
+                    "code": "321003009",
+                    "subdistrict": "新盛街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aab1",
+                    "code": "321003010",
+                    "subdistrict": "竹西街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aab0",
+                    "code": "321003052",
+                    "subdistrict": "瘦西湖街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aaaf",
+                    "code": "321003100",
+                    "subdistrict": "公道镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aaae",
+                    "code": "321003101",
+                    "subdistrict": "方巷镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aaad",
+                    "code": "321003102",
+                    "subdistrict": "槐泗镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aaac",
+                    "code": "321003103",
+                    "subdistrict": "瓜洲镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aaab",
+                    "code": "321003108",
+                    "subdistrict": "杨寿镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aaaa",
+                    "code": "321003110",
+                    "subdistrict": "杨庙镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aaa9",
+                    "code": "321003111",
+                    "subdistrict": "西湖镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aaa8",
+                    "code": "321003201",
+                    "subdistrict": "双桥乡"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aaa7",
+                    "code": "321003350",
+                    "subdistrict": "平山乡"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aaa6",
+                    "code": "321003351",
+                    "subdistrict": "城北乡"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aaa5",
+                    "code": "321003401",
+                    "subdistrict": "江苏省扬州高新技术产业开发区"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aaa4",
+                    "code": "321003402",
+                    "subdistrict": "维扬经济开发区"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aaa3",
+                    "code": "321003403",
+                    "subdistrict": "物流园区"
+                }
+            ]
+        },
+        {
+            "_id": "5c18605b2722b75024b9aa93",
+            "code": "321012",
+            "district": "江都区",
+            "subdistricts": [
+                {
+                    "_id": "5c18605b2722b75024b9aaa1",
+                    "code": "321012100",
+                    "subdistrict": "仙女镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aaa0",
+                    "code": "321012101",
+                    "subdistrict": "小纪镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa9f",
+                    "code": "321012103",
+                    "subdistrict": "武坚镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa9e",
+                    "code": "321012106",
+                    "subdistrict": "樊川镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa9d",
+                    "code": "321012108",
+                    "subdistrict": "真武镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa9c",
+                    "code": "321012109",
+                    "subdistrict": "宜陵镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa9b",
+                    "code": "321012110",
+                    "subdistrict": "丁沟镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa9a",
+                    "code": "321012112",
+                    "subdistrict": "郭村镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa99",
+                    "code": "321012114",
+                    "subdistrict": "邵伯镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa98",
+                    "code": "321012116",
+                    "subdistrict": "丁伙镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa97",
+                    "code": "321012118",
+                    "subdistrict": "大桥镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa96",
+                    "code": "321012119",
+                    "subdistrict": "吴桥镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa95",
+                    "code": "321012120",
+                    "subdistrict": "浦头镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa94",
+                    "code": "321012400",
+                    "subdistrict": "立新农场"
+                }
+            ]
+        },
+        {
+            "_id": "5c18605b2722b75024b9aa83",
+            "code": "321023",
+            "district": "宝应县",
+            "subdistricts": [
+                {
+                    "_id": "5c18605b2722b75024b9aa92",
+                    "code": "321023100",
+                    "subdistrict": "安宜镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa91",
+                    "code": "321023101",
+                    "subdistrict": "氾水镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa90",
+                    "code": "321023102",
+                    "subdistrict": "夏集镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa8f",
+                    "code": "321023103",
+                    "subdistrict": "柳堡镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa8e",
+                    "code": "321023104",
+                    "subdistrict": "射阳湖镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa8d",
+                    "code": "321023105",
+                    "subdistrict": "广洋湖镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa8c",
+                    "code": "321023106",
+                    "subdistrict": "鲁垛镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa8b",
+                    "code": "321023107",
+                    "subdistrict": "小官庄镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa8a",
+                    "code": "321023108",
+                    "subdistrict": "望直港镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa89",
+                    "code": "321023109",
+                    "subdistrict": "曹甸镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa88",
+                    "code": "321023110",
+                    "subdistrict": "西安丰镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa87",
+                    "code": "321023111",
+                    "subdistrict": "山阳镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa86",
+                    "code": "321023112",
+                    "subdistrict": "黄塍镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa85",
+                    "code": "321023113",
+                    "subdistrict": "泾河镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa84",
+                    "code": "321023400",
+                    "subdistrict": "开发区管委会"
+                }
+            ]
+        },
+        {
+            "_id": "5c18605b2722b75024b9aa6f",
+            "code": "321081",
+            "district": "仪征市",
+            "subdistricts": [
+                {
+                    "_id": "5c18605b2722b75024b9aa82",
+                    "code": "321081100",
+                    "subdistrict": "真州镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa81",
+                    "code": "321081103",
+                    "subdistrict": "新集镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa80",
+                    "code": "321081104",
+                    "subdistrict": "新城镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa7f",
+                    "code": "321081105",
+                    "subdistrict": "马集镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa7e",
+                    "code": "321081106",
+                    "subdistrict": "刘集镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa7d",
+                    "code": "321081107",
+                    "subdistrict": "陈集镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa7c",
+                    "code": "321081108",
+                    "subdistrict": "大仪镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa7b",
+                    "code": "321081109",
+                    "subdistrict": "月塘镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa7a",
+                    "code": "321081150",
+                    "subdistrict": "青山镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa79",
+                    "code": "321081401",
+                    "subdistrict": "原种场"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa78",
+                    "code": "321081402",
+                    "subdistrict": "蚕种场"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa77",
+                    "code": "321081403",
+                    "subdistrict": "园艺试验场"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa76",
+                    "code": "321081404",
+                    "subdistrict": "水产试验场"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa75",
+                    "code": "321081405",
+                    "subdistrict": "捺山茶场"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa74",
+                    "code": "321081407",
+                    "subdistrict": "汽车工业园"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa73",
+                    "code": "321081408",
+                    "subdistrict": "十二圩办事处"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa72",
+                    "code": "321081409",
+                    "subdistrict": "铜山办事处"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa71",
+                    "code": "321081410",
+                    "subdistrict": "开发区"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aa70",
+                    "code": "321081454",
+                    "subdistrict": "化学工业园区"
+                }
+            ]
+        }
+    ],
+    "id": 94
+}

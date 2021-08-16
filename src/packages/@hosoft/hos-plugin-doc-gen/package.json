@@ -1,0 +1,22 @@
+{
+  "name": "@hosoft/hos-plugin-doc-gen",
+  "version": "1.0.0",
+  "description": "HoServer plugin for auto generate api document",
+  "main": "index.js",
+  "devDependencies": {
+    "@hosoft/config": "^1.0.2",
+    "@hosoft/restful-api-framework": "^1.5.3",
+    "debug": "^4.3.2",
+    "docsify": "^4.12.1",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1",
+    "node-fetch": "^2.6.1",
+    "resolve-pathname": "^3.0.0",
+    "mkdirp": "^1.0.4",
+    "pluralize": "^8.0.0",
+    "mockjs": "^1.1.0",
+    "random-number": "^0.0.9",
+    "uuid": "^8.3.2",
+    "mongoose": "^5.13.3"
+  }
+}

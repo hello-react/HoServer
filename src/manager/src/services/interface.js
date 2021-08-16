@@ -1,9 +1,7 @@
 /* eslint-disable no-underscore-dangle,default-case */
+import {Constants, request} from '@hosoft/hos-admin-common'
 import {message} from "antd"
 import _ from "lodash"
-
-import Constants from "@/utils/constants"
-import request from '@/utils/request'
 
 let serviceList = null
 let modelList = null

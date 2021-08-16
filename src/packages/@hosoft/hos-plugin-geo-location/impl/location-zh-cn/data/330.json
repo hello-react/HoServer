@@ -1,0 +1,259 @@
+{
+    "province": "青海省",
+    "prov_code": "63",
+    "city": "海南藏族自治州",
+    "city_code": "6325",
+    "districts": [
+        {
+            "_id": "5c1860652722b75024ba2ae8",
+            "code": "632525",
+            "district": "贵南县",
+            "subdistricts": [
+                {
+                    "_id": "5c1860652722b75024ba2aef",
+                    "code": "632525100",
+                    "subdistrict": "茫曲镇"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2aee",
+                    "code": "632525101",
+                    "subdistrict": "过马营镇"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2aed",
+                    "code": "632525102",
+                    "subdistrict": "森多镇"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2aec",
+                    "code": "632525200",
+                    "subdistrict": "沙沟乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2aeb",
+                    "code": "632525202",
+                    "subdistrict": "茫拉乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2aea",
+                    "code": "632525203",
+                    "subdistrict": "塔秀乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2ae9",
+                    "code": "632525400",
+                    "subdistrict": "贵南草业开发有限责任公司"
+                }
+            ]
+        },
+        {
+            "_id": "5c1860652722b75024ba2ad8",
+            "code": "632521",
+            "district": "共和县",
+            "subdistricts": [
+                {
+                    "_id": "5c1860652722b75024ba2ae7",
+                    "code": "632521100",
+                    "subdistrict": "恰卜恰镇"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2ae6",
+                    "code": "632521101",
+                    "subdistrict": "倒淌河镇"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2ae5",
+                    "code": "632521102",
+                    "subdistrict": "龙羊峡镇"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2ae4",
+                    "code": "632521103",
+                    "subdistrict": "塘格木镇"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2ae3",
+                    "code": "632521200",
+                    "subdistrict": "黑马河乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2ae2",
+                    "code": "632521201",
+                    "subdistrict": "石乃亥乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2ae1",
+                    "code": "632521202",
+                    "subdistrict": "沙珠玉乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2ae0",
+                    "code": "632521203",
+                    "subdistrict": "铁盖乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2adf",
+                    "code": "632521204",
+                    "subdistrict": "廿地乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2ade",
+                    "code": "632521205",
+                    "subdistrict": "切吉乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2add",
+                    "code": "632521206",
+                    "subdistrict": "江西沟乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2adc",
+                    "code": "632521401",
+                    "subdistrict": "湖东种羊场"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2adb",
+                    "code": "632521402",
+                    "subdistrict": "巴卡台农场"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2ada",
+                    "code": "632521403",
+                    "subdistrict": "安置农场"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2ad9",
+                    "code": "632521404",
+                    "subdistrict": "铁卜加草改站"
+                }
+            ]
+        },
+        {
+            "_id": "5c1860652722b75024ba2ad1",
+            "code": "632522",
+            "district": "同德县",
+            "subdistricts": [
+                {
+                    "_id": "5c1860652722b75024ba2ad7",
+                    "code": "632522100",
+                    "subdistrict": "尕巴松多镇"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2ad6",
+                    "code": "632522101",
+                    "subdistrict": "唐谷镇"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2ad5",
+                    "code": "632522200",
+                    "subdistrict": "巴沟乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2ad4",
+                    "code": "632522201",
+                    "subdistrict": "秀麻乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2ad3",
+                    "code": "632522202",
+                    "subdistrict": "河北乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2ad2",
+                    "code": "632522400",
+                    "subdistrict": "省牧草良种繁殖场"
+                }
+            ]
+        },
+        {
+            "_id": "5c1860652722b75024ba2ac9",
+            "code": "632523",
+            "district": "贵德县",
+            "subdistricts": [
+                {
+                    "_id": "5c1860652722b75024ba2ad0",
+                    "code": "632523100",
+                    "subdistrict": "河阴镇"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2acf",
+                    "code": "632523101",
+                    "subdistrict": "河西镇"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2ace",
+                    "code": "632523102",
+                    "subdistrict": "拉西瓦镇"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2acd",
+                    "code": "632523103",
+                    "subdistrict": "常牧镇"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2acc",
+                    "code": "632523200",
+                    "subdistrict": "河东乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2acb",
+                    "code": "632523201",
+                    "subdistrict": "新街回族乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2aca",
+                    "code": "632523202",
+                    "subdistrict": "尕让乡"
+                }
+            ]
+        },
+        {
+            "_id": "5c1860652722b75024ba2ac0",
+            "code": "632524",
+            "district": "兴海县",
+            "subdistricts": [
+                {
+                    "_id": "5c1860652722b75024ba2ac8",
+                    "code": "632524100",
+                    "subdistrict": "子科滩镇"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2ac7",
+                    "code": "632524101",
+                    "subdistrict": "河卡镇"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2ac6",
+                    "code": "632524102",
+                    "subdistrict": "曲什安镇"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2ac5",
+                    "code": "632524200",
+                    "subdistrict": "温泉乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2ac4",
+                    "code": "632524201",
+                    "subdistrict": "龙藏乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2ac3",
+                    "code": "632524202",
+                    "subdistrict": "中铁乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2ac2",
+                    "code": "632524203",
+                    "subdistrict": "唐乃亥乡"
+                },
+                {
+                    "_id": "5c1860652722b75024ba2ac1",
+                    "code": "632524400",
+                    "subdistrict": "河卡种羊场"
+                }
+            ]
+        }
+    ],
+    "id": 330
+}

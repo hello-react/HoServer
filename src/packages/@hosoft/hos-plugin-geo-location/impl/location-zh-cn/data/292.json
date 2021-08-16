@@ -1,0 +1,299 @@
+{
+    "province": "云南省",
+    "prov_code": "53",
+    "city": "德宏傣族景颇族自治州",
+    "city_code": "5331",
+    "districts": [
+        {
+            "_id": "5c1860632722b75024ba1ad3",
+            "code": "533124",
+            "district": "陇川县",
+            "subdistricts": [
+                {
+                    "_id": "5c1860632722b75024ba1adc",
+                    "code": "533124101",
+                    "subdistrict": "章凤镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1adb",
+                    "code": "533124102",
+                    "subdistrict": "陇把镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ada",
+                    "code": "533124103",
+                    "subdistrict": "景罕镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ad9",
+                    "code": "533124104",
+                    "subdistrict": "城子镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ad8",
+                    "code": "533124201",
+                    "subdistrict": "户撒阿昌族乡"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ad7",
+                    "code": "533124202",
+                    "subdistrict": "护国乡"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ad6",
+                    "code": "533124203",
+                    "subdistrict": "清平乡"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ad5",
+                    "code": "533124204",
+                    "subdistrict": "王子树乡"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ad4",
+                    "code": "533124205",
+                    "subdistrict": "勐约乡"
+                }
+            ]
+        },
+        {
+            "_id": "5c1860632722b75024ba1acc",
+            "code": "533102",
+            "district": "瑞丽市",
+            "subdistricts": [
+                {
+                    "_id": "5c1860632722b75024ba1ad2",
+                    "code": "533102101",
+                    "subdistrict": "勐卯镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ad1",
+                    "code": "533102102",
+                    "subdistrict": "畹町镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ad0",
+                    "code": "533102103",
+                    "subdistrict": "弄岛镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1acf",
+                    "code": "533102201",
+                    "subdistrict": "姐相乡"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ace",
+                    "code": "533102202",
+                    "subdistrict": "户育乡"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1acd",
+                    "code": "533102203",
+                    "subdistrict": "勐秀乡"
+                }
+            ]
+        },
+        {
+            "_id": "5c1860632722b75024ba1abf",
+            "code": "533103",
+            "district": "芒市",
+            "subdistricts": [
+                {
+                    "_id": "5c1860632722b75024ba1acb",
+                    "code": "533103001",
+                    "subdistrict": "勐焕街道办事处"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1aca",
+                    "code": "533103101",
+                    "subdistrict": "芒市镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ac9",
+                    "code": "533103102",
+                    "subdistrict": "遮放镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ac8",
+                    "code": "533103103",
+                    "subdistrict": "勐戛镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ac7",
+                    "code": "533103104",
+                    "subdistrict": "芒海镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ac6",
+                    "code": "533103105",
+                    "subdistrict": "风平镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ac5",
+                    "code": "533103201",
+                    "subdistrict": "轩岗乡"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ac4",
+                    "code": "533103202",
+                    "subdistrict": "江东乡"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ac3",
+                    "code": "533103203",
+                    "subdistrict": "西山乡"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ac2",
+                    "code": "533103204",
+                    "subdistrict": "中山乡"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ac1",
+                    "code": "533103205",
+                    "subdistrict": "三台山乡"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ac0",
+                    "code": "533103206",
+                    "subdistrict": "五岔路乡"
+                }
+            ]
+        },
+        {
+            "_id": "5c1860632722b75024ba1ab5",
+            "code": "533122",
+            "district": "梁河县",
+            "subdistricts": [
+                {
+                    "_id": "5c1860632722b75024ba1abe",
+                    "code": "533122101",
+                    "subdistrict": "遮岛镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1abd",
+                    "code": "533122102",
+                    "subdistrict": "芒东镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1abc",
+                    "code": "533122103",
+                    "subdistrict": "勐养镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1abb",
+                    "code": "533122201",
+                    "subdistrict": "平山乡"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1aba",
+                    "code": "533122202",
+                    "subdistrict": "小厂乡"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ab9",
+                    "code": "533122203",
+                    "subdistrict": "大厂乡"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ab8",
+                    "code": "533122204",
+                    "subdistrict": "九保阿昌族乡"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ab7",
+                    "code": "533122205",
+                    "subdistrict": "曩宋阿昌族乡"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ab6",
+                    "code": "533122206",
+                    "subdistrict": "河西乡"
+                }
+            ]
+        },
+        {
+            "_id": "5c1860632722b75024ba1aa5",
+            "code": "533123",
+            "district": "盈江县",
+            "subdistricts": [
+                {
+                    "_id": "5c1860632722b75024ba1ab4",
+                    "code": "533123101",
+                    "subdistrict": "平原镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ab3",
+                    "code": "533123102",
+                    "subdistrict": "旧城镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ab2",
+                    "code": "533123103",
+                    "subdistrict": "那邦镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ab1",
+                    "code": "533123104",
+                    "subdistrict": "弄璋镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1ab0",
+                    "code": "533123105",
+                    "subdistrict": "盏西镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1aaf",
+                    "code": "533123106",
+                    "subdistrict": "卡场镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1aae",
+                    "code": "533123107",
+                    "subdistrict": "昔马镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1aad",
+                    "code": "533123108",
+                    "subdistrict": "太平镇"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1aac",
+                    "code": "533123201",
+                    "subdistrict": "新城乡"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1aab",
+                    "code": "533123202",
+                    "subdistrict": "油松岭乡"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1aaa",
+                    "code": "533123203",
+                    "subdistrict": "芒章乡"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1aa9",
+                    "code": "533123204",
+                    "subdistrict": "支那乡"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1aa8",
+                    "code": "533123205",
+                    "subdistrict": "苏典傈僳族乡"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1aa7",
+                    "code": "533123206",
+                    "subdistrict": "勐弄乡"
+                },
+                {
+                    "_id": "5c1860632722b75024ba1aa6",
+                    "code": "533123207",
+                    "subdistrict": "铜壁关乡"
+                }
+            ]
+        }
+    ],
+    "id": 292
+}

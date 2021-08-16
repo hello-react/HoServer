@@ -5,6 +5,7 @@
  */
 import { GithubOutlined } from '@ant-design/icons'
 import ProLayout, { DefaultFooter, SettingDrawer } from '@ant-design/pro-layout'
+import { Common } from '@hosoft/hos-admin-common'
 import { Button,Result } from 'antd'
 import { connect } from 'dva'
 import React, { useEffect } from 'react'
@@ -13,7 +14,6 @@ import Link from 'umi/link'
 
 import RightContent from '@/components/GlobalHeader/RightContent'
 import Authorized from '@/utils/Authorized'
-import { getAuthorityFromRouter } from '@/utils/utils'
 
 import defaultSettings from "../../config/defaultSettings"
 
@@ -33,11 +33,25 @@ const noMatch = (
 /**
  * use Authorized check all menu item
  */
-const menuDataRender = menuList =>
-    menuList.map(item => {
+const menuDataRender = menuList => {
+    return menuList.map(item => {
         const localItem = { ...item, children: item.children ? menuDataRender(item.children) : [] }
         return Authorized.check(item.authority, localItem, null)
     })
+}
+
+const getMenuTreeData = (parent, menuList) => {
+    return menuList.map(item => {
+        if (!item.name) return null
+        const name = parent && parent.value ? `${parent.value}.${item.name}` : item.name || ''
+        const localItem = { title: formatMessage({ id: `menu.${name}` }), value: name }
+        if (item.routes) {
+            localItem.children = getMenuTreeData(localItem, item.routes).filter(r => r !== null)
+        }
+
+        return Authorized.check(item.authority, localItem, null)
+    })
+}
 
 const defaultFooterDom = (
     <DefaultFooter
@@ -85,20 +99,19 @@ const BasicLayout = props => {
         },
     } = props
 
-    /**
-     * constructor
-     */
     useEffect(() => {
-        if (dispatch) {
-            dispatch({
-                type: 'user/fetchCurrent',
-            })
-        }
+        dispatch({
+            type: 'user/fetchCurrent',
+        })
+
+        const { routes } = props.route
+        const menuData = getMenuTreeData(null, routes).filter(r => r !== null)
+        dispatch({
+            type: 'global/saveMenuData',
+            payload: menuData
+        })
     }, [])
 
-    /**
-     * init variables
-     */
     const handleMenuCollapse = payload => {
         if (dispatch) {
             dispatch({
@@ -108,7 +121,7 @@ const BasicLayout = props => {
         }
     } // get children authority
 
-    const authorized = getAuthorityFromRouter(props.route.routes, location.pathname || '/') || {
+    const authorized = Common.getAuthorityFromRouter(props.route.routes, location.pathname || '/') || {
         authority: undefined,
     }
 
@@ -118,7 +131,7 @@ const BasicLayout = props => {
                 logo={defaultSettings.logoUrl}
                 formatMessage={formatMessage}
                 menuHeaderRender={(logoDom, titleDom) => (
-                    <Link to="/">
+                    <Link to="/" style={{marginTop: '10px'}}>
                         {logoDom}
                         {titleDom}
                     </Link>
@@ -131,19 +144,36 @@ const BasicLayout = props => {
 
                     return <Link to={menuItemProps.path}>{defaultDom}</Link>
                 }}
-                breadcrumbRender={(routers = []) => [
-                    {
-                        path: '/',
-                        breadcrumbName: '首页',
-                    },
-                    ...routers,
-                ]}
+                breadcrumbRender={(routers = []) => {
+                    if (!Array.isArray(routers)) {
+                        return null
+                    }
+
+                    return [
+                        {
+                            path: '/',
+                            breadcrumbName: '首页',
+                        },
+                        ...routers
+                    ]
+                }}
                 itemRender={(route, params, routes, paths) => {
                     const first = routes.indexOf(route) === 0
                     return first ? <Link to={paths.join('/')}>{route.breadcrumbName}</Link> : <span>{route.breadcrumbName}</span>
                 }}
                 footerRender={footerRender}
-                menuDataRender={menuDataRender}
+                menuDataRender={menuList => {
+                    // menuList[1].children.splice(0, 0, {
+                    //     exact: true,
+                    //     name: "测试菜单",
+                    //     parentKeys: ["/", "/func"],
+                    //     path: "/model/User",
+                    //     routes: null
+                    // })
+
+                    const menu = menuDataRender(menuList)
+                    return menu
+                }}
                 rightContentRender={() => <RightContent />}
                 {...props}
                 {...settings}
@@ -152,15 +182,17 @@ const BasicLayout = props => {
                     {children}
                 </Authorized>
             </ProLayout>
-            <SettingDrawer
-                settings={settings}
-                onSettingChange={config =>
-                    dispatch({
-                        type: 'settings/changeSetting',
-                        payload: config,
-                    })
-                }
-            />
+            {process.env.NODE_ENV !== 'production' ? (
+                <SettingDrawer
+                    settings={settings}
+                    onSettingChange={config =>
+                        dispatch({
+                            type: 'settings/changeSetting',
+                            payload: config,
+                        })
+                    }
+                />
+            ) : null}
         </>
     )
 }

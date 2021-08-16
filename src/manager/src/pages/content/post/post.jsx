@@ -3,13 +3,11 @@ import '@ant-design/compatible/assets/index.css'
 
 import { Form, Icon } from '@ant-design/compatible'
 import { DeleteOutlined,DownOutlined, EditOutlined, VerticalAlignBottomOutlined, VerticalAlignTopOutlined } from '@ant-design/icons'
+import { Common, RangePicker } from '@hosoft/hos-admin-common'
 import { Avatar, Button, Card, Col, Dropdown, Input, List, Menu, message, Modal, Pagination, Row, Switch, Typography } from 'antd'
 import _ from  'lodash'
 import moment from 'moment'
 import React, { Component, useState } from 'react'
-
-import RangePicker from '@/components/RangePicker'
-import {ossProcessImg} from "@/utils/utils"
 
 import PostDetail from "./components/PostDetail"
 import PostEditForm from './components/PostEditForm'
@@ -41,7 +39,7 @@ const ContentItem = props => {
         <Card
             className={[styles.card, manageMode && selected ? 'ant-card-sel' : '']}
             hoverable
-            cover={item.cover ? <img alt="" src={ossProcessImg(item.cover, 500, 375)} onClick={() => handleClickCard(item)} /> : null}
+            cover={item.cover ? <img alt="" src={Common.ossProcessImg(item.cover, 500, 375)} onClick={() => handleClickCard(item)} /> : null}
         >
             <Card.Meta onClick={() => handleClickCard(item)} title={<a>{item.title}</a>}
                 description={
@@ -58,7 +56,7 @@ const ContentItem = props => {
                 </span>
                 <div className={styles.avatarList}>
                     {item.author_rel && item.author_rel.avatar ? (
-                        <Avatar src={ossProcessImg(item.author_rel.avatar, 50, 0, true)}/>
+                        <Avatar src={Common.ossProcessImg(item.author_rel.avatar, 50, 0, true)}/>
                     ) : (
                         <Avatar icon={<Icon type='user' />}/>
                     )}

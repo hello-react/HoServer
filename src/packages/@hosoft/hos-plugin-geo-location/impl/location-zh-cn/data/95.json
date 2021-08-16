@@ -1,0 +1,341 @@
+{
+    "province": "江苏省",
+    "prov_code": "32",
+    "city": "镇江市",
+    "city_code": "3211",
+    "districts": [
+        {
+            "_id": "5c18605b2722b75024b9ab09",
+            "code": "321183",
+            "district": "句容市",
+            "subdistricts": [
+                {
+                    "_id": "5c18605b2722b75024b9ab15",
+                    "code": "321183002",
+                    "subdistrict": "华阳街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ab14",
+                    "code": "321183102",
+                    "subdistrict": "下蜀镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ab13",
+                    "code": "321183103",
+                    "subdistrict": "白兔镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ab12",
+                    "code": "321183104",
+                    "subdistrict": "边城镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ab11",
+                    "code": "321183105",
+                    "subdistrict": "茅山镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ab10",
+                    "code": "321183106",
+                    "subdistrict": "后白镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ab0f",
+                    "code": "321183107",
+                    "subdistrict": "郭庄镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ab0e",
+                    "code": "321183108",
+                    "subdistrict": "天王镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ab0d",
+                    "code": "321183109",
+                    "subdistrict": "宝华镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ab0c",
+                    "code": "321183400",
+                    "subdistrict": "开发区"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ab0b",
+                    "code": "321183429",
+                    "subdistrict": "茅山管委会"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ab0a",
+                    "code": "321183430",
+                    "subdistrict": "赤山湖管委会"
+                }
+            ]
+        },
+        {
+            "_id": "5c18605b2722b75024b9ab00",
+            "code": "321102",
+            "district": "京口区",
+            "subdistricts": [
+                {
+                    "_id": "5c18605b2722b75024b9ab08",
+                    "code": "321102001",
+                    "subdistrict": "正东路街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ab07",
+                    "code": "321102002",
+                    "subdistrict": "健康路街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ab06",
+                    "code": "321102003",
+                    "subdistrict": "大市口街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ab05",
+                    "code": "321102004",
+                    "subdistrict": "四牌楼街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ab04",
+                    "code": "321102005",
+                    "subdistrict": "象山街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ab03",
+                    "code": "321102006",
+                    "subdistrict": "谏壁街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ab02",
+                    "code": "321102400",
+                    "subdistrict": "京口工业园区"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9ab01",
+                    "code": "321102401",
+                    "subdistrict": "共青团农场"
+                }
+            ]
+        },
+        {
+            "_id": "5c18605b2722b75024b9aaf6",
+            "code": "321111",
+            "district": "润州区",
+            "subdistricts": [
+                {
+                    "_id": "5c18605b2722b75024b9aaff",
+                    "code": "321111001",
+                    "subdistrict": "宝塔路街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aafe",
+                    "code": "321111002",
+                    "subdistrict": "和平路街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aafd",
+                    "code": "321111003",
+                    "subdistrict": "金山街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aafc",
+                    "code": "321111004",
+                    "subdistrict": "七里甸街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aafb",
+                    "code": "321111005",
+                    "subdistrict": "蒋乔街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aafa",
+                    "code": "321111006",
+                    "subdistrict": "官塘桥街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aaf9",
+                    "code": "321111007",
+                    "subdistrict": "韦岗街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aaf8",
+                    "code": "321111008",
+                    "subdistrict": "南山街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aaf7",
+                    "code": "321111400",
+                    "subdistrict": "工业园区管委会"
+                }
+            ]
+        },
+        {
+            "_id": "5c18605b2722b75024b9aaea",
+            "code": "321112",
+            "district": "丹徒区",
+            "subdistricts": [
+                {
+                    "_id": "5c18605b2722b75024b9aaf5",
+                    "code": "321112001",
+                    "subdistrict": "高资街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aaf4",
+                    "code": "321112100",
+                    "subdistrict": "高桥镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aaf3",
+                    "code": "321112101",
+                    "subdistrict": "辛丰镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aaf2",
+                    "code": "321112102",
+                    "subdistrict": "谷阳镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aaf1",
+                    "code": "321112103",
+                    "subdistrict": "上党镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aaf0",
+                    "code": "321112104",
+                    "subdistrict": "宝堰镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aaef",
+                    "code": "321112105",
+                    "subdistrict": "世业镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aaee",
+                    "code": "321112400",
+                    "subdistrict": "宜城街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aaed",
+                    "code": "321112401",
+                    "subdistrict": "江心洲生态农业园区"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aaec",
+                    "code": "321112402",
+                    "subdistrict": "荣炳盐资源区"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aaeb",
+                    "code": "321112403",
+                    "subdistrict": "高新园区管委会"
+                }
+            ]
+        },
+        {
+            "_id": "5c18605b2722b75024b9aadd",
+            "code": "321181",
+            "district": "丹阳市",
+            "subdistricts": [
+                {
+                    "_id": "5c18605b2722b75024b9aae9",
+                    "code": "321181001",
+                    "subdistrict": "云阳街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aae8",
+                    "code": "321181002",
+                    "subdistrict": "曲阿街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aae7",
+                    "code": "321181100",
+                    "subdistrict": "司徒镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aae6",
+                    "code": "321181101",
+                    "subdistrict": "延陵镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aae5",
+                    "code": "321181102",
+                    "subdistrict": "珥陵镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aae4",
+                    "code": "321181103",
+                    "subdistrict": "导墅镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aae3",
+                    "code": "321181104",
+                    "subdistrict": "皇塘镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aae2",
+                    "code": "321181105",
+                    "subdistrict": "吕城镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aae1",
+                    "code": "321181106",
+                    "subdistrict": "陵口镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aae0",
+                    "code": "321181107",
+                    "subdistrict": "访仙镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aadf",
+                    "code": "321181108",
+                    "subdistrict": "界牌镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aade",
+                    "code": "321181113",
+                    "subdistrict": "丹北镇"
+                }
+            ]
+        },
+        {
+            "_id": "5c18605b2722b75024b9aad6",
+            "code": "321182",
+            "district": "扬中市",
+            "subdistricts": [
+                {
+                    "_id": "5c18605b2722b75024b9aadc",
+                    "code": "321182001",
+                    "subdistrict": "三茅街道"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aadb",
+                    "code": "321182101",
+                    "subdistrict": "新坝镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aada",
+                    "code": "321182102",
+                    "subdistrict": "油坊镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aad9",
+                    "code": "321182103",
+                    "subdistrict": "八桥镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aad8",
+                    "code": "321182104",
+                    "subdistrict": "西来桥镇"
+                },
+                {
+                    "_id": "5c18605b2722b75024b9aad7",
+                    "code": "321182400",
+                    "subdistrict": "经济开发区"
+                }
+            ]
+        }
+    ],
+    "id": 95
+}

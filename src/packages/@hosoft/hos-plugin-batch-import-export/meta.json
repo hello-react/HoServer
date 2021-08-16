@@ -1,0 +1,23 @@
+{
+  "name": "batch-import-export",
+  "version": "1.0.0",
+  "description": "数据批量导入导出",
+  "category": "",
+  "packages": [
+    {
+      "type": "server",
+      "package": "batch-import-export_server_1.0.0.zip",
+      "main": "index.js",
+      "hash": "",
+      "target-dir": "",
+      "files": [],
+      "config": null
+    },
+    {
+      "type": "manager",
+      "package": "batch-import-export_manager_1.0.0.zip",
+      "target-dir": "",
+      "files": []
+    }
+  ]
+}

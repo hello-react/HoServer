@@ -1,0 +1,33 @@
+FOLDER:com/hoserver/services
+FILE:{{EVAL:CommUtils.capitalizeFirstLetter(api.second_cat)+'Service.java'}}
+package com.hoserver.service;
+
+import android.os.AsyncTask;
+
+import com.hoserver.common.Constants;
+import com.hoserver.common.HttpCallback;
+import com.hoserver.common.HttpRequestTask;
+
+import java.util.Hashtable;
+
+public class {{EVAL:CommUtils.capitalizeFirstLetter(api.second_cat)}}Service {
+{{API_START}}
+
+    /**
+     * {{dis_name}}
+     * {{description}}
+     */
+    public static<T> AsyncTask {{name}}({{params}}Hashtable args, HttpCallback callback) {
+        HttpRequestTask request = new HttpRequestTask(
+                Constants.SERVER_URL + Constants.API_PREFIX + {{api_route}},
+                "{{method}}",
+                args,
+                callback
+        );
+
+        return request.execute();
+    }
+
+{{API_END}}
+
+}

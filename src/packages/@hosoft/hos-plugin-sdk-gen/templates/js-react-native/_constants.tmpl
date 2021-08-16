@@ -1,0 +1,11 @@
+FOLDER:common
+FILE:constants.js
+/* eslint-disable */
+import AppCfg from '../../configs/AppCfg'
+
+const SERVER_VERSION = '1.0'
+
+export default {
+    SERVER_URL: __DEV__ ? AppCfg.DEV_SERVER_URL : AppCfg.PRODUCTION_SERVER_URL,
+    API_PREFIX: `/api/v${parseInt(SERVER_VERSION, 10)}`
+}

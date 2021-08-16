@@ -20,7 +20,14 @@ function getModulePackageName(module) {
     return packageName
 }
 
-export const webpackPlugin = config => {
+export const webpackPlugin = (config, webpackConfig) => {
+    // for our es6 packages
+    config.resolve.symlinks(false)
+    const hosPath = path.resolve('./node_modules/@hosoft')
+    config.module.rule('js').exclude.clear().end().exclude.add(/node_modules\/(?!@hosoft)/).end()
+    config.module.rule('js').include.add(hosPath).end()
+    config.module.rule('jsx').include.add(hosPath).end()
+
     // optimize chunks
     config.optimization // share the same chunks across different modules
         .runtimeChunk(false)
@@ -33,23 +40,10 @@ export const webpackPlugin = config => {
                 vendors: {
                     test: module => {
                         // const packageName = getModulePackageName(module) || ''
-
-                        // if (packageName) {
-                        //     return ['bizcharts', 'gg-editor', 'g6', '@antv', 'gg-editor-core', 'bizcharts-plugin-slider'].includes(packageName)
-                        // }
-
                         return false
                     },
 
                     name(module) {
-                        // const packageName = getModulePackageName(module)
-
-                        // if (packageName) {
-                        //     if (['bizcharts', '@antv_data-set'].indexOf(packageName) >= 0) {
-                        //         return 'viz' // visualization package
-                        //     }
-                        // }
-
                         return 'misc'
                     },
                 },

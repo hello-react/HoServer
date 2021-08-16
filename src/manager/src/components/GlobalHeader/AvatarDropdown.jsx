@@ -1,10 +1,9 @@
 import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons'
+import { Common } from '@hosoft/hos-admin-common'
 import { Avatar, Menu, Spin } from 'antd'
 import { connect } from 'dva'
 import React from 'react'
 import router from 'umi/router'
-
-import {ossProcessImg} from '@/utils/utils'
 
 import HeaderDropdown from '../HeaderDropdown'
 import styles from './index.less'
@@ -55,7 +54,7 @@ class AvatarDropdown extends React.Component {
         return currentUser && currentUser.nick_name ? (
             <HeaderDropdown overlay={menuHeaderDropdown}>
                 <span className={`${styles.action} ${styles.account}`}>
-                    <Avatar size="small" className={styles.avatar} src={ossProcessImg(currentUser.avatar, 50, 0, true)} icon={currentUser.avatar ? undefined : <UserOutlined />} alt="avatar" />
+                    <Avatar size="small" className={styles.avatar} src={Common.ossProcessImg(currentUser.avatar, 50, 0, true)} icon={currentUser.avatar ? undefined : <UserOutlined />} alt="avatar" />
                     <span className={styles.name}>{currentUser.nick_name}</span>
                 </span>
             </HeaderDropdown>

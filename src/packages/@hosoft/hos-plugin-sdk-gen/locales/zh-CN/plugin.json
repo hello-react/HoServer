@@ -1,0 +1,6 @@
+{
+  "languageNotSupport": "语言不支持",
+  "getSdkVersionInfo": "客户端SDK版本信息",
+  "downloadClientSdk": "下载客户端SDK",
+  "generateClientSdk": "重新生成客户端SDK"
+}

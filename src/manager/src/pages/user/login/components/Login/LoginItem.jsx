@@ -137,8 +137,7 @@ class WrapFormItem extends Component {
         return (
             <FormItem wrapperCol={{span: 24}}>
                 <Row gutter={8}>
-                    <Col span={16}>{getFieldDecorator(name, options)(<Input {...customProps} {...otherProps} />)}</Col>
-                    <Col span={8}></Col>
+                    <Col span={24}>{getFieldDecorator(name, options)(<Input {...customProps} {...otherProps} />)}</Col>
                 </Row>
             </FormItem>
         )

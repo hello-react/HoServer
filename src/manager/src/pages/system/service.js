@@ -1,8 +1,6 @@
+import {Constants, request} from '@hosoft/hos-admin-common'
 import {message} from "antd"
 import _ from 'lodash'
-
-import Constants from '@/utils/constants'
-import request from '@/utils/request'
 
 const wrapper = {}
 
@@ -92,14 +90,12 @@ wrapper.getSystemConfig = async function() {
         const result = []
 
         for (const seg in items) {
-            const segConfigs = items[seg]
-            if (segConfigs.value !== undefined || typeof segConfigs !== 'object') {
-                if (seg !== 'dis_name' && seg !== 'desc') {
-                    result.push({seg, config: segConfigs})
-                }
+            const segConfig = items[seg]
+            if (typeof segConfig === 'object') {
+                const segResult = processResult(segConfig)
+                result.push({seg, configs: segResult })
             } else {
-                const segResult = processResult(segConfigs)
-                result.push({seg, configs: segResult, config: { dis_name: segConfigs.dis_name, desc: segConfigs.desc } })
+                result.push({seg, value: segConfig})
             }
         }
 

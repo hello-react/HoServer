@@ -1,10 +1,10 @@
+import { Common } from '@hosoft/hos-admin-common'
 import { routerRedux } from 'dva/router'
 
-import { sendSMS } from '@/services/system'
+// TODO：sms plugin
+// import { sendSMS } from '@/services/system'
 import { userLogin } from '@/services/user'
-import { setAutologinInfo } from '@/utils/authority'
-
-import { getPageQuery, setAuthority } from './utils/utils'
+import { setAuthority,setAutologinInfo } from '@/utils/authority'
 
 const Model = {
     namespace: 'userAndlogin',
@@ -21,7 +21,7 @@ const Model = {
 
             if (response.status === 'ok') {
                 const urlParams = new URL(window.location.href)
-                const params = getPageQuery()
+                const params = Common.getPageQuery()
                 let { redirect } = params
 
                 if (redirect) {

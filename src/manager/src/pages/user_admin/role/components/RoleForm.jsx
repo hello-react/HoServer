@@ -1,21 +1,18 @@
 /* eslint-disable @typescript-eslint/camelcase */
 /**
- * HoServer Manager Ver 1.0
+ * HoServer Manager Ver 2.0
  * Copyright http://hos.helloreact.cn
  *
  * create: 2020/01/20
- * author: Jack Zhang
- * */
+ */
 import '@ant-design/compatible/assets/index.css'
 
-import {Form as LegacyForm, Icon} from "@ant-design/compatible"
-import {Button, Col, Input, message, Modal, Row, Select, Tag} from 'antd'
+import { Form as LegacyForm, Icon } from "@ant-design/compatible"
+import { Constants, TransferModal } from '@hosoft/hos-admin-common'
+import { prompt } from '@hosoft/hos-admin-common'
+import { Button, Col, Input, message, Modal, Row, Select, Tag } from 'antd'
 import _ from 'lodash'
-import React, {useEffect, useImperativeHandle, useRef, useState} from 'react'
-
-import ListSelect from "@/components/Modals/ListSelect";
-import prompt from "@/third/antd-prompt"
-import Constants from "@/utils/constants"
+import React, { useEffect, useImperativeHandle, useRef, useState } from 'react'
 
 import UserService from "../../service"
 
@@ -85,9 +82,8 @@ const RoleForm = LegacyForm.create()(props => {
         props.form.validateFields((err, fields) => {
             if (err) return
 
-            const roleInstance = roleRef.current
-
-            _.merge(roleInstance, fields)
+            let roleInstance = roleRef.current
+            roleInstance = _.merge(roleInstance, fields)
             callback(roleInstance)
         })
     }
@@ -135,7 +131,7 @@ const RoleForm = LegacyForm.create()(props => {
                     }) : '未设置'}
                 </div>
                 <div>
-                    <ListSelect title="设置权限" request={UserService.listPermission} selValues={permissions.map(p => p.name)} onOk={values => {
+                    <TransferModal title="设置权限" request={UserService.listPermission} selValues={permissions.map(p => p.name)} onOk={values => {
                         roleRef.current.permissions = values.map(v => ({name: v, scope: ''}))
                         setPermissions(roleRef.current.permissions)
                     }} />
@@ -155,7 +151,7 @@ const RoleFormModal = props => {
     const formRef = React.createRef()
 
     const handleSubmit = () => {
-        formRef.current.getFormFields((values) => {
+        formRef.current.getFormFields(values => {
             console.log('ModelForm submit: ', values)
 
             onOk && onOk(editMode, values, modelInstance)

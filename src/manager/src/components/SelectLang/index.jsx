@@ -1,8 +1,9 @@
 import { GlobalOutlined } from '@ant-design/icons'
 import { Menu } from 'antd'
-import { getLocale, setLocale } from 'umi-plugin-react/locale'
-import React from 'react'
 import classNames from 'classnames'
+import React from 'react'
+import { getLocale, setLocale } from 'umi-plugin-react/locale'
+
 import HeaderDropdown from '../HeaderDropdown'
 import styles from './index.less'
 
@@ -12,9 +13,11 @@ const SelectLang = props => {
 
     const changeLang = ({ key }) => setLocale(key)
 
-    const locales = ['zh-CN']
+    const locales = ['zh-CN', 'zh-TW', 'en-US']
     const languageLabels = {
-        'zh-CN': '简体中文'
+        'zh-CN': '简体中文',
+        'zh-TW': '繁體中文',
+        'en-US': 'English',
     }
     const languageIcons = {
         'zh-CN': '🇨🇳',

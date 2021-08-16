@@ -2,14 +2,13 @@
 import '@ant-design/compatible/assets/index.css'
 
 import {Form as LegacyForm, Icon} from "@ant-design/compatible"
-import {Card, Col, Input, message, Row, Select, Tag, Tooltip} from 'antd'
+import {Constants, SelectLocation} from '@hosoft/hos-admin-common'
+import {Card, Col, Input, Row, Select, Tag, Tooltip} from 'antd'
 import _ from "lodash";
 import React, {Component} from 'react'
 
-import SelectLocation from '@/components/SelectLocation'
 import UserService from '@/pages/user_admin/service'
 import AvatarForm from '@/pages/user_admin/user/components/AvatarForm'
-import Constants from "@/utils/constants"
 
 class UserForm extends Component {
     constructor() {

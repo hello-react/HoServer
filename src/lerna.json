@@ -1,0 +1,9 @@
+{
+  "npmClient": "yarn",
+  "packages": [
+    "packages/@hosoft/**",
+    "manager",
+    "server"
+  ],
+  "version": "1.0.0"
+}

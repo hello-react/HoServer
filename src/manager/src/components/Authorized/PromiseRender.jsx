@@ -39,11 +39,12 @@ export default class PromiseRender extends React.Component {
                     component: error,
                 })
             })
-    } // Determine whether the incoming component has been instantiated
+    }
+
+    // Determine whether the incoming component has been instantiated
     // AuthorizedRoute is already instantiated
     // Authorized  render is already instantiated, children is no instantiated
     // Secured is not instantiated
-
     checkIsInstantiation = target => {
         if (isComponentClass(target)) {
             const Target = target

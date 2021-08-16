@@ -1,0 +1,124 @@
+{
+  "_id" : "5ea78785c78696c0f1072ae8",
+  "timestamp" : true,
+  "category_name" : "sns",
+  "properties" : [
+    {
+      "auto_increment" : false,
+      "unique" : true,
+      "index" : true,
+      "input_flag" : 2,
+      "search_flag" : 1,
+      "output_flag" : 1,
+      "properties" : null,
+      "_id" : "5ea78785c78696c0f1072ae9",
+      "name" : "id",
+      "dis_name" : "Id",
+      "prop_type" : "objectId",
+      "order" : 5
+    },
+    {
+      "auto_increment" : false,
+      "unique" : false,
+      "index" : true,
+      "input_flag" : 3,
+      "search_flag" : 3,
+      "output_flag" : 1,
+      "properties" : null,
+      "_id" : "5ea7905c4a28cdc345a4edf9",
+      "name" : "user_id",
+      "dis_name" : "用户Id",
+      "prop_type" : "objectId",
+      "default_val" : "current_user_id",
+      "order" : 10,
+      "relations" : {
+        "rel_type" : "1",
+        "name" : "User",
+        "field" : "user_id"
+      }
+    },
+    {
+      "auto_increment" : false,
+      "unique" : false,
+      "index" : true,
+      "input_flag" : 2,
+      "search_flag" : 1,
+      "output_flag" : 1,
+      "properties" : null,
+      "_id" : "5ea78785c78696c0f1072aeb",
+      "name" : "friend_user_id",
+      "dis_name" : "所加好友用户Id",
+      "prop_type" : "objectId",
+      "order" : 15,
+      "relations" : {
+        "rel_type" : "1",
+        "name" : "User",
+        "field" : "user_id"
+      }
+    },
+    {
+      "auto_increment" : false,
+      "unique" : false,
+      "index" : false,
+      "input_flag" : 1,
+      "search_flag" : 1,
+      "output_flag" : 1,
+      "properties" : null,
+      "_id" : "5ea78785c78696c0f1072aec",
+      "name" : "status",
+      "dis_name" : "状态",
+      "prop_type" : "char",
+      "order" : 20,
+      "description" : "用于加好友需要同意的场景",
+      "relations" : {
+        "rel_type" : "2",
+        "name" : "{\"accepted\":\"同意\",\"rejected\":\"拒绝\"}"
+      }
+    },
+    {
+      "auto_increment" : false,
+      "unique" : false,
+      "index" : false,
+      "input_flag" : 1,
+      "search_flag" : 1,
+      "output_flag" : 1,
+      "properties" : null,
+      "_id" : "5ea78785c78696c0f1072aed",
+      "name" : "alias",
+      "dis_name" : "备注姓名",
+      "prop_type" : "char",
+      "order" : 25,
+      "width" : 64
+    },
+    {
+      "auto_increment" : false,
+      "unique" : false,
+      "index" : false,
+      "input_flag" : 0,
+      "search_flag" : 0,
+      "output_flag" : 2,
+      "properties" : [],
+      "_id" : "5ea7905c4a28cdc345a4edfd",
+      "name" : "created_at",
+      "dis_name" : "创建时间",
+      "prop_type" : "date"
+    },
+    {
+      "auto_increment" : false,
+      "unique" : false,
+      "index" : false,
+      "input_flag" : 0,
+      "search_flag" : 0,
+      "output_flag" : 2,
+      "properties" : [],
+      "_id" : "5ea7905c4a28cdc345a4edfe",
+      "name" : "updated_at",
+      "dis_name" : "更新时间",
+      "prop_type" : "date"
+    }
+  ],
+  "name" : "Friend",
+  "dis_name" : "好友",
+  "db_table" : "sns_friend",
+  "__v" : 1
+}

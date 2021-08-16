@@ -1,0 +1,36 @@
+FOLDER:api
+FILE:{{EVAL:CommUtils.capitalizeFirstLetter(api.second_cat)+'Service'}}.js
+
+{{API_START}}
+
+/**
+ * {{dis_name}}
+ * {{description}}
+ */
+{{EVAL:CommUtils.capitalizeFirstLetter(api.second_cat)+'Service'}}.{{name}} = function({{params}}, onSuccess, onError) {
+    $.ajax({
+        url: serverUrl + apiPrefix + {{api_route}},
+        method: "{{method}}",
+        timeout: 0,
+        headers: {
+            token: getToken(),
+            "Content-Type": "application/json"
+        },
+        {{request_params}},
+        success: function(resp) {
+            if (resp.code / 1 !== 200) {
+                onError && onError(resp)
+                return
+            }
+
+            onSuccess && onSuccess(resp.data)
+        },
+        error: function(e) {
+            console.error(e.message);
+            onError && onError({code: -1, message: e.message})
+        }
+    })
+}
+
+{{API_END}}
+

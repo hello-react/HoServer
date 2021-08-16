@@ -1,0 +1,10 @@
+{
+  "loginWithMobile": "手机验证码登录",
+  "bindMobile": "绑定手机号",
+  "sendSMS": "获取验证码",
+  "errSMSConfig": "请先配置短信服务相关参数",
+  "errMobileNotExists": "手机号未注册",
+  "errBusinessLimit": "对该手机号短信发送次数已达上限，请1小时后再试",
+  "errMobileNumber": "请输入有效正确的手机号",
+  "errSendSMS": "验证码发送失败"
+}

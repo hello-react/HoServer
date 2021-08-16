@@ -1,9 +1,9 @@
+import { Common } from "@hosoft/hos-admin-common"
 import { stringify } from 'querystring'
 import router from 'umi/router'
 
 import { queryCurrent } from '@/services/user'
-import { setAuthority,setAutologinInfo } from '@/utils/authority'
-import {getPageQuery} from "@/utils/utils"
+import { setAuthority, setAutologinInfo } from '@/utils/authority'
 
 const UserModel = {
     namespace: 'user',
@@ -44,7 +44,7 @@ const UserModel = {
             setAuthority('')
             setAutologinInfo('')
 
-            const { redirect } = getPageQuery() // Note: There may be security issues, please note
+            const { redirect } = Common.getPageQuery() // Note: There may be security issues, please note
 
             if (window.location.pathname !== '/user/login' && !redirect) {
                 router.replace({

@@ -4,6 +4,7 @@ const GlobalModel = {
     namespace: 'global',
     state: {
         collapsed: false,
+        menus: [],
         notices: [],
     },
     effects: {
@@ -63,6 +64,13 @@ const GlobalModel = {
                 },
             })
         },
+
+        *saveMenuData({ payload }, { put }) {
+            yield put({
+                type: 'updateMenus',
+                payload,
+            })
+        },
     },
     reducers: {
         changeLayoutCollapsed(
@@ -96,6 +104,15 @@ const GlobalModel = {
                 notices: state.notices.filter(item => item.type !== payload),
             }
         },
+
+        updateMenus(state = {
+            menus: []
+        }, { payload }) {
+            return {
+                ...state,
+                menus: payload
+            }
+        }
     },
     subscriptions: {
         setup({ history }) {
@@ -108,4 +125,5 @@ const GlobalModel = {
         },
     },
 }
+
 export default GlobalModel

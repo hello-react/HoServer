@@ -1,0 +1,14 @@
+{
+  "name": "@hosoft/hos-plugin-sms",
+  "version": "1.0.0",
+  "description": "HoServer SMS plugin",
+  "main": "index.js",
+  "devDependencies": {
+    "@alicloud/sms-sdk": "^1.1.6",
+    "@hosoft/config": "^1.0.2",
+    "@hosoft/restful-api-framework": "^1.5.3",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1",
+	"random-number": "^0.0.9"
+  }
+}

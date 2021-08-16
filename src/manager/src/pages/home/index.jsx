@@ -1,20 +1,19 @@
 /* eslint-disable jsx-a11y/alt-text */
 /**
- * HoServer Manager Ver 1.0
+ * HoServer Manager Ver 2.0
  * Copyright http://hos.helloreact.cn
  *
  * create: 2020/01/20
- * author: Jack Zhang
- * */
+ */
 import { BulbTwoTone } from '@ant-design/icons'
 import { PageHeaderWrapper } from '@ant-design/pro-layout'
+import { Common } from "@hosoft/hos-admin-common";
 import { Avatar, Card, Col, Divider, List, Row,Skeleton } from 'antd'
 import { connect } from 'dva'
 import moment from 'moment'
 import React, { Component } from 'react'
 
-import {ossProcessImg} from "@/utils/utils";
-
+import defaultSettings from "../../../config/defaultSettings";
 import styles from './style.less'
 
 const PageHeaderContent = ({ currentUser }) => {
@@ -49,20 +48,6 @@ class Home extends Component {
         this.showIntrduce = true
     }
 
-    componentDidMount() {
-        const { dispatch } = this.props
-        dispatch({
-            type: 'dashboardAndworkplace/init',
-        })
-    }
-
-    componentWillUnmount() {
-        const { dispatch } = this.props
-        dispatch({
-            type: 'dashboardAndworkplace/clear',
-        })
-    }
-
     renderActivities = item => {
         const events = item.template.split(/@\{([^{}]*)\}/gi).map(key => {
             if (item[key]) {
@@ -78,7 +63,7 @@ class Home extends Component {
         return (
             <List.Item key={item.id}>
                 <List.Item.Meta
-                    avatar={<Avatar src={ossProcessImg(item.user.avatar, 50, 0, true)} />}
+                    avatar={<Avatar src={Common.ossProcessImg(item.user.avatar, 50, 0, true)} />}
                     title={
                         <span>
                             <a className={styles.username}>{item.user.name}</a>
@@ -98,6 +83,7 @@ class Home extends Component {
 
     render() {
         const { currentUser } = this.props
+        const {productName} = defaultSettings
         if (!currentUser || !currentUser.user_id) {
             return null
         }
@@ -110,7 +96,7 @@ class Home extends Component {
                             className={styles.projectList}
                             style={{marginBottom: '10px'}}
                             bordered={false}>
-                            <BulbTwoTone /> 欢迎使用 HoServer 管理平台，请选择菜单进行操作。
+                            <BulbTwoTone /> 欢迎使用 {productName} 管理平台，请选择菜单进行操作。
                         </Card>
                         {this.showIntrduce ? (
                             <Card
@@ -158,6 +144,8 @@ class Home extends Component {
     }
 }
 
-export default connect(({ user }) => ({
-    currentUser: user.currentUser
+export default connect(({ user, plugin }) => ({
+    currentUser: user.currentUser,
+    serverPlugins: plugin.serverPlugins,
+    managerPlugins: plugin.managerPlugins
 }))(Home)

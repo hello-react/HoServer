@@ -1,9 +1,7 @@
-// import proImg from '@/assets/pro.svg'
+import React, { Component } from 'react'
 
-const IS_HOS_PRO = false
 const API_SERVER_URL = 'http://localhost:3001'
-const IMAGE_URL = 'https://gitee.com/hello-react/HoServer/raw/master/src/server/public/branding/'
-// const IMAGE_URL = API_SERVER_URL + '/public/branding/'
+const IMAGE_URL = API_SERVER_URL + '/public/branding/'
 
 const PRODUCT_NAME = 'HoServer'
 const THEME_COLOR = 'dark'
@@ -13,7 +11,7 @@ const MONITOR_URL = 'http://localhost:3000/'
 export default {
     navTheme: THEME_COLOR,
     // 拂晓蓝
-    primaryColor: 'daybreak',
+    primaryColor: 'cyan',
     layout: 'sidemenu',
     contentWidth: 'Fluid',
     fixedHeader: false,
@@ -23,7 +21,7 @@ export default {
     menu: {
         locale: true,
     },
-    title:'HoServer',
+    title: PRODUCT_NAME,
     pwa: false,
 
     // 产品名称，主要用于登录等页面显示
@@ -36,7 +34,5 @@ export default {
     // 后台 Api 服务地址
     apiServerUrl: API_SERVER_URL,
     // 监控系统地址
-    monitorUrl: MONITOR_URL,
-    // 是否使用阿里云存储上传（网页客户端直传）// demo replace(false|true)
-    enableOssUpload: true
+    monitorUrl: MONITOR_URL
 }

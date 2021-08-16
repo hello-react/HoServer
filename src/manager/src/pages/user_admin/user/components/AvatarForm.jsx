@@ -1,17 +1,15 @@
-import {Form as LegacyForm, Icon} from "@ant-design/compatible"
-import {UploadOutlined} from "@ant-design/icons"
-import {Avatar, Button} from "antd"
-import React, {useEffect, useState} from "react"
-
-import UploadFile from "@/components/UploadFile"
-import {ossProcessImg} from "@/utils/utils"
+import { Form as LegacyForm, Icon}  from "@ant-design/compatible"
+import { UploadOutlined } from "@ant-design/icons"
+import { Common, UploadFile } from "@hosoft/hos-admin-common"
+import { Avatar, Button } from "antd"
+import React, { useEffect, useState } from "react"
 
 const AvatarForm = props => {
     const {onUploadResult, src} = props
     const [avatarSrc, setAvatarSrc] = useState(src)
 
     useEffect(() => {
-        setAvatarSrc(ossProcessImg(props.src, 250, 0, true))
+        setAvatarSrc(Common.ossProcessImg(props.src, 250, 0, true))
     }, [props.src])
 
     const uploadProps = {

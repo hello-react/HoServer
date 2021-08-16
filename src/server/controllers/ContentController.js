@@ -1,28 +1,28 @@
-/**
- * HoServer API Server Ver 1.0
- * Copyright http://hos.helloreact.cn
- *
- * create: 2020/02/27
- * author: Jack Zhang
- **/
-const { Constants } = require('../framework/base')
+const { Constants } = require('@hosoft/restful-api-framework/base')
 
 /**
- * 内容管理接口
+ * Content manage apis
  */
 class ContentController {
     initRoutes(container, router) {
-        // 内容管理路由
         router.def('Content', [...Constants.API_DEF_ROUTE_ACTIONS, 'batch_update'])
-        router.def('Content', 'list').beforeDbProcess((context, query) => {
-            if (context.query.search) {
-                // prettier-ignore
-                query.$or = [
-                    { title: new RegExp(`.*${context.query.search}.*`) },
-                    { content: new RegExp(`.*${context.query.search}.*`) }
-                ]
-            }
-        })
+
+        router
+            .def('Content', 'list')
+            .outFields('content')
+            .beforeDbProcess((ctx, query) => {
+                if (ctx.query.search) {
+                    // prettier-ignore
+                    query.$or = [
+                        { title: new RegExp(`.*${ctx.query.search}.*`) },
+                        { content: new RegExp(`.*${ctx.query.search}.*`) }
+                    ]
+                }
+
+                if (!(query.category || ctx.isAdmin())) {
+                    query.category = { $ne: 'sys' }
+                }
+            })
     }
 }
 

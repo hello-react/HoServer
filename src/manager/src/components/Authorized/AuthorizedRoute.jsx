@@ -1,5 +1,6 @@
-import { Redirect, Route } from 'umi'
 import React from 'react'
+import { Redirect, Route } from 'umi'
+
 import Authorized from './Authorized'
 
 const AuthorizedRoute = ({ component: Component, render, authority, redirectPath, ...rest }) => (

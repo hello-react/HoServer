@@ -2,11 +2,9 @@
 import '@ant-design/compatible/assets/index.css'
 
 import {Form as LegacyForm, Icon} from "@ant-design/compatible"
+import {Constants, UploadFile} from "@hosoft/hos-admin-common"
 import {Button, Input, Modal, Select, Switch} from 'antd'
 import React, {useEffect, useImperativeHandle, useRef, useState} from 'react'
-
-import UploadFile from "@/components/UploadFile"
-import Constants from "@/utils/constants"
 
 import ContentService from '../../service'
 
@@ -39,6 +37,7 @@ const PostEditForm = LegacyForm.create()(props => {
         }
 
         const {title, sub_title, link, cover, files, category, sub_category, content, enabled} = contentRef.current
+
         props.form.setFieldsValue({
             title, sub_title, link, category, sub_category, content, enabled
         })
@@ -182,7 +181,7 @@ const PostEditForm = LegacyForm.create()(props => {
                     )}
                 </LegacyForm.Item>
                 <LegacyForm.Item label="立即上架">
-                    {getFieldDecorator('enabled')(<Switch defaultChecked />)}
+                    {getFieldDecorator('enabled', { valuePropName: 'checked', initialValue: true})(<Switch />)}
                 </LegacyForm.Item>
             </LegacyForm>
             <Modal visible={previewVisible} footer={null} onCancel={() => setPreviewVisible(false)}>

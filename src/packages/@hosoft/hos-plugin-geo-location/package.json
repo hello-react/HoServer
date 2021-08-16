@@ -1,0 +1,12 @@
+{
+  "name": "@hosoft/hos-plugin-geo-location",
+  "version": "1.0.0",
+  "description": "HoServer plugin provide some country's region query",
+  "main": "index.js",
+  "devDependencies": {
+    "@hosoft/config": "^1.0.2",
+    "@hosoft/restful-api-framework": "^1.5.3",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1"
+  }
+}

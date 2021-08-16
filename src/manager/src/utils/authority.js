@@ -30,27 +30,6 @@ export function setAuthority(authority) {
     reloadAuthorized()
 }
 
-export function getToken() {
-    if (global.token) {
-        return global.token
-    }
-
-    const infoJson = localStorage ? localStorage.getItem('antd-pro-auto-login') : ''
-    if (!infoJson) {
-        return ''
-    }
-
-    let autoLoginInfo
-    try {
-        autoLoginInfo = JSON.parse(infoJson)
-        global.token = autoLoginInfo.token
-    } catch (e) {
-        return ''
-    }
-
-    return global.token
-}
-
 export function getAutoLogin() {
     const infoJson = localStorage ? localStorage.getItem('antd-pro-auto-login') : ''
     if (!infoJson) {

@@ -1,0 +1,15 @@
+{
+  "key": "value",
+  "keyDeep": {
+    "inner": "value"
+  },
+  "keyNesting": "reuse $t(keyDeep.inner)",
+  "keyInterpolate": "replace this {{value}}",
+  "keyInterpolateUnescaped": "replace this {{- value}}",
+  "keyInterpolateWithFormatting": "replace this {{value, format}}",
+  "keyContext_male": "the male variant",
+  "keyContext_female": "the female variant",
+  "keyPluralSimple": "the singular",
+  "keyPluralSimple_plural": "the plural",
+  "keyPluralMultipleEgArabic_0": "the plural form 0"
+}

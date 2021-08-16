@@ -1,10 +1,9 @@
 /**
- * HoServer Manager Ver 1.0
+ * HoServer Manager Ver 2.0
  * Copyright http://hos.helloreact.cn
  *
  * create: 2020/01/20
- * author: Jack Zhang
- * */
+ */
 import {Icon} from "@ant-design/compatible"
 import { PageHeaderWrapper } from '@ant-design/pro-layout'
 import {Button, Card, Col, Input, message, Row, Switch, Tooltip} from "antd"

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<title>HoServer Javascript (jQuery) SDK example</title>
+<head>
+    <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script src="js.cookie.min.js"></script>
+    <script src="services.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#login").click(function(){
+                UserService.login(
+                    { user_name: 'admin', password: '123456' },
+                    function(data) {
+                        setToken(data.token)
+                        $('#result').text('登录成功')
+                    },
+                    function(err) {
+                        $('#result').text(JSON.stringify(err, null ,2))
+                    }
+                )
+            });
+
+            $("#getUser").click(function(){
+                UserService.getUser(
+                    '5d62946590250a0d49ee4003',
+                    { user_name: 'admin', password: '123456' },
+                    function(data) {
+                        $('#result').text(JSON.stringify(data, null ,2))
+                    },
+                    function(err) {
+                        $('#result').text(JSON.stringify(err, null ,2))
+                    }
+                )
+            });
+        });
+    </script>
+</head>
+<body>
+
+<div id="div1"><h2>HoServer Javascript (jQuery) SDK example</h2></div>
+
+<button id="login">Login</button>
+<button id="getUser">Get User Info</button>
+
+<div>
+    <p>Result:</p>
+    <pre id="result"></pre>
+</div>
+
+</body>
+</html>

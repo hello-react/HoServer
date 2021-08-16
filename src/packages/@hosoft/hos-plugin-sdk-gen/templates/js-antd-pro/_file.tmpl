@@ -1,0 +1,31 @@
+FOLDER:{{main_cat}}
+FILE:{{EVAL:api.second_cat.toLowerCase()+'.js'}}
+/* eslint-disable */
+import { request, message } from "../common/utils"
+import Constants from '../common/constants'
+
+const wrapper = {}
+
+{{API_START}}
+
+/**
+ * {{dis_name}}
+ * {{description}}
+ */
+wrapper.{{name}} = async ({{params}}) => {
+    const rep = await request(`${Constants.API_PREFIX}{{api_route}}`, {
+        method: '{{method}}',
+        {{request_params}}
+    })
+
+    if (rep.code / 1 !== 200) {
+        message.error(`${rep && rep.message ? ':' + rep.message : ''}`)
+        return null
+    }
+
+    return rep.data
+}
+
+{{API_END}}
+
+export default wrapper

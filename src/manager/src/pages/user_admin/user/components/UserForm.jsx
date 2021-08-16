@@ -1,21 +1,17 @@
 /* eslint-disable @typescript-eslint/camelcase */
 /**
- * HoServer Manager Ver 1.0
+ * HoServer Manager Ver 2.0
  * Copyright http://hos.helloreact.cn
  *
  * create: 2020/01/20
- * author: Jack Zhang
- * */
+ */
 import '@ant-design/compatible/assets/index.css'
 
-import {Form as LegacyForm, Icon} from "@ant-design/compatible"
-import {Button, Card, Col, Input, message, Modal, Row, Select, Switch, Tag, Tooltip} from 'antd'
+import { Form as LegacyForm, Icon } from "@ant-design/compatible"
+import { Constants, SelectLocation, TransferModal } from '@hosoft/hos-admin-common'
+import { Button, Card, Col, Input, Modal, Row, Select, Switch, Tag, Tooltip } from 'antd'
 import _ from "lodash";
 import React, {useEffect, useImperativeHandle, useRef, useState} from 'react'
-
-import ListSelect from "@/components/Modals/ListSelect"
-import SelectLocation from '@/components/SelectLocation'
-import Constants from "@/utils/constants"
 
 import UserService from '../../service'
 import AvatarForm from './AvatarForm'
@@ -61,8 +57,7 @@ const UserForm = LegacyForm.create()(props => {
         props.form.validateFields(async (err, values) => {
             if (err) return
 
-            _.merge(userInfo, values)
-            callback(userInfo)
+            callback(_.merge(userInfo, values))
         })
     }
 
@@ -149,7 +144,7 @@ const UserForm = LegacyForm.create()(props => {
                         }) : '未设置'}
                     </div>
                     <div>
-                        <ListSelect title="设置角色" request={UserService.listRole} selValues={roles} onOk={values => {
+                        <TransferModal title="设置角色" request={UserService.listRole} selValues={roles} onOk={values => {
                             userInfo.roles = values
                             setRoles(values)
                         }} />
@@ -167,7 +162,7 @@ const UserForm = LegacyForm.create()(props => {
                         }) : '未设置'}
                     </div>
                     <div>
-                        <ListSelect title="设置权限" request={UserService.listPermission} selValues={permissions.map(p => p.name)} onOk={values => {
+                        <TransferModal title="设置权限" request={UserService.listPermission} selValues={permissions.map(p => p.name)} onOk={values => {
                             userInfo.permissions = values.map(v => ({name: v, scope: ''}))
                             setPermissions(values)
                         }} />
@@ -206,7 +201,7 @@ const UserFormModal = props => {
     const formRef = React.createRef()
 
     const handleSubmit = () => {
-        formRef.current.getFormFields((values) => {
+        formRef.current.getFormFields(values => {
             console.log('UserForm submit: ', values)
 
             onOk && onOk(editMode, values, modelInstance)

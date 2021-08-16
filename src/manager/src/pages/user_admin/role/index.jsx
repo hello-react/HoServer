@@ -1,24 +1,21 @@
 /* eslint-disable no-underscore-dangle */
 /**
- * HoServer Manager Ver 1.0
+ * HoServer Manager Ver 2.0
  * Copyright http://hos.helloreact.cn
  *
  * create: 2020/01/20
- * author: Jack Zhang
- * */
+ */
 import {Form as LegacyForm} from "@ant-design/compatible"
+import { Common, TableLayout } from "@hosoft/hos-admin-common"
+import { ModelService } from '@hosoft/hos-admin-common'
 import {Modal, Tag} from "antd";
 import _ from "lodash";
 import React, {Fragment} from 'react'
 
-import TableLayout from "@/layouts/TableLayout"
-import ModelService from "@/services/model";
-import {setDefaultColumn} from "@/utils/utils"
-
 import UserService from "../service"
 import RoleForm from "./components/RoleForm"
 
-const defTableColumns = setDefaultColumn([
+const defTableColumns = Common.setDefaultColumn([
     {
         searchFlag: 1,
         title: "角色分类",
@@ -91,7 +88,7 @@ class RoleManage extends TableLayout {
         const result = await ModelService.getModelDataListTable(this.modelName, params)
         const data = _.get(result, 'data', [])
 
-        let preCategory = {category_name: null}
+        let preCategory = {category_name: undefined}
         for (let i=0; i<data.length; i++) {
             const row = data[i]
             if (row.category_name === preCategory.category_name) {

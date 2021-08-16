@@ -1,0 +1,23 @@
+{
+  "name": "@hosoft/config",
+  "version": "1.0.2",
+  "description": "A simple configuration manager for Node.js, support read/write config file in json/yaml format",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "jsonfile": "^6.1.0",
+    "lodash": "^4.17.21",
+    "lodash.get": "^4.4.2",
+    "lodash.set": "^4.3.2",
+    "moment": "^2.29.1"
+  },
+  "keywords": [
+    "config",
+    "Node.js"
+  ],
+  "author": "Jack Zhang",
+  "license": "MIT"
+}

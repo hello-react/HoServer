@@ -1,0 +1,28 @@
+{
+  "noAuth": "商户无此接口权限",
+  "notEnough": "余额不足",
+  "orderPaid": "商户订单已支付",
+  "orderClosed": "订单已关闭",
+  "systemError": "系统超时",
+  "appidNotExist": "参数中缺少appid",
+  "mchidNotExist": "参数中缺少mch_id",
+  "appidMchidNotMatch": "appid和mch_id不匹配",
+  "lackParams": "缺少必要的请求参数",
+  "outTradeNoUsed": "商户订单号重复",
+  "signError": "签名错误",
+  "xmlFormatError": "XML格式错误",
+  "requirePostMethod": "请使用Post方法",
+  "postDataEmpty": "Post数据为空",
+  "notUtf8": "编码格式错误",
+
+  "wxAuthFail": "获取微信授权失败: {{message}}",
+  "invalidDiscountCode": "优惠码无效",
+  "getPaymentStatistics": "支付账单统计",
+  "getPaymentProducts": "产品列表",
+
+  "saveAppStorePay": "创建AppStore支付记录",
+  "prePayWx": "微信支付预处理",
+  "prePayAlipay": "支付宝支付预处理",
+  "wxNotify": "微信支付回调",
+  "alipayNotify": "支付宝支付回调"
+}

@@ -1,43 +1,49 @@
-/**
- * HoServer API Server Ver 1.0
- * Copyright http://hos.helloreact.cn
- *
- * create: 2020/01/15
- * author: Jack Zhang
- **/
+/* eslint-disable max-len */
 const UserService = require('../services/user/UserService')
-const { ErrorCodes } = require('../framework/base')
+const { ErrorCodes } = require('@hosoft/restful-api-framework/base')
+const { Role, Permission } = require('@hosoft/restful-api-framework/models')
 
 /**
- * 用户相关接口
+ * User related apis
  */
 class UserController {
     // prettier-ignore
     initRoutes(container, router) {
-        // 用户不支持删除，默认路由仅用于管理员操作，普通用户操作调用独立接口
+        // role, permissions
+        router.get('/user/roles/categories', t('getRolePermCategories'), async context => {
+            return this._getRolePermCategories()
+        }, { model: 'Role', private: true })
+
+        router.def('Permission')
+        router.def('Role')
+
+        // users
+        router.def('User.permissions')
         router.def('User', ['create', 'batch_update'], {permissions: 'user:manage'})
-        router.def('User', 'list', {permissions: 'user:manage'}).outFields('location real_name mobile email is_admin is_active has_login verified disabled')
-        router.def('User', 'update').beforeDbProcess((ctx, userInfo) => this._removeUnexpectedFields(ctx, userInfo))
-        router.get('/user/users/:user_id', '通过user_id获取用户信息', ctx => UserService.getUserByUserId(ctx.params.user_id))
-        router.get('/user/current', '获取当前用户信息', ctx => UserService.getUserByUserId(ctx.currentUserId))
-        router.get('/user/wechat', '获取微信登录用户信息', ctx => UserService.getThirdUserInfo(ctx.query), {permissions: []})
+        router.def('User', 'list', {permissions: 'user:manage'}).outFields('location real_name mobile email is_admin is_active vip_type has_login verified disabled')
+        router.def('User', 'update').beforeDbProcess((ctx, dbQuery, userInfo) => this._removeUnexpectedFields(ctx, dbQuery, userInfo))
+        router.get('/user/users/:user_id', t('getUserByUserId'), ctx => UserService.getUserByUserId(ctx.params.user_id, ctx.isAdmin() ? '' : ctx.currentUserId))
+        router.get('/user/current', t('getCurrentUserInfo'), ctx => this._getCurrentUserInfo(ctx), {open: true})
 
-        // 登录注册相关
-        router.post('/user/register', '用户注册', ctx => UserService.register(ctx.body), {permissions: []})
-        router.post('/user/register/third', '三方平台用户注册', ctx => UserService.registerThird(ctx.body), {permissions: []})
-        router.post('/user/login', '用户登录', ctx => UserService.login(ctx.body), {permissions: []})
-        router.post('/user/login/mobile', '手机验证码登录', ctx => UserService.loginWithMobile(ctx.body), {permissions: []})
-        router.post('/user/login/third', '三方平台用户登录', ctx => UserService.loginThird(ctx.body), {permissions: []})
-        router.post('/user/login_admin', '管理员登录', async ctx => this.loginAdmin(ctx), {permissions: []})
+        // login/register
+        router.post('/user/register', t('register'), ctx => UserService.register(ctx.body), {open: true})
+        router.post('/user/login', t('login'), ctx => UserService.login(ctx.body), {open: true})
+        router.post('/user/login_admin', t('loginAdmin'), async ctx => this._loginAdmin(ctx), {open: true})
 
-        // 修改重置密码
-        router.post('/user/password/change', '修改密码', ctx => UserService.changePassword(ctx.body))
-        router.post('/user/password/reset', '重置密码', ctx => UserService.resetPassword(ctx.body))
-        router.post('/user/mobile/bind', '绑定手机号', ctx => UserService.bindMobile(ctx.body))
+        // modify password
+        router.post('/user/password/change', t('changePassword'), ctx => UserService.changePassword(ctx.body, ctx.isAdmin() ? '' : ctx.currentUserId))
+        router.post('/user/password/reset', t('resetPassword'), ctx => UserService.resetPassword(ctx.body), {open: true})
+
+        // change user name
+        router.post('/user/user_name/change', t('changeUserName'), ctx => UserService.changeUserName(ctx.currentUserId, ctx.body))
     }
 
-    // 更新用户信息部分字段不允许修改
-    _removeUnexpectedFields(ctx, userInfo) {
+    // some fields are not allow to modify
+    _removeUnexpectedFields(ctx, dbQuery, userInfo) {
+        if (userInfo.user_name === 'superadmin') {
+            return Promise.reject({ message: t('errNotEditable'), code: ErrorCodes.GENERAL_ERR_UNAUTHORIZED })
+        }
+
         delete userInfo.user_id
         delete userInfo.user_name
         delete userInfo.has_login
@@ -48,10 +54,31 @@ class UserController {
         }
     }
 
-    async loginAdmin(ctx) {
+    async _getCurrentUserInfo(ctx) {
+        const curUserInfo = await UserService.getUserByUserId(ctx.currentUserId)
+        return curUserInfo || {}
+    }
+
+    async _getRolePermCategories() {
+        const roles = await Role.find({}, { distinct: 'category_name' })
+        const perms = await Permission.find({}, { distinct: 'category_name' })
+
+        const roleCats = roles.map((r) => r.category_name)
+        const permCats = perms.map((r) => r.category_name)
+
+        for (const cat of permCats) {
+            if (!roleCats.includes(cat)) {
+                roleCats.push(cat)
+            }
+        }
+
+        return roleCats
+    }
+
+    async _loginAdmin(ctx) {
         const userInfo = UserService.login(ctx.body)
         if (!userInfo.is_admin) {
-            return Promise.reject({ message: '非管理员用户', code: ErrorCodes.GENERAL_ERR_UNAUTHORIZED })
+            return Promise.reject({ message: t('errNotAdminUser'), code: ErrorCodes.GENERAL_ERR_UNAUTHORIZED })
         }
 
         return userInfo

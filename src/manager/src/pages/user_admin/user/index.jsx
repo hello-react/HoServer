@@ -1,22 +1,17 @@
 /* eslint-disable prefer-destructuring */
 /**
- * HoServer Manager Ver 1.0
+ * HoServer Manager Ver 2.0
  * Copyright http://hos.helloreact.cn
  *
  * create: 2020/01/20
- * author: Jack Zhang
- * */
+ */
 import './index.less'
 
-import {Icon} from "@ant-design/compatible"
-import {Avatar, Dropdown, Menu, Modal, Tag, Tooltip} from "antd"
+import { Icon } from "@ant-design/compatible"
+import { Common, MultiTags, TableLayout, TransferModal } from "@hosoft/hos-admin-common"
+import { Avatar, Dropdown, Menu, Modal, Tag, Tooltip } from "antd"
 import _ from 'lodash'
 import React, {Fragment} from 'react'
-
-import ListSelect from "@/components/Modals/ListSelect";
-import MultiTagItem from "@/components/MultiTagItem"
-import TableLayout from "@/layouts/TableLayout"
-import {ossProcessImg, setDefaultColumn} from "@/utils/utils"
 
 import UserService from "../service"
 import UserForm from './components/UserForm'
@@ -34,7 +29,7 @@ const getRowStyle = row => {
     return ''
 }
 
-const defTableColumns = setDefaultColumn([
+const defTableColumns = Common.setDefaultColumn([
     {
         searchFlag: 1,
         title: "用户Id",
@@ -48,7 +43,7 @@ const defTableColumns = setDefaultColumn([
         align: "center",
         width: 50,
         render: (text, record) => record.avatar ? (
-            <Avatar src={ossProcessImg(record.avatar, 50, 0, true)}/>
+            <Avatar src={Common.ossProcessImg(record.avatar, 50, 0, true)}/>
         ) : (
             <Avatar icon={<Icon type='user' />}/>
         )
@@ -149,7 +144,7 @@ const defTableColumns = setDefaultColumn([
         width: 120,
         hideInTable: true,
         render: (text, record) => (
-            <MultiTagItem tags={record.roles} editMode={0} />
+            <MultiTags tags={record.roles} editMode={0} />
         )
     },
     {
@@ -158,7 +153,7 @@ const defTableColumns = setDefaultColumn([
         width: 120,
         hideInTable: true,
         render: (text, record) => (
-            <MultiTagItem tags={record.permissions} editMode={0} />
+            <MultiTags tags={record.permissions} editMode={0} />
         )
     },
     {
@@ -248,7 +243,7 @@ class UserManage extends TableLayout {
 
         return (
             <Fragment>
-                <ListSelect
+                <TransferModal
                     title="设置角色"
                     visible={this.state.roleSettingVisible}
                     request={UserService.listRole}
@@ -256,8 +251,8 @@ class UserManage extends TableLayout {
                     onOk={values => {
                         this.setRole(values)
                     }}
-                ><span /></ListSelect>
-                <ListSelect
+                ><span /></TransferModal>
+                <TransferModal
                     title="设置权限"
                     visible={this.state.permSettingVisible}
                     request={UserService.listPermission}
@@ -265,7 +260,7 @@ class UserManage extends TableLayout {
                     onOk={values => {
                         this.setPermission(values)
                     }}
-                ><span /></ListSelect>
+                ><span /></TransferModal>
             </Fragment>
         )
     }

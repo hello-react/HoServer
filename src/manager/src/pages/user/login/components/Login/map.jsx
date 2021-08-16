@@ -9,7 +9,7 @@ export default {
             size: 'large',
             id: 'userName',
             prefix: <UserOutlined className={styles.prefixIcon} />,
-            placeholder: 'admin',
+            placeholder: '',
         },
         rules: [
             {
@@ -24,7 +24,7 @@ export default {
             prefix: <LockOutlined className={styles.prefixIcon} />,
             type: 'password',
             id: 'password',
-            placeholder: '123456',
+            placeholder: '',
         },
         rules: [
             {

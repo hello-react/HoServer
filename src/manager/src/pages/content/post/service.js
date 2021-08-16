@@ -1,8 +1,6 @@
+import {Constants, request} from '@hosoft/hos-admin-common'
 import {message} from "antd"
 import _ from "lodash"
-
-import Constants from '@/utils/constants'
-import request from '@/utils/request'
 
 const wrapper = {}
 

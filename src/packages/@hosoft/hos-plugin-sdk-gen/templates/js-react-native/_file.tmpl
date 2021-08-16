@@ -1,0 +1,31 @@
+FOLDER:{{main_cat}}
+FILE:{{EVAL:api.second_cat.toLowerCase()+'.js'}}
+/* eslint-disable */
+import { request, toast } from "../common/utils"
+import Constants from '../common/constants'
+
+const wrapper = {}
+
+{{API_START}}
+
+/**
+ * {{dis_name}}
+ * {{description}}
+ */
+wrapper.{{name}} = async ({{params}}) => {
+    const rep = await request({
+        url: `${Constants.SERVER_URL}${Constants.API_PREFIX}{{api_route}}`,
+        method: '{{method}}'
+    }, args)
+
+    if (rep.code / 1 !== 200) {
+        toast(`${rep && rep.message ? ':' + rep.message : ''}`)
+        return null
+    }
+
+    return rep.data
+}
+
+{{API_END}}
+
+export default wrapper

@@ -1,0 +1,45 @@
+{
+    "province": "海南省",
+    "prov_code": "46",
+    "city": "三沙市",
+    "city_code": "4603",
+    "districts": [
+        {
+            "_id": "5c1860612722b75024b9f5d5",
+            "code": "460323",
+            "district": "中沙群岛的岛礁及其海域",
+            "subdistricts": [
+                {
+                    "_id": "5c1860612722b75024b9f5d6",
+                    "code": "460323451",
+                    "subdistrict": "中沙岛礁"
+                }
+            ]
+        },
+        {
+            "_id": "5c1860612722b75024b9f5d3",
+            "code": "460321",
+            "district": "西沙群岛",
+            "subdistricts": [
+                {
+                    "_id": "5c1860612722b75024b9f5d4",
+                    "code": "460321451",
+                    "subdistrict": "永兴岛"
+                }
+            ]
+        },
+        {
+            "_id": "5c1860612722b75024b9f5d1",
+            "code": "460322",
+            "district": "南沙群岛",
+            "subdistricts": [
+                {
+                    "_id": "5c1860612722b75024b9f5d2",
+                    "code": "460322451",
+                    "subdistrict": "永暑岛"
+                }
+            ]
+        }
+    ],
+    "id": 245
+}

@@ -1,9 +1,9 @@
+import { Common } from "@hosoft/hos-admin-common"
 import { connect } from 'dva'
 import React from 'react'
 import Redirect from 'umi/redirect'
 
 import Authorized from '@/utils/Authorized'
-import { getRouteAuthority } from '@/utils/utils'
 
 const AuthComponent = ({
     children,
@@ -21,7 +21,7 @@ const AuthComponent = ({
 
     return (
         <Authorized
-            authority={getRouteAuthority(location.pathname, routes) || ''}
+            authority={Common.getRouteAuthority(location.pathname, routes) || ''}
             noMatch={isLogin ? <Redirect to="/exception/403" /> : <Redirect to="/user/login" />}
         >
             {children}

@@ -1,20 +1,18 @@
 /* eslint-disable @typescript-eslint/camelcase */
 /**
- * HoServer Manager Ver 1.0
+ * HoServer Manager Ver 2.0
  * Copyright http://hos.helloreact.cn
  *
  * create: 2020/01/20
- * author: Jack Zhang
- * */
+ */
 import '@ant-design/compatible/assets/index.css'
 
-import {Form as LegacyForm, Icon} from "@ant-design/compatible"
-import {Button, Col, Input, message, Modal, Row, Select} from 'antd'
+import { Form as LegacyForm, Icon } from "@ant-design/compatible"
+import { Constants} from '@hosoft/hos-admin-common'
+import { prompt } from '@hosoft/hos-admin-common'
+import { Button, Col, Input, message, Modal, Row, Select } from 'antd'
 import _ from 'lodash'
-import React, {useEffect, useImperativeHandle, useRef, useState} from 'react'
-
-import prompt from "@/third/antd-prompt"
-import Constants from "@/utils/constants"
+import React, { useEffect, useImperativeHandle, useRef, useState } from 'react'
 
 import UserService from "../../service"
 
@@ -83,8 +81,8 @@ const PermissionForm = LegacyForm.create()(props => {
         props.form.validateFields((err, fields) => {
             if (err) return
 
-            const permissionInstance = permissionRef.current
-            _.merge(permissionInstance, fields)
+            let permissionInstance = permissionRef.current
+            permissionInstance = _.merge(permissionInstance, fields)
             callback(permissionInstance)
         })
     }
@@ -134,7 +132,7 @@ const PermissionFormModal = props => {
     const formRef = React.createRef()
 
     const handleSubmit = () => {
-        formRef.current.getFormFields((values) => {
+        formRef.current.getFormFields(values => {
             console.log('PermissionForm submit: ', values)
 
             onOk && onOk(editMode, values, modelInstance)
