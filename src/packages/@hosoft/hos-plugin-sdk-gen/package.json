@@ -7,8 +7,9 @@
     "@hosoft/config": "^1.0.2",
     "@hosoft/restful-api-framework": "^1.5.3",
     "lodash": "^4.17.21",
+    "mkdirp": "^1.0.4",
     "moment": "^2.29.1",
-    "multistream": "^4.1.0",
-    "mkdirp": "^1.0.4"
-  }
+    "multistream": "^4.1.0"
+  },
+  "gitHead": "6b452565a5c2010878c4f11ee0e71da74e1caec4"
 }

@@ -9,6 +9,7 @@
     "@hosoft/restful-api-framework": "^1.5.3",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
-	"random-number": "^0.0.9"
-  }
+    "random-number": "^0.0.9"
+  },
+  "gitHead": "6b452565a5c2010878c4f11ee0e71da74e1caec4"
 }

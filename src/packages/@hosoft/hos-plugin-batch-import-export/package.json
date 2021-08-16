@@ -10,5 +10,6 @@
     "lodash": "^4.17.21",
     "mkdirp": "^1.0.4",
     "moment": "^2.29.1"
-  }
+  },
+  "gitHead": "6b452565a5c2010878c4f11ee0e71da74e1caec4"
 }

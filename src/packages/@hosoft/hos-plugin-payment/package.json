@@ -10,7 +10,8 @@
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
     "request-promise-any": "^1.0.9",
-    "xml2js": "^0.4.23",
-    "uuid": "^8.3.2"
-  }
+    "uuid": "^8.3.2",
+    "xml2js": "^0.4.23"
+  },
+  "gitHead": "6b452565a5c2010878c4f11ee0e71da74e1caec4"
 }
