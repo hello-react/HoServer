@@ -7,9 +7,9 @@
     "@hosoft/config": "^1.0.2",
     "@hosoft/restful-api-framework": "^1.5.3",
     "lodash": "^4.17.21",
-    "mkdirp": "^1.0.4",
     "moment": "^2.29.1",
-    "multistream": "^4.1.0"
+    "multistream": "^4.1.0",
+    "mkdirp": "^1.0.4"
   },
   "publishConfig": {
     "access": "public"

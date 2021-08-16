@@ -9,15 +9,15 @@
     "debug": "^4.3.2",
     "docsify": "^4.12.1",
     "lodash": "^4.17.21",
-    "mkdirp": "^1.0.4",
-    "mockjs": "^1.1.0",
     "moment": "^2.29.1",
-    "mongoose": "^5.13.3",
     "node-fetch": "^2.6.1",
-    "pluralize": "^8.0.0",
-    "random-number": "^0.0.9",
     "resolve-pathname": "^3.0.0",
-    "uuid": "^8.3.2"
+    "mkdirp": "^1.0.4",
+    "pluralize": "^8.0.0",
+    "mockjs": "^1.1.0",
+    "random-number": "^0.0.9",
+    "uuid": "^8.3.2",
+    "mongoose": "^5.13.3"
   },
   "publishConfig": {
     "access": "public"

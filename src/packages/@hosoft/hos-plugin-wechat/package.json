@@ -6,11 +6,11 @@
   "devDependencies": {
     "@hosoft/config": "^1.0.2",
     "@hosoft/restful-api-framework": "^1.5.3",
-    "express": "^4.17.1",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
-    "querystring": "^0.2.1",
-    "request": "^2.88.2"
+    "express": "^4.17.1",
+    "request": "^2.88.2",
+    "querystring": "^0.2.1"
   },
   "publishConfig": {
     "access": "public"
