@@ -18,6 +18,9 @@
     "config",
     "Node.js"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "Jack Zhang",
   "license": "MIT"
 }

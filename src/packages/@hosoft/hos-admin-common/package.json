@@ -37,5 +37,8 @@
     "name": "Jack Zhang",
     "email": "jhzzzz@gmail.com"
   },
-  "gitHead": "6b452565a5c2010878c4f11ee0e71da74e1caec4"
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "118136697bc312d472da7dd4c6fb74a082a14f40"
 }

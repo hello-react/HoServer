@@ -88,6 +88,9 @@
     "Node.js",
     "Headless CMS"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "Jack Zhang",
   "license": "MIT"
 }
