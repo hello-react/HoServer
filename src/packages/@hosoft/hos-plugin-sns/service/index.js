@@ -4,7 +4,7 @@
  *
  * create: 2018/11/18
 **/
-const MessageService = require('../../../../server/services/message/MessageService')
+// const MessageService = require('../../../../server/services/message/MessageService')
 const { CacheManager, Constants, ErrorCodes } = require('@hosoft/restful-api-framework/base')
 const { Comment, Content, Forward, Favorite, Friend, Like } = require('@hosoft/restful-api-framework/models')
 const { DbHelper } = require('@hosoft/restful-api-framework/helpers')

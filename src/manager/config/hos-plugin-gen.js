@@ -15,16 +15,22 @@ export default (api, opts) => {
                 const info = fs.statSync(fullPath)
                 if (info.isDirectory() && ele.startsWith('hos-plugin')) {
                     const pluginIndexFile = path.join(fullPath, 'admin', 'plugin-index.js')
-                    if (fs.existsSync(pluginIndexFile)) {
+                    const pluginDistFile = path.join(fullPath, 'dist', 'main.js')
+                    const hasIndex = fs.existsSync(pluginIndexFile)
+                    const hasDist = fs.existsSync(pluginDistFile)
+                    if (hasIndex || hasDist) {
                         try {
-                            const pos = pluginIndexFile.indexOf('node_modules/')
+                            const pos = pluginIndexFile.indexOf('node_modules')
                             const packageJson = JSON.parse(fs.readFileSync(path.join(fullPath, 'package.json')))
+                            const dir = hasIndex
+                                ? pluginIndexFile.substr(pos + 'node_modules'.length + 1).replace(/\\/g, '\\\\')
+                                : pluginDistFile.substr(pos + 'node_modules'.length + 1).replace(/\\/g, '\\\\')
                             plugins.push({
                                 name: ele,
                                 main: packageJson.main,
                                 version: packageJson.version,
                                 dis_name: packageJson.description,
-                                dir: pluginIndexFile.substr(pos + 13)
+                                dir: dir
                             })
                         } catch (ex) {
                             console.error(ex)

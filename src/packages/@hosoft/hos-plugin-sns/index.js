@@ -5,7 +5,7 @@
  * create: 2020/04/25
 **/
 const _ = require('lodash')
-const MessageService = require('../../../server/services/message/MessageService')
+// const MessageService = require('../../../server/services/message/MessageService')
 const { BaseHelper, DbHelper } = require('@hosoft/restful-api-framework/helpers')
 const { CacheManager } = require('@hosoft/restful-api-framework/base')
 const { Content, User } = require('@hosoft/restful-api-framework/models')

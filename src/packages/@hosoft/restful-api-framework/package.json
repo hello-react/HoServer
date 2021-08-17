@@ -1,6 +1,6 @@
 {
   "name": "@hosoft/restful-api-framework",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "description": "Base framework of the headless cms HoServer provided by http://helloreact.cn",
   "main": "index.js",
   "scripts": {
@@ -44,6 +44,7 @@
     "multistream": "^4.1.0",
     "mysql2": "^2.2.5",
     "node-discover": "^1.2.1",
+    "node-machine-id": "^1.1.12",
     "node-schedule": "^2.0.0",
     "password-validator": "^5.1.1",
     "pg": "^8.6.0",

@@ -1,6 +1,6 @@
 {
   "name": "@hosoft/hos-plugin-sns",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "HoServer plugin provide SNS capabilities(Friends, Comments, Favorites etc.)",
   "main": "index.js",
   "devDependencies": {
