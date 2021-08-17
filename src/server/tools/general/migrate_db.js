@@ -13,13 +13,18 @@ const app = express()
 
 Bootstrap.startServer(app, 3001, async (status, container) => {
     if (status === 'startSucess') {
-        // export_db(() => {
-        //     console.log('DONE!')
-        // })
-
-        import_db(() => {
-            console.log('DONE!')
-        })
+        const action = process.env.ACTION
+        if (action === 'export') {
+            export_db(() => {
+                console.log('DONE!')
+            })
+        } else if (action === 'import') {
+            import_db(() => {
+                console.log('DONE!')
+            })
+        } else {
+            console.log('invalid action')
+        }
     }
 })
 
@@ -28,6 +33,12 @@ const import_db = async (callback) => {
     const dataDir = path.join(__dirname, 'data', 'migrate')
 
     const dirs = fs.readdirSync(dataDir)
+    const pos = dirs.indexOf('Model')
+    if (pos > 0) {
+        dirs[pos] = dirs[0]
+        dirs[0] = 'Model'
+    }
+
     for (const dirname of dirs) {
         const filepath = path.resolve(dataDir, dirname)
         const stat = fs.statSync(filepath)
@@ -36,7 +47,7 @@ const import_db = async (callback) => {
             const modelDir = path.join(dataDir, dirname)
 
             // 删除所有数据
-            await model.deleteMany({}, true)
+            // await model.deleteMany({}, true)
             const recordFiles = fs.readdirSync(modelDir)
             for (const fileName of recordFiles) {
                 const fileExt = path.parse(fileName).ext
@@ -52,6 +63,11 @@ const import_db = async (callback) => {
             }
 
             console.log(`${dirname} import success, total ${recordFiles.length} records`)
+            if (dirname === 'Model') {
+                console.log('new Model imported, please restart')
+                fileUtils.deleteDirectory(filepath)
+                process.exit()
+            }
         }
     }
 
@@ -62,8 +78,11 @@ const export_db = async (callback) => {
     const allModels = require('@hosoft/restful-api-framework/models')
     const modelNames = _.keys(allModels)
 
-    const exportRecordModel = ['Content', 'Dictionary', 'Model', 'Permission', 'Role', 'Test', 'User']
-    const exportModelNames = [
+    const onlyModels = process.env.ONLY_MODEL ? process.env.ONLY_MODEL.split(',') : []
+    const addModels = process.env.ADD_MODEL ? process.env.ADD_MODEL.split(',') : []
+
+    let exportRecordModel = ['Content', 'Dictionary', 'Model', 'Permission', 'Role', 'Test', 'User']
+    let exportModelNames = [
         'Api',
         'Content',
         'Dictionary',
@@ -80,6 +99,16 @@ const export_db = async (callback) => {
         'User'
     ]
 
+    if (onlyModels && onlyModels.length > 0) {
+        exportRecordModel = onlyModels
+        exportModelNames = onlyModels
+    }
+
+    if (addModels && addModels.length > 0) {
+        exportRecordModel = _.concat(exportRecordModel, addModels)
+        exportModelNames = _.concat(exportModelNames, addModels)
+    }
+
     for (const modelName of modelNames) {
         if (!exportRecordModel.includes(modelName)) {
             continue
@@ -89,6 +118,10 @@ const export_db = async (callback) => {
             const model = allModels[modelName]
             const allRecords = await model.find({})
             const dataDir = path.join(__dirname, 'data', 'migrate', modelName)
+            if (fs.existsSync(dataDir)) {
+                await fileUtils.deleteDirectory(dataDir)
+            }
+
             fs.mkdirSync(dataDir, { recursive: true })
 
             let uniqueField = 'id'
@@ -100,6 +133,7 @@ const export_db = async (callback) => {
             }
 
             for (const record of allRecords) {
+                // 对于 Model 只导处指定数据
                 if (modelName === 'Model' && !exportModelNames.includes(record.name)) {
                     continue
                 }

@@ -1,6 +1,6 @@
 {
   "name": "@hosoft/hos-plugin-geo-location",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "HoServer plugin provide some country's region query",
   "main": "index.js",
   "devDependencies": {

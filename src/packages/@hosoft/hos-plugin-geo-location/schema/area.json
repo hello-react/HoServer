@@ -11,6 +11,21 @@
   "category_name" : "app",
   "properties" : [
     {
+      "auto_increment" : false,
+      "unique" : true,
+      "index" : true,
+      "input_flag" : 1,
+      "search_flag" : 1,
+      "output_flag" : 1,
+      "properties" : [],
+      "name" : "id",
+      "order" : 5,
+      "width" : 24,
+      "dis_name" : "Id",
+      "prop_type" : "objectId",
+      "description" : ""
+    },
+    {
       "relations" : {
         "rel_type" : "4",
         "name" : "PROVINCE"
@@ -28,7 +43,7 @@
       "order" : 10
     },
     {
-      "unique" : true,
+      "unique" : false,
       "index" : false,
       "require" : false,
       "width" : 64,
@@ -58,7 +73,7 @@
       "order" : 30
     },
     {
-      "unique" : true,
+      "unique" : false,
       "index" : false,
       "require" : false,
       "width" : 64,
@@ -99,7 +114,7 @@
           "order" : 10
         },
         {
-          "unique" : true,
+          "unique" : false,
           "require" : false,
           "width" : 64,
           "input_flag" : 1,

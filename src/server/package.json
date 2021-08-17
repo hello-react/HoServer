@@ -37,6 +37,7 @@
     "pluralize": "^8.0.0",
     "serve-favicon": "^2.5.0",
     "sqlstring": "^2.3.2",
+    "supertest": "^6.1.4",
     "xml2js": "^0.4.23"
   },
   "devDependencies": {

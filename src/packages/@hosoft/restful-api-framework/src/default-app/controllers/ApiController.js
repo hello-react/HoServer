@@ -49,8 +49,11 @@ class ApiController {
 
     async _syncRdbModel(ctx) {
         if (!ctx.error) {
-            const model = await BaseHelper.getDB('default').getModel(ctx.body)
-            await model.sync()
+            const defaultDbClass = BaseHelper.getDB('default')
+            if (defaultDbClass.constructor.name === 'RelationDB') {
+                const model = await defaultDbClass.getModel(ctx.body)
+                await model.sync()
+            }
         }
     }
 

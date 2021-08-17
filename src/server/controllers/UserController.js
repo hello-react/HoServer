@@ -23,7 +23,7 @@ class UserController {
         router.def('User', 'list', {permissions: 'user:manage'}).outFields('location real_name mobile email is_admin is_active vip_type has_login verified disabled')
         router.def('User', 'update').beforeDbProcess((ctx, dbQuery, userInfo) => this._removeUnexpectedFields(ctx, dbQuery, userInfo))
         router.get('/user/users/:user_id', t('getUserByUserId'), ctx => UserService.getUserByUserId(ctx.params.user_id, ctx.isAdmin() ? '' : ctx.currentUserId))
-        router.get('/user/current', t('getCurrentUserInfo'), ctx => this._getCurrentUserInfo(ctx), {open: true})
+        router.get('/user/current', t('getCurrentUserInfo'), ctx => this._getCurrentUserInfo(ctx))
 
         // login/register
         router.post('/user/register', t('register'), ctx => UserService.register(ctx.body), {open: true})

@@ -116,6 +116,10 @@ class Model {
      *  4 output include all sub properties
      */
     static setOutputFlag(prop, parent) {
+        if (!prop) {
+            return
+        }
+
         if (prop.array_level === undefined) {
             prop.array_level = parent ? parent.array_level : 0
         }
@@ -232,20 +236,27 @@ class Model {
 
         for (const prop of model.properties) {
             const queryKey = prop.name
+            const inputObjProp = inputObj[queryKey]
 
             if (prop.name === 'id' || prop.unique) {
                 if (prop.prop_type === Constants.API_FIELD_TYPE.objectId) {
-                    if (!inputObj[queryKey]) {
+                    if (!inputObjProp) {
                         if (isCreate) inputObj[queryKey] = this.getObjectId()
                     } else {
-                        inputObj[queryKey] = this.getObjectId(inputObj[queryKey])
+                        inputObj[queryKey] = this.getObjectId(inputObjProp)
                     }
                 }
             }
 
             // recursive check
-            if (prop.properties && prop.properties.length > 0 && prop.array_level < 2 && inputObj[queryKey]) {
-                this.makeId(inputObj[queryKey], prop, isCreate)
+            if (prop.properties && prop.properties.length > 0 && prop.array_level < 2 && inputObjProp) {
+                if (prop.prop_type.indexOf('array') > -1 && inputObjProp instanceof Array) {
+                    for (const inputObjAryItem of inputObjProp) {
+                        this.makeId(inputObjAryItem, prop, isCreate)
+                    }
+                } else {
+                    this.makeId(inputObjProp, prop, isCreate)
+                }
             }
         }
     }

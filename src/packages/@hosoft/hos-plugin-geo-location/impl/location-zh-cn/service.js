@@ -4,8 +4,11 @@
  *
  * create: 2018/11/18
 **/
+const fs = require('fs')
+const path = require('path')
 const { Area } = require('@hosoft/restful-api-framework/models')
 const { BaseHelper } = require('@hosoft/restful-api-framework/base')
+const { fileUtils } = require('@hosoft/restful-api-framework/utils')
 
 // 最新全国省\市\区县\街道3级区域数据缓存 (2018年12月)
 const locationCache = {}
@@ -14,12 +17,20 @@ const locationCache = {}
  * Third login service
  */
 class AreaService {
+    constructor() {
+        this.hasInit = false
+    }
+
     async initLocationCache(){
         let allCities = await Area.find({})
         if (allCities.length === 0) {
+            logger.info('initialize zh-cn location data, please wait...')
             await this.initLocationData()
+            logger.info('location data initialize finished!')
             allCities = await Area.find({})
         }
+
+        this.hasInit = true
 
         const provinces = {}
         const cities = {}
@@ -113,13 +124,14 @@ class AreaService {
 
     async initLocationData() {
         const dataDir = path.join(__dirname, 'data')
-        const recordFiles = fs.readdirSync()
+        const recordFiles = fs.readdirSync(dataDir)
         for (const fileName of recordFiles) {
             const fileExt = path.parse(fileName).ext
             if (fileExt && fileExt == '.json') {
                 const recordFile = path.join(dataDir, fileName)
                 const record = fileUtils.getJsonFile(recordFile)
                 try {
+                    delete record.id
                     await Area.create(record)
                 } catch (e) {
                     console.error('create area record failed: ' + recordFile, e)

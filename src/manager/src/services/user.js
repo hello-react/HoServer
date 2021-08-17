@@ -17,9 +17,10 @@ export async function queryCurrent() {
 
     if (rep.code / 1 !== 200) {
         message.error(`获取当前用户信息失败:  ${rep.message || '接口异常'}`)
-    } else {
-        return rep.data
+        return null
     }
+
+    return rep.data
 }
 
 /**

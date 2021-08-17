@@ -32,7 +32,7 @@ class Context {
         this.error = null
         this.finished = false
 
-        this.isDevMode = (process.env.NODE_ENV || 'default').toLowerCase().startsWith('dev')
+        this.isDevMode = /(default|dev)/i.test(process.env.NODE_ENV || 'default')
         this.apiParamSetter = {
             get: (target, prop) => this.checkGenApiInParam(target, prop),
             set: (target, prop, value) => {
