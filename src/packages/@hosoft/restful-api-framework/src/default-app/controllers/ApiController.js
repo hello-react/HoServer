@@ -1,4 +1,4 @@
-/* eslint-disable no-async-promise-executor,max-len */
+/* eslint-disable no-async-promise-executor */
 /**
  * HoServer API Server Ver 2.0
  * Copyright http://hos.helloreact.cn
@@ -18,33 +18,65 @@ const { Constants, BaseHelper, ErrorCodes } = require('../../base')
  * Api related route
  */
 class ApiController {
-    // prettier-ignore
     initRoutes(container, router) {
-        router.post('/api/sys_category', tf('setSysCategoryName'), async ctx => ApiService.setSysCategoryName(ctx.body), { model: 'Api' })
+        // system category
+        router.post(
+            '/api/sys_category',
+            tf('setSysCategoryName'),
+            async (ctx) => ApiService.setSysCategoryName(ctx.body),
+            { model: 'Api' }
+        )
 
         // Model related api
-        router.def('Model', 'detail', { permission: [] }).beforeProcess(this._getServiceMeta).afterProcess(async ctx => this._fillModeldetail(_.get(ctx, 'result')))
-        router.def('Model', 'list')
-            .beforeDbProcess(async (ctx, query) => this._sortAndRemoveUnpublic(ctx, query))
-            .afterProcess(async ctx => this._fillModelRelInfo(_.get(ctx, ['result', 'list'])))
+        router
+            .def('Model', 'detail', { permission: [] })
+            .beforeProcess(this._getServiceMeta)
+            .afterProcess(async (ctx) => this._fillModeldetail(_.get(ctx, 'result')))
 
-        router.def('Model', ['create', 'update']).afterProcess(async ctx => this._syncRdbModel(ctx))
-        router.def('Model', ['delete', 'batch_delete']).beforeProcess(async ctx => this._checkReference(ctx, 1))
+        router
+            .def('Model', 'list')
+            .beforeDbProcess(async (ctx, query) => this._sortAndRemoveUnpublic(ctx, query))
+            .afterProcess(async (ctx) => this._fillModelRelInfo(_.get(ctx, ['result', 'list'])))
+
+        router.def('Model', ['create', 'update']).afterProcess(async (ctx) => this._syncRdbModel(ctx))
+        router.def('Model', ['delete', 'batch_delete']).beforeProcess(async (ctx) => this._checkReference(ctx, 1))
         router.def('Model.properties')
 
         // dictionary related api
-        router.get('/api/dictionaries/categories', tf('getDictCategories'), async ctx => ApiService.getDictCategories(), { private: true, type: 1 })
+        router.get(
+            '/api/dictionaries/categories',
+            tf('getDictCategories'),
+            async (ctx) => ApiService.getDictCategories(),
+            { private: true, type: 1 }
+        )
+
         router.def('Dictionary', ['detail'])
         router.def('Dictionary', ['create', 'update', 'list'], { private: true })
-        router.def('Dictionary', ['delete', 'batch_delete'], { private: true }).beforeProcess(async ctx => this._checkReference(ctx, 3))
+        router
+            .def('Dictionary', ['delete', 'batch_delete'], { private: true })
+            .beforeProcess(async (ctx) => this._checkReference(ctx, 3))
 
         // Api related
-        router.get('/api/apis', tf('getApiList'), async ctx => ApiService.getApiList(ctx.query, ctx.isSuperadmin()), { model: 'Api' })
-        router.get('/api/apis/:id', tf('getApiDetailt'), async ctx => ApiService.getApiDetailt(ctx.req.params.id), { model: 'Api' })
-        router.post('/api/apis/:id', tf('updateApi'), async ctx => ApiService.updateApi(ctx.req.params.id, ctx.body), { model: 'Api' })
+        router.get('/api/apis', tf('getApiList'), async (ctx) => ApiService.getApiList(ctx.query, ctx.isSuperadmin()), {
+            model: 'Api'
+        })
+
+        router.get('/api/apis/:id', tf('getApiDetailt'), async (ctx) => ApiService.getApiDetailt(ctx.req.params.id), {
+            model: 'Api'
+        })
+
+        router.post(
+            '/api/apis/:id',
+            tf('updateApi'),
+            async (ctx) => ApiService.updateApi(ctx.req.params.id, ctx.body),
+            { model: 'Api' }
+        )
 
         // Service related api
-        router.get('/api/services', tf('getServiceList'), async ctx => ApiService.getServiceList(ctx.query), { category: 'system', type: 1 })
+        router.get('/api/services', tf('getServiceList'), async (ctx) => ApiService.getServiceList(ctx.query), {
+            category: 'system',
+            type: 1
+        })
     }
 
     async _syncRdbModel(ctx) {
