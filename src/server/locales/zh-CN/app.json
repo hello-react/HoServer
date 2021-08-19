@@ -3,6 +3,13 @@
   "errNotAdminUser": "非管理员用户",
   "errNotEditable": "不允许修改",
 
+  "getAnnounce": "获取系统公告内容",
+  "setAnnounce": "设置系统公告内容",
+  "getSiteMaintainInfo": "获取系统维护信息",
+  "setSiteMaintainInfo": "设置系统维护信息",
+  "getClientVersion": "获取客户端版本信息",
+  "clientReadyMsg": "客户端启动完毕",
+
   "getMessageList": "获取消息列表",
   "setMessageReadStatus": "设置消息阅读状态",
   "getRolePermCategories": "获取权限角色分类列表",
@@ -16,11 +23,6 @@
   "resetPassword": "重置密码",
 
   "////////// services": "//////////",
-  "minute": "分钟",
-  "hour": "小时",
-  "day": "天",
-  "week": "周",
-  "month": "月",
 
   "errNoUserOrPass": "请输入用户名和密码",
   "errUserNotExists": "用户不存在",

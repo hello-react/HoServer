@@ -7,6 +7,7 @@
 const config = require('@hosoft/config')
 const rn = require('random-number')
 const SMSClient = require('@alicloud/sms-sdk')
+const SMSService = require('../../service')
 const { ErrorCodes } = require('@hosoft/restful-api-framework/base')
 const { User } = require('@hosoft/restful-api-framework/models')
 
@@ -63,8 +64,8 @@ class AliSMSService {
                 TemplateParam: templateParam
             })
 
-            await this.saveSMS(mobile, code)
-            logger.info('UserService sendSMS result: ' + sendSMSResult)
+            await SMSService.saveSMS(mobile, code)
+            logger.info('UserService sendSMS result: ', sendSMSResult)
 
             return 'success'
         } catch (e) {
@@ -73,7 +74,7 @@ class AliSMSService {
             } else if (e.code === 'isv.MOBILE_NUMBER_ILLEGAL') {
                 return Promise.reject({ message: tp('errMobileNumber'), code: ErrorCodes.GENERAL_ERR_THIRD_SERVICE })
             } else {
-                return Promise.reject({ message: tp('errSendSMS'), detail: e.message || '', code: ErrorCodes.GENERAL_ERR_UNEXPECTED })
+                return Promise.reject({ message: `${tp('errSendSMS')}, detail: ${e.message || ''}`, code: ErrorCodes.GENERAL_ERR_UNEXPECTED })
             }
         }
     }

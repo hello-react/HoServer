@@ -64,13 +64,13 @@ const UserLayout = props => {
                     links={[
                         {
                             key: '快速[RESTful Api + 管理平台]开发脚手架',
-                            title: 'HO SERVER 官网',
+                            title: 'HOSERVER 官网',
                             href: 'http://hos.helloreact.cn',
                             blankTarget: true,
                         },
                         {
                             key: '开箱即用跨平台 App 开发脚手架',
-                            title: 'HO APP BASE',
+                            title: 'HOMOBILE',
                             href: 'http://hab.helloreact.cn',
                             blankTarget: true,
                         },

@@ -1,16 +1,16 @@
 {
   "name": "@hosoft/hos-plugin-geo-location",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "HoServer plugin provide some country's region query",
   "main": "index.js",
   "devDependencies": {
     "@hosoft/config": "^1.0.2",
-    "@hosoft/restful-api-framework": "^2.0.0",
+    "@hosoft/restful-api-framework": "^2.0.5",
     "lodash": "^4.17.21",
     "moment": "^2.29.1"
   },
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "06848f4dde254df44d2b5ca7b6e7788fe3cb6cfc"
+  "gitHead": "1e9cb25f68bce55f9a809d6234b80de73ee79e2f"
 }

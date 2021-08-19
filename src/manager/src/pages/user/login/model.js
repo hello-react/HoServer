@@ -1,10 +1,9 @@
 import { Common } from '@hosoft/hos-admin-common'
 import { routerRedux } from 'dva/router'
 
-// TODO：sms plugin
-// import { sendSMS } from '@/services/system'
 import { userLogin } from '@/services/user'
 import { setAuthority,setAutologinInfo } from '@/utils/authority'
+import PluginManager from '@/utils/plugin-manager'
 
 const Model = {
     namespace: 'userAndlogin',
@@ -44,7 +43,10 @@ const Model = {
         },
 
         *getCaptcha({ payload }, { call }) {
-            yield call(sendSMS, payload)
+            const smsPlugin = PluginManager.getLocalPlugin('hos-plugin-sms')
+            if (smsPlugin) {
+                yield call(smsPlugin.instance.sendSMS, payload)
+            }
         },
     },
     reducers: {

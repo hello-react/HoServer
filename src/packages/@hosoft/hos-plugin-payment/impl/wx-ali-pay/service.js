@@ -61,7 +61,7 @@ class Service {
 
         const product = this.products.find(p => p.product_code === product_id)
         if (!product) {
-            return Promise.reject({ message: tp('errParameter'), code: ErrorCodes.GENERAL_ERR_PARAM })
+            return Promise.reject({ message: tf('errParameter'), code: ErrorCodes.GENERAL_ERR_PARAM })
         }
 
         let price = product.fee * count
@@ -155,7 +155,7 @@ class Service {
 
         const product = this.products.find(p => p.product_code === product_id)
         if (!product) {
-            return Promise.reject({ message: tp('errParameter'), code: ErrorCodes.GENERAL_ERR_PARAM })
+            return Promise.reject({ message: tf('errParameter'), code: ErrorCodes.GENERAL_ERR_PARAM })
         }
 
         let price = product.fee * count

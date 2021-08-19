@@ -50,7 +50,7 @@ const before = async (context) => {
             let userInfo = await CacheManager.getCache('UserInfo', decoded.id)
             if (!userInfo) {
                 userInfo = await User.findOne({ user_id: context.currentUserId })
-                await BaseHelper.getServiceInst('User').setUserRolePermission(userInfo)
+                await BaseHelper.getServiceInst('UserService').setUserRolePermission(userInfo)
                 await CacheManager.setCache('UserInfo', decoded.id, userInfo, 600) // expire after 10 minutes
             }
 

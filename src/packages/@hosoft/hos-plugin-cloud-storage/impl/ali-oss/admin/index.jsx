@@ -34,7 +34,7 @@ const AliOSSUpload = props => {
 
     const loadUploadPolicy = async () => {
         const policyReq = await request(`${Constants.API_PREFIX}/upload/oss/policy`, { method: 'GET' })
-        if (policyReq.code / 1 !== 200) {
+        if (policyReq.status / 1 !== 0) {
             message.error(`获取 OSS 上传策略失败: ${policyReq.message}`)
             return false
         }

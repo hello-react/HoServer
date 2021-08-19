@@ -830,18 +830,14 @@ class Container {
 
         const services = await this._scanLocalServices()
         for (const service of services) {
-            if (this.services[service.name]) {
-                throw new Error(`${service.name}Service has already exist, please modify service file name`)
+            const serviceKey = service.category_name ? `${service.category_name}/${service.name}` : service.name
+            if (this.services[serviceKey]) {
+                throw new Error(`${serviceKey}Service has already exist, please modify service file name`)
             }
 
             // load service apis
             service.instance = require(service.file)
-            // if (service.instance.getServiceDesc) {
-            //     const serviceDesc = service.instance.getServiceDesc() || {}
-            //     service.description = serviceDesc.description || ''
-            // }
-
-            this.services[service.name] = service
+            this.services[serviceKey] = service
         }
 
         logger.debug(`loadServices, total: ${Object.keys(this.services).length} of ${services.length} loaded`)
@@ -902,12 +898,12 @@ class Container {
             pa.forEach((ele, index) => {
                 const info = fs.statSync(dir + '/' + ele)
                 if (info.isDirectory()) {
-                    loopServiceDir(dir + '/' + ele, category ? `${category}/${ele}` : ele)
+                    loopServiceDir(dir + '/' + ele, category)
                 } else {
                     const fileName = ele.endsWith('.jsc') ? path.basename(ele, '.jsc') : path.basename(ele, '.js')
                     if (fileName.endsWith('Service')) {
                         serviceFiles.push({
-                            name: fileName.substr(0, fileName.lastIndexOf('Service')),
+                            name: fileName,
                             category_name: category,
                             file: dir + '/' + ele
                         })
@@ -917,7 +913,7 @@ class Container {
         }
 
         // system default app services
-        loopServiceDir(path.join(__dirname, '..', 'default-app', 'services'), 'default')
+        loopServiceDir(path.join(__dirname, '..', 'default-app', 'services'), 'sys')
         loopServiceDir(path.join(global.APP_PATH, 'services'), '')
         return serviceFiles
     }

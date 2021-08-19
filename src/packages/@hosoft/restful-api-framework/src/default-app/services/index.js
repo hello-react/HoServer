@@ -7,7 +7,11 @@
  **/
 
 const ApiService = require('./api/ApiService')
+const ContentService = require('./content/ContentService')
+const MessageService = require('./message/MessageService')
 
 module.exports = {
-    ApiService
+    ApiService,
+    ContentService,
+    MessageService
 }

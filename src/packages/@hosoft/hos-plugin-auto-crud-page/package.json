@@ -1,6 +1,6 @@
 {
   "name": "@hosoft/hos-plugin-auto-crud-page",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "HoServer plugin used for auto generate CRUD page for admin site",
   "main": "dist/main.js",
   "dependencies": {
@@ -8,14 +8,14 @@
     "@ant-design/icons": "^4.6.2",
     "@ant-design/pro-layout": "4.11.4",
     "@ant-design/pro-table": "^2.45.0",
-    "@hosoft/hos-admin-common": "^1.0.0",
+    "@hosoft/hos-admin-common": "^1.0.2",
     "antd": "^4.16.8",
     "dva": "^2.4.1",
-    "moment": "^2.29.1",
     "lodash": "^4.17.11",
+    "moment": "^2.29.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-beautiful-dnd": "^13.1.0"
+    "react-beautiful-dnd": "^13.1.0",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
@@ -23,11 +23,11 @@
     "@babel/preset-react": "^7.14.5",
     "babel-loader": "^8.2.2",
     "babel-plugin-inline-react-svg": "^2.0.1",
-    "style-loader": "^0.23.1",
-    "css-loader": "^2.1.1"
+    "css-loader": "^2.1.1",
+    "style-loader": "^0.23.1"
   },
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "118136697bc312d472da7dd4c6fb74a082a14f40"
+  "gitHead": "1e9cb25f68bce55f9a809d6234b80de73ee79e2f"
 }

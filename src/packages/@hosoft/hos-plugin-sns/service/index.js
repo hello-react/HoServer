@@ -4,10 +4,10 @@
  *
  * create: 2018/11/18
 **/
-// const MessageService = require('../../../../server/services/message/MessageService')
 const { CacheManager, Constants, ErrorCodes } = require('@hosoft/restful-api-framework/base')
 const { Comment, Content, Forward, Favorite, Friend, Like } = require('@hosoft/restful-api-framework/models')
 const { DbHelper } = require('@hosoft/restful-api-framework/helpers')
+const { MessageService } = require('@hosoft/restful-api-framework/services')
 
 /**
  * SNS Service
@@ -60,7 +60,7 @@ class Index {
      */
     async updateContentStat(userId, type, count, idList) {
             if (!['like', 'comment', 'forward', 'favorite'].includes(type)) {
-            return Promise.reject({ message: tp('errParameter'), code: ErrorCodes.GENERAL_ERR_PARAM })
+            return Promise.reject({ message: tf('errParameter'), code: ErrorCodes.GENERAL_ERR_PARAM })
         }
 
         if (idList instanceof Array) {
@@ -117,7 +117,7 @@ class Index {
     async deleteFavorite(userId, args) {
         const { id, type, type_id } = args
         if (!(userId && (id || (type && type_id)))) {
-            return Promise.reject({ message: tp('errParameter'), code: ErrorCodes.GENERAL_ERR_PARAM })
+            return Promise.reject({ message: tf('errParameter'), code: ErrorCodes.GENERAL_ERR_PARAM })
         }
 
         const query = {
@@ -148,7 +148,7 @@ class Index {
     async deleteFriend(userId, args) {
         const { id, friend_user_id } = args
         if (!(userId && (id || friend_user_id))) {
-            return Promise.reject({ message: tp('errParameter'), code: ErrorCodes.GENERAL_ERR_PARAM })
+            return Promise.reject({ message: tf('errParameter'), code: ErrorCodes.GENERAL_ERR_PARAM })
         }
 
         const query = {

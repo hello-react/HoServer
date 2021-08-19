@@ -22,12 +22,12 @@ class Service {
     async saveAppStorePay(user_id, args) {
         const { pay_by, product_id, data, receipt } = context.params
         if (!(user_id && pay_by && product_id && receipt)) {
-            return Promise.reject({ message: tp('errParameter'), code: ErrorCodes.GENERAL_ERR_PARAM })
+            return Promise.reject({ message: tf('errParameter'), code: ErrorCodes.GENERAL_ERR_PARAM })
         }
 
         const product = this.products.find(p => p.product_code === product_id)
         if (!product) {
-            return Promise.reject({ message: tp('errParameter'), code: ErrorCodes.GENERAL_ERR_PARAM })
+            return Promise.reject({ message: tf('errParameter'), code: ErrorCodes.GENERAL_ERR_PARAM })
         }
 
         const newPayment = {

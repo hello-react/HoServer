@@ -1,7 +1,7 @@
 const config = require('@hosoft/config')
 const jwt = require('jsonwebtoken')
 const PasswordValidator = require('password-validator')
-const { BaseHelper, ErrorCodes, PluginManager } = require('@hosoft/restful-api-framework/base')
+const { BaseHelper, CacheManager, ErrorCodes, PluginManager } = require('@hosoft/restful-api-framework/base')
 const { Role, User } = require('@hosoft/restful-api-framework/models')
 const tokenExpireTime = config.get('jwt.expire') || '1d'
 
@@ -44,6 +44,7 @@ class UserService {
                 return Promise.reject({ message: t('errUserFreezed'), code: ErrorCodes.USER_ERR_DISABLED })
             }
 
+            CacheManager.deleteCache('UserInfo', String(userInfo.user_id))
             return this.fillUserInfo(userInfo)
         } else {
             return Promise.reject({ message: t('errWrongUserOrPassword'), code: ErrorCodes.USER_ERR_PASSWORD })

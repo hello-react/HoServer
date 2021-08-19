@@ -1,4 +1,4 @@
-const MessageService = require('../services/message/MessageService')
+const { MessageService } = require('@hosoft/restful-api-framework/services')
 
 /**
  * Message api，used for system notification, user messages, badges etc.

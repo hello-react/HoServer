@@ -18,7 +18,7 @@ class SMSService {
         // prettier-ignore
         const smsResult = await SMS.find({
             mobile
-        }).sort({ created_at: -1 }).limit(1)
+        }, { sort: { created_at: -1 }, limit: 1})
 
         if (smsResult && smsResult.length > 0) {
             const firstSMS = smsResult[0]

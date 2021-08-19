@@ -25,7 +25,7 @@ class Database {
                 class: MongoDB
             },
             {
-                name: ['mysql', 'postgres', 'mysql', 'mssql', 'mariadb', 'sqlite'],
+                name: ['mysql', 'postgres', 'mssql', 'mariadb', 'sqlite'],
                 class: RDB
             }
         ]

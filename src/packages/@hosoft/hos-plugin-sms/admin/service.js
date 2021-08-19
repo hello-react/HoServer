@@ -5,7 +5,7 @@ import {message} from 'antd'
  * 获取验证码短信
  * @param mobile
  */
-export async function sendSMS(mobile) {
+export async function sendSmsAliyun(mobile) {
     const rep = await request(`${Constants.API_PREFIX}/system/sms/aliyun`, {
         method: 'GET',
         params: { check_exists: true, mobile }

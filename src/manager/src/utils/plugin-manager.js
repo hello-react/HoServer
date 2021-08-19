@@ -52,6 +52,10 @@ class PluginManager {
         return this.serverSidePlugins
     }
 
+    getInstalledPlugins() {
+        return pluginList
+    }
+
     async getPluginList() {
         const result = []
         const serverSidePlugins = await this.getServerPlugins()
@@ -100,6 +104,30 @@ class PluginManager {
         }
 
         return result
+    }
+
+    getLocalPlugin(pluginName) {
+        return pluginList.find(p => p.name === pluginName)
+    }
+
+    getDefaultImpl(pluginName) {
+        const plugin = this.serverSidePlugins.find(p => p.name === pluginName)
+        if (!plugin) {
+            return ''
+        }
+
+        return plugin.default_impl || ''
+    }
+
+    async isPluginEnabled(pluginName) {
+        const plugins = await this.getServerPlugins()
+        const plugin = plugins.find(p => p.name === pluginName)
+        if (plugin) {
+            return plugin.enabled
+        }
+
+        const localPlugin = pluginList.find(p => p.name === pluginName)
+        return !!localPlugin
     }
 
     setRenderHook(hookName, func) {

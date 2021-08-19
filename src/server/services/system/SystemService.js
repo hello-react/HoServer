@@ -1,20 +1,12 @@
-/**
- * HoServer API Server Ver 2.0
- * Copyright http://hos.helloreact.cn
- *
- * create: 2018/11/18
- **/
-const fileUtils = require('../../../utils/file-utils')
 const moment = require('moment')
-const PluginManager = require('../../../base/plugin-manager')
-const { ApiService } = require('../../services')
-const { Content, SiteMaintain } = require('../../../models')
-const { ErrorCodes } = require('../../../base')
+const { BaseHelper, ErrorCodes } = require('@hosoft/restful-api-framework/base')
+const { Content, SiteMaintain } = require('@hosoft/restful-api-framework/models')
+const { fileUtils } = require('@hosoft/restful-api-framework/utils')
 
 /**
  * default system service
  */
-class DefSystemService {
+class SystemService {
     constructor() {
         this.init()
     }
@@ -22,7 +14,7 @@ class DefSystemService {
     async init() {
         const maintainInfo = await this.getSiteMaintainInfo()
         if (maintainInfo) {
-            await ApiService.setSiteMaintainInfo(maintainInfo)
+            await BaseHelper.getContainer().enableMaintainInfo(maintainInfo)
         }
     }
 
@@ -70,7 +62,7 @@ class DefSystemService {
      * set system maintain info
      */
     async setSiteMaintainInfo(args) {
-        await ApiService.setSiteMaintainInfo(args)
+        await BaseHelper.getContainer().enableMaintainInfo(args)
 
         if (args.id) {
             return SiteMaintain.updateOne({ id: args.id }, args)
@@ -127,24 +119,6 @@ class DefSystemService {
 
         return this.clientVersion[clientType]
     }
-
-    /**
-     * get installed plugins
-     * @param args
-     */
-    async installedPlugins(args) {
-        return PluginManager.getInstalledPlugins()
-    }
-
-    /**
-     * enable or disable plugin
-     * @param args
-     * @returns {Promise<void>}
-     */
-    async enablePlugin(args) {
-        const { name, enabled, package_info } = args
-        return await PluginManager.enablePlugin(name, enabled, package_info)
-    }
 }
 
-module.exports = new DefSystemService()
+module.exports = new SystemService()

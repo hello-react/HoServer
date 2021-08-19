@@ -6,43 +6,16 @@
  **/
 const _ = require('lodash')
 const config = require('@hosoft/config')
-const DefSystemService = require('../services/system/DefSystemService')
+const SystemService = require('../services/system/SystemService')
 const { Constants } = require('../../base')
 
 /**
- * system manage related api
+ * System management related api
  */
 class SystemController {
     initRoutes(container, router) {
         // server logs
         router.def('ServerLog', ['list'])
-
-        // system announce, maintain info
-        router.get('/system/announce', tf('getAnnounce'), async (ctx) => DefSystemService.getAnnounce(), {
-            open: true,
-            type: 1
-        })
-        router.post('/system/announce', tf('setAnnounce'), async (ctx) => DefSystemService.setAnnounce(ctx.body), {
-            name: 'setSystemAnnounce',
-            private: true,
-            type: 1
-        })
-        router.get(
-            '/system/maintain',
-            tf('getSiteMaintainInfo'),
-            async (ctx) => DefSystemService.getSiteMaintainInfo(),
-            { open: true, type: 1 }
-        )
-        router.post(
-            '/system/maintain',
-            tf('setSiteMaintainInfo'),
-            async (ctx) => DefSystemService.setSiteMaintainInfo(ctx.body),
-            {
-                name: 'setSystemMaintainInfo',
-                private: true,
-                type: 1
-            }
-        )
 
         // system configs
         router.get('/system/configs', tf('getSystemConfigs'), async (ctx) => this._getSystemConfigs(), {
@@ -51,34 +24,18 @@ class SystemController {
             type: 1
         })
 
-        // client version, ad banner info
-        router.get(
-            '/system/client_version',
-            tf('getClientVersion'),
-            (ctx) => DefSystemService.getClientVersion(ctx.query.client_type),
-            { type: 1 }
-        )
-        router.post(
-            '/system/client/ready',
-            tf('clientReadyMsg'),
-            async (ctx) => DefSystemService.clientReadyMsg(ctx.currentUserId, ctx.body),
-            {
-                type: 1
-            }
-        )
-
-        // system plugins
+        // plugins management
         router.get(
             '/system/plugins/installed',
             tf('installedPlugins'),
-            (ctx) => DefSystemService.installedPlugins(ctx.query),
+            (ctx) => SystemService.installedPlugins(ctx.query),
             {
                 open: true,
                 type: 1
             }
         )
 
-        router.post('/system/plugins/enable', tf('enablePlugins'), (ctx) => DefSystemService.enablePlugin(ctx.body), {
+        router.post('/system/plugins/enable', tf('enablePlugins'), (ctx) => SystemService.enablePlugin(ctx.body), {
             type: 1
         })
     }
@@ -87,6 +44,7 @@ class SystemController {
         return config.getConfigs()
     }
 
+    // deprecated
     _setDesc(items, descItems) {
         const keys = _.keys(items)
         for (const key of keys) {

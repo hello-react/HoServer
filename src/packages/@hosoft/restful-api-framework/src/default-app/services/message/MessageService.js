@@ -1,8 +1,9 @@
 const _ = require('lodash')
 const moment = require('moment')
-const { CacheManager, Constants, ErrorCodes } = require('@hosoft/restful-api-framework/base')
-const { DbHelper } = require('@hosoft/restful-api-framework/helpers')
-const { Message, MessageReadStatus, User } = require('@hosoft/restful-api-framework/models')
+
+const { CacheManager, Constants, ErrorCodes } = require('../../../base')
+const { DbHelper } = require('../../../../helpers')
+const { Message, MessageReadStatus, User } = require('../../../models')
 
 /**
  * System message service
@@ -218,37 +219,37 @@ class MessageService {
         if (rangeSec < 60) {
             slot = 1
             range = Math.ceil(rangeSec)
-            range_unit = t('minute')
+            range_unit = tf('minute')
         }
         // within 1 day
         else if (rangeSec < 1440 /* 60*24 */) {
             slot = 2
             range = Math.ceil(rangeSec / 60)
-            range_unit = t('hour')
+            range_unit = tf('hour')
         }
         // witin 1 week
         else if (rangeSec < 10080 /* 60*24*7 */) {
             slot = 3
             range = Math.ceil(rangeSec / 1440)
-            range_unit = t('day')
+            range_unit = tf('day')
         }
         // within 1 month
         else if (rangeSec < 43200 /* 60*24*30 */) {
             slot = 4
             range = Math.ceil(rangeSec / 10080)
-            range_unit = t('week')
+            range_unit = tf('week')
         }
         // within 3 month
         else if (rangeSec < 131040 /* 60*24*91 */) {
             slot = 5
             range = Math.ceil(rangeSec / 43200)
-            range_unit = t('month')
+            range_unit = tf('month')
         }
         // more than 3 months
         else {
             slot = 6
             range = Math.ceil(rangeSec / 43200)
-            range_unit = t('month')
+            range_unit = tf('month')
         }
 
         return {

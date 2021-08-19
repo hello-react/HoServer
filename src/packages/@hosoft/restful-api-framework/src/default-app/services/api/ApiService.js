@@ -231,15 +231,6 @@ class ApiService {
     }
 
     /**
-     * set system maintain info
-     * @param args
-     * @returns {Promise<void>}
-     */
-    async setSiteMaintainInfo(args) {
-        BaseHelper.getContainer().enableMaintainInfo(args)
-    }
-
-    /**
      * fill category name
      */
     async fillCategoryInfo(dataList) {

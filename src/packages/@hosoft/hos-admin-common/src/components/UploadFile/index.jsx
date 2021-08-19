@@ -1,6 +1,7 @@
 /* eslint-disable prefer-destructuring */
 import React from 'react'
 
+import {pluginManager} from '../../common/common'
 import Uploader from './LocalWebUpload'
 
 /*
@@ -18,8 +19,18 @@ usage:
  */
 
 const UploadFile = props => {
+    let UploaderComp = null
+
+    if (props.cloud !== false) {
+        const storagePlugin = pluginManager().getLocalPlugin('hos-plugin-cloud-storage')
+        if (storagePlugin) {
+            UploaderComp = storagePlugin.instance.getUploadComponent()
+            // console.log('storage component: ', UploaderComp)
+        }
+    }
+
     return (
-        <Uploader {...props} />
+        <UploaderComp {...props} />
     )
 }
 
