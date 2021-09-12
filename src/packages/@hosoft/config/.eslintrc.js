@@ -27,7 +27,7 @@ module.exports = {
         "eqeqeq": [0, "smart"],
         "indent": [0, 4],
         'linebreak-style': 0,
-        'max-len': ["error", { "code": 150 }],
+        'max-len': ["error", { "code": 120 }],
         "no-plusplus": 0,
         "prefer-promise-reject-errors": 0,
         "prettier/prettier": ["error", {
