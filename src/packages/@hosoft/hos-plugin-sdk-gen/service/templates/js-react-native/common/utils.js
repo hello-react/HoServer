@@ -2,9 +2,9 @@
 import request from './request'
 import Common from '../../utils/common'
 
-const toast = Common.toast
+const message = Common.toast
 
 export {
     request,
-    toast
+    message
 }

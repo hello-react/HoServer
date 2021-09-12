@@ -24,7 +24,7 @@ Bootstrap.startServer(app, 3001, async (status, container) => {
  * @param callback
  * @returns {Promise<void>}
  */
-const execute_script = async (callback) => {
+const execute_script = async callback => {
     const { User } = require('@hosoft/restful-api-framework/models')
     // do something here
 

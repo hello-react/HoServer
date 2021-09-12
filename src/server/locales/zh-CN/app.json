@@ -17,6 +17,7 @@
   "getCurrentUserInfo": "获取当前用户信息",
   "register": "用户注册",
   "login": "用户登录",
+  "logout": "用户登出",
   "loginAdmin": "管理员登录",
   "changePassword": "修改密码",
   "changeUserName": "修改用户名",

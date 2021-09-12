@@ -8,6 +8,7 @@
 const BaseHelper = require('../../base/helpers/base-helper')
 const config = require('@hosoft/config')
 const Constants = require('../../base/constants/constants')
+const fs = require('fs')
 const mkdirp = require('mkdirp')
 const moment = require('moment')
 const multer = require('multer')
@@ -22,25 +23,37 @@ const serverUrl = config.get('server.serverUrl')
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, path.join(global.APP_PATH, 'public/uploads'))
+        cb(null, global.APP_PATH)
     },
     filename: async function (req, file, cb) {
         const hookObj = { query: req.query, fileInfo: {} }
-        await BaseHelper.getContainer().executeHook('uploadFile', null, null, hookObj)
 
-        const category = hookObj.fileInfo.category || req.query.category || 'temp'
-        const saveTo = hookObj.fileInfo.saveTo || category + '/' + moment().format('/YYYY-MM/DD/hhmmSSS/')
-        const dir = path.join(global.APP_PATH, 'public/uploads', saveTo)
+        const category = req.query.category || 'temp'
+        const fileName = req.query.filename || file.originalname
+        const isTemp = req.query.is_temp || false
 
+        const saveTo =
+            (isTemp + '' === 'true' ? '/temp' : '/public/uploads') +
+            `/${category}/` +
+            moment().format('YYYY-MM/DD/hhmmSSS/')
+        const dir = path.join(global.APP_PATH, saveTo)
         mkdirp.sync(dir)
 
-        cb(null, saveTo + file.originalname)
+        hookObj.fileInfo.saveTo = saveTo
+        hookObj.fileInfo.fileName = fileName
+
+        await BaseHelper.getContainer().executeHook('uploadFile', null, null, hookObj)
+        cb(null, hookObj.fileInfo.saveTo + hookObj.fileInfo.fileName)
     }
 })
 
 const upload = multer({ storage: storage })
 router.post(Constants.API_PREFIX + '/upload', upload.single('file'), (req, res) => {
-    return res.send(serverUrl + '/public/uploads/' + req.file.filename)
+    if (req.file.filename.indexOf('/public') == 0) {
+        return res.send(serverUrl + req.file.filename)
+    }
+
+    res.send(fs.existsSync(path.join(global.APP_PATH, req.file.filename)) ? 'success' : '')
 })
 
 module.exports = router

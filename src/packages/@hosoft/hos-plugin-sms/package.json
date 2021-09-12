@@ -1,8 +1,11 @@
 {
   "name": "@hosoft/hos-plugin-sms",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "HoServer SMS plugin",
   "main": "index.js",
+  "dependencies": {
+    "@alicloud/sms-sdk": "^1.1.6"
+  },
   "devDependencies": {
     "@alicloud/sms-sdk": "^1.1.6",
     "@hosoft/config": "^1.0.2",
@@ -14,5 +17,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "1e9cb25f68bce55f9a809d6234b80de73ee79e2f"
+  "gitHead": "d6214cd1e4748c77e110ef47ffc13b7495c47a87"
 }

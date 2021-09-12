@@ -18,10 +18,12 @@ export default (api, opts) => {
                     const pluginDistFile = path.join(fullPath, 'dist', 'main.js')
                     const hasIndex = fs.existsSync(pluginIndexFile)
                     const hasDist = fs.existsSync(pluginDistFile)
+                    let jsonFile = ''
                     if (hasIndex || hasDist) {
                         try {
+                            jsonFile = path.join(fullPath, 'package.json')
                             const pos = pluginIndexFile.indexOf('node_modules')
-                            const packageJson = JSON.parse(fs.readFileSync(path.join(fullPath, 'package.json')))
+                            const packageJson = JSON.parse(fs.readFileSync(jsonFile))
                             const dir = hasIndex
                                 ? pluginIndexFile.substr(pos + 'node_modules'.length + 1).replace(/\\/g, '\\\\')
                                 : pluginDistFile.substr(pos + 'node_modules'.length + 1).replace(/\\/g, '\\\\')
@@ -33,7 +35,7 @@ export default (api, opts) => {
                                 dir: dir
                             })
                         } catch (ex) {
-                            console.error(ex)
+                            console.error(ex, jsonFile)
                         }
                     }
                 }

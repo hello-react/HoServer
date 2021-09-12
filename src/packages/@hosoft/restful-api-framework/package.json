@@ -1,6 +1,6 @@
 {
   "name": "@hosoft/restful-api-framework",
-  "version": "2.0.5",
+  "version": "2.0.7",
   "description": "Base framework of the headless cms HoServer provided by http://helloreact.cn",
   "main": "index.js",
   "scripts": {
@@ -19,11 +19,13 @@
     "cookie-parser": "^1.4.5",
     "cookie-session": "^1.4.0",
     "crypto": "^1.0.1",
+    "crypto-js": "^4.1.1",
     "defaults": "^1.0.3",
     "ejs": "^3.1.6",
     "exceljs": "^4.2.1",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
+    "generate-password": "^1.6.1",
     "hddserial": "^0.0.7",
     "i18next": "^20.3.5",
     "i18next-fs-backend": "^1.1.1",
@@ -94,5 +96,5 @@
   },
   "author": "Jack Zhang",
   "license": "MIT",
-  "gitHead": "1e9cb25f68bce55f9a809d6234b80de73ee79e2f"
+  "gitHead": "d6214cd1e4748c77e110ef47ffc13b7495c47a87"
 }

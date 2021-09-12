@@ -209,6 +209,9 @@ const wrapper = {
             }
 
             return true
+        } else if (prop.input_flag === 0) {
+            wrapper._makeError(result, 'not-allowed', { prop: prop.name, name: prop.dis_name })
+            return false
         }
 
         let dt
@@ -386,6 +389,9 @@ const wrapper = {
                         break
                     case 'require':
                         errmessages.push(tf('errInputRequire', { name: field.name, prop: field.prop }))
+                        break
+                    case 'not-allowed':
+                        errmessages.push(tf('errInputNotAllowed', { name: field.name, prop: field.prop }))
                         break
                     case 'exist':
                         errmessages.push(tf('errInputExist', { name: field.name, prop: field.prop }))

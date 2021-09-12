@@ -9,8 +9,8 @@ import '@ant-design/compatible/assets/index.css'
 import './ModelForm.less'
 
 import { Form as LegacyForm, Icon } from "@ant-design/compatible";
-import { Constants } from '@hosoft/hos-admin-common'
-import { ModelService } from '@hosoft/hos-admin-common'
+import { Constants , ModelService } from '@hosoft/hos-admin-common'
+
 import { Button, Col, Input, message, Modal, Row, Select, Switch, Tag, Tooltip } from 'antd'
 import _ from "lodash";
 import React, { useEffect, useImperativeHandle, useRef, useState } from 'react'
@@ -74,7 +74,7 @@ const ModelForm = LegacyForm.create()(props => {
         ) : null
     }
 
-    const setDbTableName = () => {
+    const getDbTableName = () => {
         const modelName = props.form.getFieldValue('name')
         const categoryName = props.form.getFieldValue('category_name')
         if (!(categoryName && modelName)) {
@@ -82,6 +82,18 @@ const ModelForm = LegacyForm.create()(props => {
         }
 
         return `${categoryName}_${modelName}`.toLowerCase()
+    }
+
+    const setRouteName = value => {
+        const defDbName = getDbTableName()
+        if (value && defDbName !== value) {
+            const categoryName = props.form.getFieldValue('category_name')
+            const dbRouteName = `${categoryName}/${value.replace(`${categoryName}_`, '')}`
+            const routeName = props.form.getFieldValue('route_name')
+            if (routeName !== dbRouteName) {
+                props.form.setFieldsValue({route_name: dbRouteName})
+            }
+        }
     }
 
     const getFormValues = callback => {
@@ -141,7 +153,7 @@ const ModelForm = LegacyForm.create()(props => {
                         {required: true, message: '对象名称必填'},
                         {pattern: '^([A-Za-z0-9_\\-]){1,}$', message: '只允许英文字母数字和下划线'}
                     ]
-                })(<Input placeholder="请输入英文字母数字和下划线" onChange={() => setDbTableName()} />)}
+                })(<Input placeholder="请输入英文字母数字和下划线" />)}
             </LegacyForm.Item>
             <LegacyForm.Item required label="显示名称">
                 {getFieldDecorator('dis_name', {
@@ -189,12 +201,12 @@ const ModelForm = LegacyForm.create()(props => {
             </LegacyForm.Item>
             <LegacyForm.Item label="数据库表名" extra="对应 Mongodb 集合名称，建议使用默认值">
                 {getFieldDecorator('db_table', {
-                    initialValue: setDbTableName(),
+                    initialValue: getDbTableName(),
                     rules: [
                         {required: true, message: '数据库表名必填'},
                         {pattern: '^([A-Za-z0-9_\\-]){1,}$', message: '只允许英文字母数字和下划线'}
                     ]
-                })(<Input placeholder="请输入英文字母数字和下划线" />)}
+                })(<Input placeholder="请输入英文字母数字和下划线" onChange={e => setRouteName(e.target.value)} />)}
             </LegacyForm.Item>
             <LegacyForm.Item label="对象属性列表" required>
                 <PropertiesList modelMeta={modelRef.current || {}} editMode={editMode} onOk={values => {

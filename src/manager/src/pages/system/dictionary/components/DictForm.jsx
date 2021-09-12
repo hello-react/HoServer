@@ -8,8 +8,7 @@
 import '@ant-design/compatible/assets/index.css'
 
 import { Form as LegacyForm, Icon } from "@ant-design/compatible"
-import { Constants } from '@hosoft/hos-admin-common'
-import { prompt } from '@hosoft/hos-admin-common'
+import { Constants, prompt } from '@hosoft/hos-admin-common'
 import { Button, Col, Input, message, Modal, Row, Select } from 'antd'
 import _ from 'lodash'
 import React, { useEffect, useImperativeHandle, useRef, useState } from 'react'

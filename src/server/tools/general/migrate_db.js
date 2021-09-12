@@ -28,7 +28,7 @@ Bootstrap.startServer(app, 3001, async (status, container) => {
     }
 })
 
-const import_db = async (callback) => {
+const import_db = async callback => {
     const allModels = require('@hosoft/restful-api-framework/models')
     const dataDir = path.join(__dirname, 'data', 'migrate')
 
@@ -74,7 +74,7 @@ const import_db = async (callback) => {
     callback && callback(true)
 }
 
-const export_db = async (callback) => {
+const export_db = async callback => {
     const allModels = require('@hosoft/restful-api-framework/models')
     const modelNames = _.keys(allModels)
 

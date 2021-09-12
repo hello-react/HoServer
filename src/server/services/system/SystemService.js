@@ -78,11 +78,12 @@ class SystemService {
      */
     async clientReadyMsg(user_id, args) {
         const { build, platform, client_type } = args
-        if (!(user_id && build && platform && client_type)) {
-            return Promise.reject({ message: tf('errParameter'), code: ErrorCodes.GENERAL_ERR_PARAM })
+
+        const clientVersion = {}
+        if ((client_type, build)) {
+            await this.getClientVersion(client_type, build)
         }
 
-        const clientVersion = await this.getClientVersion(client_type, build)
         const announces = await this.getAnnounce(1)
         const adContent = await Content.find(
             {
@@ -94,8 +95,8 @@ class SystemService {
         )
 
         return {
-            serverTime: moment().format('YYYY-MM-DD HH:mm:ss'),
-            clientVer: clientVersion,
+            server_time: moment().format('YYYY-MM-DD HH:mm:ss'),
+            client_ver: clientVersion,
             announces: announces,
             ad: adContent
         }

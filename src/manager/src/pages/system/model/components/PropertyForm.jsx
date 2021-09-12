@@ -8,9 +8,7 @@
 import '@ant-design/compatible/assets/index.css'
 
 import { Form as LegacyForm, Icon } from "@ant-design/compatible";
-import { Constants } from '@hosoft/hos-admin-common'
-import { ModelService } from '@hosoft/hos-admin-common'
-import { prompt } from '@hosoft/hos-admin-common'
+import { Constants, prompt, ModelService } from '@hosoft/hos-admin-common'
 import { Button, Col, Input, InputNumber, message, Modal, Row, Select, Switch } from 'antd'
 import _ from 'lodash'
 import React, { useEffect, useImperativeHandle, useRef, useState } from 'react'
@@ -34,6 +32,7 @@ const PropertyForm = LegacyForm.create()(props => {
     const [selModelProps, setSelModelProps] = useState([])
     const [propType, setPropType] = useState('')
     const [unique, setUnique] = useState(false)
+    const [hasInputEnum, setHasInputEnum] = useState(false)
 
     const isObjectType = objectTypes.indexOf(propType) > -1
     const isAuto = propType === 'auto'
@@ -160,9 +159,9 @@ const PropertyForm = LegacyForm.create()(props => {
                 console.log('handleInputEnum enumStr: ', enumStr)
                 enumValue = eval(`(${ enumStr })`)
             } catch {
-                message.info('你输入的不是 JSON，尝试按 key=value 提取')
                 const lines = enumStr.split(/[\r\n]/g)
                 const result = {}
+                let valid = true
                 for (const line of lines) {
                     const parts = line.split(/[:：=]/g)
                     if (parts.length === 2) {
@@ -171,10 +170,16 @@ const PropertyForm = LegacyForm.create()(props => {
                         if (key && value) {
                             result[key] = value
                         }
+                    } else {
+                        valid = false
+                        message.info(`${line} 尝试按key=value方式提取失败`)
+                        break
                     }
                 }
 
-                enumValue = _.keys(result).length > 0 ? result : null
+                if (valid) {
+                    enumValue = _.keys(result).length > 0 ? result : null
+                }
             }
         }
 
@@ -182,8 +187,10 @@ const PropertyForm = LegacyForm.create()(props => {
             relations.rel_type = 2
             relations.name = JSON.stringify(enumValue)
             setRelations({...relations})
+            setHasInputEnum(true)
         } else {
             message.info('不是有效字典格式，请检查输入')
+            setHasInputEnum(false)
         }
     }
 
@@ -254,6 +261,7 @@ const PropertyForm = LegacyForm.create()(props => {
                     values.index = true
                 }
                 values.require = true
+                values.input_flag = 2
             } else if (isObjectType) {
                 values.index = false
             }
@@ -353,7 +361,7 @@ const PropertyForm = LegacyForm.create()(props => {
                         </Col>
                         <Col span={8}>
                             <Button disabled={relations.rel_type != 2} onClick={handleInputEnum}>
-                                输入字典枚举
+                                {hasInputEnum ? '已输入' : '输入字典枚举'}
                             </Button>
                         </Col>
                         <Col span={8} />

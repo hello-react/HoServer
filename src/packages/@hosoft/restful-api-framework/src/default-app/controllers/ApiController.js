@@ -75,7 +75,8 @@ class ApiController {
         // Service related api
         router.get('/api/services', tf('getServiceList'), async (ctx) => ApiService.getServiceList(ctx.query), {
             category: 'system',
-            type: 1
+            type: 1,
+            model: 'Api'
         })
     }
 

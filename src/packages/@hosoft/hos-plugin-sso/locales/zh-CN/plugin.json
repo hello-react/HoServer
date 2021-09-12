@@ -1,0 +1,6 @@
+{
+  "checkAuthenticated": "检查用户是否已登录当前应用",
+  "appLogin": "检查单点登录token并自动登录",
+  "caLogin": "根据请求发放单点登录token",
+  "verifyToken": "验证单点登录token, 返回关联登录用户信息"
+}

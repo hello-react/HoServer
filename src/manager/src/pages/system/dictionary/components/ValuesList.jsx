@@ -71,12 +71,13 @@ const ValuesList = props => {
             } else {
                 valuesRef.current = _.concat([], dictInstance.values || [])
             }
+
+            actionRef.current.reload()
         }
     }, [visible])
 
     const loadData = params => {
         let data
-
         const isDesc = params.sort && params.sort.indexOf('-') === 0
         if (isDesc) {
             params.sort = params.sort.substr(1)
@@ -187,6 +188,18 @@ const ValuesList = props => {
         })
     }
 
+    const handleResortValues = () => {
+        const newValues = _.orderBy(valuesRef.current, 'order')
+        let index = 5
+        for (let i=0; i<newValues.length; i++) {
+            newValues[i].order = index
+            index += 5
+        }
+
+        valuesRef.current = newValues
+        actionRef.current.reload()
+    }
+
     const handleClose = () => setVisible(false)
 
     const values = valuesRef.current
@@ -220,7 +233,7 @@ const ValuesList = props => {
                 >
                     <ProTable
                         actionRef={actionRef}
-                        rowKey={r => `${r.key}${r.order}`}
+                        rowKey={r => `${r.key}`}
                         options={{search: false}}
                         onFullScreen={() => {
                             if (windowSize.width === Constants.MODEL_TABLE_WIDTH) {
@@ -256,15 +269,7 @@ const ValuesList = props => {
                                     </Dropdown>
                                 ) : null,
                                 <Button key="resort" onClick={() => {
-                                    const newValues = _.orderBy(valuesRef.current, 'order')
-                                    let index = 5
-                                    for (let i=0; i<newValues.length; i++) {
-                                        newValues[i].order = index
-                                        index += 5
-                                    }
-
-                                    valuesRef.current = newValues
-                                    actionRef.current.reload()
+                                    handleResortValues()
                                 }}>重编序号</Button>,
                                 <Button key="new" icon={<PlusOutlined />} type="primary" onClick={async () => {
                                     await setValueEditMode(1)
@@ -279,7 +284,7 @@ const ValuesList = props => {
                                 已选择 <a style={{ fontWeight: 600 }}>{selectedRowKeys.length}</a> 项
                             </div>
                         )}
-                        request={loadData}
+                        request={params => loadData(params)}
                         columns={tableColumns}
                         rowSelection={editMode ? {} : null}
                     />

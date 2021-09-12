@@ -1,6 +1,6 @@
 const Bootstrap = require('@hosoft/restful-api-framework')()
 
-module.exports = async (app) => {
+module.exports = async app => {
     const config = require('@hosoft/config')
     const port = process.env.PORT || config.get('server.port')
 

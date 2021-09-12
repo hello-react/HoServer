@@ -8,14 +8,14 @@ class MessageController {
         router.get(
             '/messages',
             t('getMessageList'),
-            (ctx) => MessageService.getMessageList(ctx.currentUserId, ctx.query),
+            ctx => MessageService.getMessageList(ctx.currentUserId, ctx.query),
             { model: 'Message' }
         )
 
         router.post(
             '/message/read_status',
             t('setMessageReadStatus'),
-            (ctx) => MessageService.setMessageReadStatus(ctx.currentUserId, ctx.body),
+            ctx => MessageService.setMessageReadStatus(ctx.currentUserId, ctx.body),
             { model: 'Message' }
         )
     }

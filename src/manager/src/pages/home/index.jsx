@@ -45,7 +45,7 @@ const PageHeaderContent = ({ currentUser }) => {
 class Home extends Component {
     constructor() {
         super()
-        this.showIntrduce = true
+        this.showIntrduce = false
     }
 
     renderActivities = item => {

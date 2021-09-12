@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 const API_SERVER_URL = 'http://localhost:3001'
 const IMAGE_URL = API_SERVER_URL + '/public/branding/'
 
-const PRODUCT_NAME = 'HoServer'
+const PRODUCT_NAME = '强磁场实验平台'
 const THEME_COLOR = 'dark'
 // demo replace(localhost:3000|monitor.helloreact.cn)
 const MONITOR_URL = 'http://localhost:3000/'

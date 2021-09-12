@@ -7,7 +7,7 @@
  */
 import '@ant-design/compatible/assets/index.css'
 
-import { Form as LegacyForm, Icon } from "@ant-design/compatible";
+import { Form as LegacyForm, Icon } from "@ant-design/compatible"
 import { DownOutlined, PlusOutlined } from '@ant-design/icons'
 import { BadgeButton, Common, Constants, JsonViewModal, ProTable } from '@hosoft/hos-admin-common'
 import { Badge, Button, Divider, Dropdown, Menu, message, Modal } from 'antd'
@@ -15,6 +15,8 @@ import _ from 'lodash'
 import React, {useEffect, useRef, useState} from 'react'
 
 import PropertyForm from "./PropertyForm"
+
+const {API_FIELD_TYPE} = Constants
 
 const getInputFlag = () => {
     return [
@@ -310,20 +312,29 @@ const PropertiesList = props => {
 
     const handleBatchModify = (records, field, value) => {
         const setPropertyValues = () => {
+            let count = 0
             const curProperties = thisRef.current.properties
             for (const record of records) {
                 const existIndex = curProperties.findIndex(v => v.name === record.name)
                 if (existIndex > -1) {
+                    if (field === 'index' && (value === 'hashed' || value === 'text') && record.prop_type !== 'char') {
+                        message.warn('哈希/全文索引只能用于 MongoDb 字符类型数据')
+                        continue
+                    }
+
                     const newRecord = {...curProperties[existIndex]}
                     newRecord[field] = value
                     curProperties[existIndex] = newRecord
+                    count++
 
                     // console.log(`handleBatchModify, ${record.name} => ${value}`)
                 }
             }
 
             actionRef.current.reload()
-            message.info('设置完毕')
+            if (count > 0) {
+                message.info('设置完毕')
+            }
         }
 
         records.length > 10 ?
@@ -394,6 +405,16 @@ const PropertiesList = props => {
                                             } else if (e.key.endsWith('flag')) {
                                                 const parts = e.key.split('-')
                                                 handleBatchModify(selectedRows, parts[1], parseInt(parts[0], 10))
+                                            } else if (e.key.endsWith('index')) {
+                                                const parts = e.key.split('-')
+                                                let value = parts[0]
+                                                if (value === 'true') {
+                                                    value = true
+                                                } else if (value === 'false') {
+                                                    value = false
+                                                }
+
+                                                handleBatchModify(selectedRows, parts[1], value)
                                             }
                                         }}>
                                             <Menu.Item key="remove">删除</Menu.Item>
@@ -411,6 +432,12 @@ const PropertiesList = props => {
                                             <Menu.SubMenu title="查询选项">
                                                 <Menu.Item key="0-search_flag">禁止查询</Menu.Item>
                                                 <Menu.Item key="1-search_flag">精确匹配</Menu.Item>
+                                            </Menu.SubMenu>
+                                            <Menu.SubMenu title="索引类型">
+                                                <Menu.Item key="false-index">无索引</Menu.Item>
+                                                <Menu.Item key="true-index">默认索引</Menu.Item>
+                                                <Menu.Item key="hashed-index">哈希索引(hashed)</Menu.Item>
+                                                <Menu.Item key="text-index">全文索引(text)</Menu.Item>
                                             </Menu.SubMenu>
                                         </Menu>
                                     }>
@@ -443,7 +470,24 @@ const PropertiesList = props => {
                                     <Button icon={<PlusOutlined />} type="primary">
                                         新建
                                     </Button>
-                                </PropertyForm>
+                                </PropertyForm>,
+                                <Button type="primary" onClick={() => {
+                                    thisRef.current.properties.splice(0, 0, {
+                                        "unique" : true,
+                                        "index" : true,
+                                        "order": 0,
+                                        "output_flag": 1,
+                                        "search_flag": 1,
+                                        "properties" : null,
+                                        "require" : false,
+                                        "name" : "id",
+                                        "dis_name" : "Id",
+                                        "prop_type" : API_FIELD_TYPE.objectId
+                                    })
+                                    actionRef.current.reload()
+                                }}>
+                                    新建Id
+                                </Button>
                             ]
                         }}
                         tableAlertRender={selectedRowKeys => (

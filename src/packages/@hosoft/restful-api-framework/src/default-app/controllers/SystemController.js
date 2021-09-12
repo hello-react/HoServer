@@ -31,12 +31,14 @@ class SystemController {
             (ctx) => SystemService.installedPlugins(ctx.query),
             {
                 open: true,
-                type: 1
+                type: 1,
+                model: 'Plugin'
             }
         )
 
         router.post('/system/plugins/enable', tf('enablePlugins'), (ctx) => SystemService.enablePlugin(ctx.body), {
-            type: 1
+            type: 1,
+            model: 'Plugin'
         })
     }
 

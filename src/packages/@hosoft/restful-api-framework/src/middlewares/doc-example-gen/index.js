@@ -22,7 +22,7 @@ const after = async (context) => {
 
     // in dev mode always use last result
     if (!context.error && context.result) {
-        if (api.input_example === undefined || context.isDevMode) {
+        if (api.input_example === undefined || (!api.modified && context.isDevMode)) {
             let input = api.method === 'GET' || api.method === 'DELETE' ? req.query : req.body
             input = JSON.parse(JSON.stringify(input))
             const simpleInput = simplifyArray(input)
@@ -31,7 +31,11 @@ const after = async (context) => {
             await ApiService.updateApi(api.id, { input_example: api.input_example })
         }
 
-        if (context.isDevMode || api.output_example === undefined || !(api.out_fields && api.out_fields.length > 0)) {
+        if (
+            api.output_example === undefined ||
+            (!api.modified && context.isDevMode) ||
+            !(api.out_fields && api.out_fields.length > 0)
+        ) {
             // remove un-needed runtime properties
             const result = JSON.parse(JSON.stringify(context.result))
 

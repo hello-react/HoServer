@@ -192,7 +192,7 @@ class ApiManage extends TableLayout {
     }
 
     loadData = async params => {
-        params.page_size = 30
+        params.page_size = 300
         const result = await ModelService.getModelDataListTable(this.modelName, params)
         const data = _.get(result, 'data', [])
 

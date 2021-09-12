@@ -34,7 +34,7 @@ const apiEditableFields = [
 
 const allActions = [...Constants.API_DEF_ROUTE_ACTIONS, 'batch_update', 'batch_delete']
 const systemModels = ['Api', 'Model', 'Service', 'Plugin']
-const unPublicModels = [...systemModels, 'ServerLog', 'ClientLog', 'SiteMaintain']
+const unPublicModels = [...systemModels, 'ServerLog', 'ClientLog', 'SiteMaintain', 'Plugin']
 
 // container instance
 let containerInstance = null
@@ -225,8 +225,10 @@ class Container {
                         if (modifiedApi[field].length > 0) {
                             _.merge(defApi[field], modifiedApi[field])
                         }
-                    } else if (modifiedApi[field]) {
+                    } else if (typeof modifiedApi[field] === 'object') {
                         _.merge(defApi[field], modifiedApi[field])
+                    } else if (modifiedApi[field]) {
+                        defApi[field] = modifiedApi[field]
                     }
                 }
             }

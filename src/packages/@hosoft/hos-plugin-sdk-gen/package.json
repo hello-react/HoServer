@@ -1,6 +1,6 @@
 {
   "name": "@hosoft/hos-plugin-sdk-gen",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "HoServer plugin for auto generate api client SDK files of common languages",
   "main": "index.js",
   "devDependencies": {
@@ -14,5 +14,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "1e9cb25f68bce55f9a809d6234b80de73ee79e2f"
+  "gitHead": "d6214cd1e4748c77e110ef47ffc13b7495c47a87"
 }

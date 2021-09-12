@@ -18,8 +18,12 @@ class QueryConverter {
 
         const newSelFields = []
         let fields
-        if (typeof selectFields === 'object') {
+        let isObject = false
+        if (selectFields instanceof Array) {
+            fields = selectFields
+        } else if (typeof selectFields === 'object') {
             fields = _.keys(selectFields)
+            isObject = true
         } else if (typeof selectFields === 'string') {
             fields = selectFields.split(/[\s,]/)
         }
@@ -34,7 +38,7 @@ class QueryConverter {
                 }
             }
 
-            if (!k.endsWith('_rel') && !k.startsWith('-') && selectFields[k]) {
+            if (!k.endsWith('_rel') && !k.startsWith('-') && (!isObject || selectFields[k])) {
                 newSelFields.push(key)
             }
         }

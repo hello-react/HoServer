@@ -34,6 +34,15 @@ class Config {
     }
 
     /**
+     * create a new instance
+     * @param options
+     * @returns {Config}
+     */
+    newInstance(options) {
+        return new Config(options)
+    }
+
+    /**
      * load configuration file
      */
     reload(options) {

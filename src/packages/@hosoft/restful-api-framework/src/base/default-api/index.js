@@ -453,6 +453,9 @@ class DefaultApiHandler {
             return Promise.reject({ message: `invalid model ${api.model}`, code: ErrorCodes.GENERAL_ERR_NOT_FOUND })
         }
 
+        const forceDelete = context.query.force || false
+        delete context.query.force
+
         const query = await this.getRouteQueryParams(context, api)
         const dbQuery = { ...context.query, ...query }
         if (Object.keys(dbQuery).length === 0) {
@@ -477,7 +480,12 @@ class DefaultApiHandler {
                 return 'hooked'
             }
 
-            result = await model.delete(dbQuery)
+            const deletedProp = model.getProperty('deleted')
+            if (!forceDelete && deletedProp) {
+                result = await model.update(dbQuery, { deleted: true })
+            } else {
+                result = await model.delete(dbQuery)
+            }
         }
 
         if (!api.model.toLowerCase().endsWith('log')) {

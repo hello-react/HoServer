@@ -182,6 +182,7 @@ class RouteProxy {
         if (!mainCategory && api.model) {
             const model = BaseHelper.getModel(api.model)
             mainCategory = model ? model.meta.category_name : ''
+            secondCategory = api.model
         }
 
         let routePath = ''
@@ -197,8 +198,9 @@ class RouteProxy {
             const parts = routePath.split('/')
             if (parts.length > 0) {
                 // const part1 = pluralize(parts[0], 1) // sns has problem
-                const part0 = pluralize(parts[0], 1)
-                const part1 = parts.length === 1 ? pluralize(parts[0], 1) : parts[1]
+                const part0 = categoryNameDict[parts[0]] ? parts[0] : pluralize(parts[0], 1)
+                const part1 =
+                    parts.length === 1 ? (categoryNameDict[parts[0]] ? pluralize(parts[0], 1) : parts[0]) : parts[1]
                 // ex: /api/v1/payment/prepay/wx, make same category as Payment model
                 if (!mainCategory && modelNameMap[part1]) {
                     const routeModel = BaseHelper.getModel(modelNameMap[part1].name)
@@ -213,13 +215,15 @@ class RouteProxy {
                     api.main_catname = getCategoryDisName(part0, true)
                 }
 
-                if (parts.length > 1) {
-                    secondCategory = pluralize(parts[1], 1)
-                    api.second_catname = getCategoryDisName(secondCategory)
-                } else {
-                    secondCategory = part1 || '_default'
-                    api.second_catname = getCategoryDisName(secondCategory)
+                if (!secondCategory) {
+                    if (parts.length > 1) {
+                        secondCategory = categoryNameDict[parts[1]] ? pluralize(parts[1], 1) : parts[1]
+                    } else {
+                        secondCategory = part1
+                    }
                 }
+
+                api.second_catname = getCategoryDisName(secondCategory || '_default')
 
                 // ex: app/active_code, when active_code is not in dict
                 if (!api.second_catname) {

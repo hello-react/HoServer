@@ -77,7 +77,7 @@ class RelationDB {
     initDb(dbConfig, dbType) {
         return new Promise((resolve, reject) => {
             const dbConnectionUrl = dbConfig.url
-            sequelize = new Sequelize(dbConnectionUrl, { operatorsAliases, logging: false })
+            sequelize = new Sequelize(dbConnectionUrl, { operatorsAliases, logging: true })
 
             sequelize
                 .authenticate()

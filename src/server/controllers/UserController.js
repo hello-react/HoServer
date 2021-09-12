@@ -11,7 +11,7 @@ class UserController {
         router.get(
             '/user/roles/categories',
             t('getRolePermCategories'),
-            (ctx) => {
+            ctx => {
                 return this._getRolePermCategories()
             },
             { model: 'Role', private: true }
@@ -32,28 +32,29 @@ class UserController {
             .def('User', 'update')
             .beforeDbProcess((ctx, dbQuery, userInfo) => this._removeUnexpectedFields(ctx, dbQuery, userInfo))
 
-        router.get('/user/users/:user_id', t('getUserByUserId'), (ctx) =>
+        router.get('/user/users/:user_id', t('getUserByUserId'), ctx =>
             UserService.getUserByUserId(ctx.params.user_id, ctx.isAdmin() ? '' : ctx.currentUserId)
         )
 
-        router.get('/user/current', t('getCurrentUserInfo'), (ctx) => this._getCurrentUserInfo(ctx))
+        router.get('/user/current', t('getCurrentUserInfo'), ctx => this._getCurrentUserInfo(ctx))
 
         // login/register
-        router.post('/user/register', t('register'), (ctx) => UserService.register(ctx.body), { open: true })
-        router.post('/user/login', t('login'), (ctx) => UserService.login(ctx.body), { open: true })
-        router.post('/user/login_admin', t('loginAdmin'), async (ctx) => this._loginAdmin(ctx), { open: true })
+        router.post('/user/register', t('register'), ctx => UserService.register(ctx.body), { open: true })
+        router.post('/user/login', t('login'), ctx => UserService.login(ctx), { open: true })
+        router.post('/user/login_admin', t('loginAdmin'), async ctx => this._loginAdmin(ctx), { open: true })
+        router.post('/user/logout', t('logout'), ctx => UserService.logout(ctx))
 
         // modify password
-        router.post('/user/password/change', t('changePassword'), (ctx) =>
+        router.post('/user/password/change', t('changePassword'), ctx =>
             UserService.changePassword(ctx.body, ctx.isAdmin() ? '' : ctx.currentUserId)
         )
 
-        router.post('/user/password/reset', t('resetPassword'), (ctx) => UserService.resetPassword(ctx.body), {
+        router.post('/user/password/reset', t('resetPassword'), ctx => UserService.resetPassword(ctx.body), {
             open: true
         })
 
         // change user name
-        router.post('/user/user_name/change', t('changeUserName'), (ctx) =>
+        router.post('/user/user_name/change', t('changeUserName'), ctx =>
             UserService.changeUserName(ctx.currentUserId, ctx.body)
         )
     }
@@ -83,8 +84,8 @@ class UserController {
         const roles = await Role.find({}, { distinct: 'category_name' })
         const perms = await Permission.find({}, { distinct: 'category_name' })
 
-        const roleCats = roles.map((r) => r.category_name)
-        const permCats = perms.map((r) => r.category_name)
+        const roleCats = roles.map(r => r.category_name)
+        const permCats = perms.map(r => r.category_name)
 
         for (const cat of permCats) {
             if (!roleCats.includes(cat)) {

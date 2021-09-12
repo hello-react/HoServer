@@ -15,8 +15,8 @@ class XfYunService {
     async getAuth(date) {
         const host = 'iat-api.xfyun.cn'
         // const appid = '5a405607'
-        const apiSecret = 'adcbdc6ba4411b2671c216e503b0dbdb'
-        const apiKey = '62bb0c8b9fb46fae58474ca4766bc4a1'
+        const apiSecret = config.get('plugins.xfyun.apiSecret')
+        const apiKey = config.get('plugins.xfyun.apiKey')
         const uri = '/v2/iat'
 
         const signatureOrigin = `host: ${host}\ndate: ${date}\nGET ${uri} HTTP/1.1`

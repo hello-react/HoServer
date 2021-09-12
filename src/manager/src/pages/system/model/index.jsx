@@ -144,6 +144,7 @@ class ModelManage extends TableLayout {
 
     loadData = async params => {
         params.sort = 'category_name name'
+        params.page_size = 100
         const result = await ModelService.getModelDataListTable(this.modelName, params)
         const data = _.get(result, 'data', [])
 

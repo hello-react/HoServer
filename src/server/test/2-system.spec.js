@@ -5,7 +5,7 @@ const app = express()
 
 describe('2: 系统接口', () => {
     // 1005 删掉 1 条, 还剩 4 条记录
-    it('2001: 获取列表', (done) => {
+    it('2001: 获取列表', done => {
         request(app)
             .get(`/api/v1/test/tests?page_size=2&page=2`)
             .end((err, res) => {

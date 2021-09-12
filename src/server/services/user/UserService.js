@@ -17,7 +17,8 @@ class UserService {
     /**
      * user login
      */
-    async login(args) {
+    async login(ctx) {
+        const args = ctx.body
         const password = args.password
         const user_name = (args.user_name || '').toLowerCase()
         if (!(user_name && password)) {
@@ -45,10 +46,20 @@ class UserService {
             }
 
             CacheManager.deleteCache('UserInfo', String(userInfo.user_id))
-            return this.fillUserInfo(userInfo)
+            const result = await this.fillUserInfo(userInfo)
+
+            await BaseHelper.getContainer().executeHook('afterLoginSuccess', ctx, null, result)
+            return result
         } else {
             return Promise.reject({ message: t('errWrongUserOrPassword'), code: ErrorCodes.USER_ERR_PASSWORD })
         }
+    }
+
+    /**
+     * user log out
+     */
+    async logout(ctx) {
+        await BaseHelper.getContainer().executeHook('afterLogoutSuccess', ctx)
     }
 
     /**
@@ -288,7 +299,6 @@ class UserService {
             areaPlugin.getService().fillLocationInfo(result.location)
         }
 
-        await BaseHelper.getContainer().executeHook('fillUserInfo', null, null, result, user)
         return result
     }
 
@@ -306,7 +316,7 @@ class UserService {
      */
     async setUserRolePermission(userInfo) {
         const permissions = userInfo.permissions || []
-        if (permissions.findIndex((p) => p.name === 'site:access') < 0) {
+        if (permissions.findIndex(p => p.name === 'site:access') < 0) {
             permissions.push({ name: 'site:access', scope: null })
         }
 
@@ -315,7 +325,7 @@ class UserService {
                 const role = await this.getRoleByName(roleName)
                 if (role && role.permissions) {
                     for (const permission of role.permissions) {
-                        const existPerm = permissions.find((p) => p.name === permission.name)
+                        const existPerm = permissions.find(p => p.name === permission.name)
                         if (!existPerm) {
                             permissions.push(permission)
                         }

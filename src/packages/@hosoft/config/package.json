@@ -1,6 +1,6 @@
 {
   "name": "@hosoft/config",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple configuration manager for Node.js, support read/write config file in json/yaml format",
   "main": "index.js",
   "scripts": {
@@ -22,5 +22,6 @@
     "access": "public"
   },
   "author": "Jack Zhang",
-  "license": "MIT"
+  "license": "MIT",
+  "gitHead": "d6214cd1e4748c77e110ef47ffc13b7495c47a87"
 }

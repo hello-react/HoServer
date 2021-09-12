@@ -22,7 +22,7 @@ class PluginManager {
 
         for (const plugin of pluginList) {
             const serverPlugin = this.serverSidePlugins.find(p => p.name === plugin.name)
-            if (serverPlugin && serverPlugin.enabled) {
+            if (serverPlugin && serverPlugin.enabled == 1) {
                 plugin.instance.init && plugin.instance.init(this)
             }
         }
@@ -83,7 +83,7 @@ class PluginManager {
 
             if (!hasRemoved) {
                 result.push(plugin)
-                pluginNames[plugin.name] = plugin.enabled || false
+                pluginNames[plugin.name] = plugin.enabled || 0
             }
         }
 
@@ -92,7 +92,7 @@ class PluginManager {
                 result.push({
                     name: plugin.name,
                     version: plugin.version,
-                    enabled: false,
+                    enabled: 0,
                     packages: [{
                         dir: plugin.dir,
                         dis_name: plugin.dis_name,

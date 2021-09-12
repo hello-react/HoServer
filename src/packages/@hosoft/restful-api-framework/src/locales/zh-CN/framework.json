@@ -19,6 +19,7 @@
   "errInputRequire": "{{name}}[{{prop}}]必须输入",
   "errInputDict": "{{name}}[{{prop}}]为{{val}}不在字典取值范围内",
   "errInputExist": "{{name}}[{{prop}}]为{{val}}的记录已经存在",
+  "errInputNotAllowed": "{{name}}[{{prop}}]禁止输入",
   "defaultCategory": "默认分类",
 
   "versionInfo": "版本信息",

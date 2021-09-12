@@ -394,6 +394,7 @@ class RdbAdapter extends Model {
 
         /**
          * batch update model records
+         * TODO: update 和 updateMany 这块不清楚，update 还做了更新多个的事情
          */
         this.updateMany = async (dataList) => {
             const idField = this.getIdField('')

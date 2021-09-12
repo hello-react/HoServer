@@ -14,7 +14,7 @@ global.APP_PATH = process.cwd()
 
 const app = express()
 
-const getTestData = (testCase) => {
+const getTestData = testCase => {
     const jsonObj = fileUtils.getJsonFile(path.join(__dirname, 'test_data', `${testCase}.json`))
     return jsonObj
 }
@@ -34,7 +34,7 @@ describe('1: model default api', () => {
     const arraySubPropId1 = '5e7b32820872f0498cd46257'
 
     // total insert 5 records for test
-    it('1001: create new record', (done) => {
+    it('1001: create new record', done => {
         // first manual create 2 records
         const { Test } = require('@hosoft/restful-api-framework/models')
         const jsonObj = getTestData('1001')
@@ -75,7 +75,7 @@ describe('1: model default api', () => {
             })
     })
 
-    it('1002: get record detail', (done) => {
+    it('1002: get record detail', done => {
         request(app)
             .get(`/api/v1/test/tests/${newCreateId3}`)
             .end((err, res) => {
@@ -142,7 +142,7 @@ describe('1: model default api', () => {
             })
     })
 
-    it('1003: update (merge only)', (done) => {
+    it('1003: update (merge only)', done => {
         request(app)
             .post(`/api/v1/test/tests/${newCreateId1}`)
             .send({
@@ -209,7 +209,7 @@ describe('1: model default api', () => {
             })
     })
 
-    it('1004: update (replace)', (done) => {
+    it('1004: update (replace)', done => {
         request(app)
             .post(`/api/v1/test/tests/${newCreateId2}`)
             .send({
@@ -256,7 +256,7 @@ describe('1: model default api', () => {
             })
     })
 
-    it('1005: delete', (done) => {
+    it('1005: delete', done => {
         request(app)
             .delete(`/api/v1/test/tests/${newCreateId3}`)
             .end((err, res) => {
@@ -276,7 +276,7 @@ describe('1: model default api', () => {
     })
 
     // 1005 delete 1, 4 records left
-    it('1006: list records', (done) => {
+    it('1006: list records', done => {
         request(app)
             .get(`/api/v1/test/tests?page_size=2&page=2`)
             .end((err, res) => {
@@ -295,8 +295,8 @@ describe('1: model default api', () => {
                 })
 
                 // also verify 1003, 1004 update result
-                const record1 = data.list.find((r) => r.id === newCreateId1)
-                const record2 = data.list.find((r) => r.id === newCreateId2)
+                const record1 = data.list.find(r => r.id === newCreateId1)
+                const record2 = data.list.find(r => r.id === newCreateId2)
                 if (!(record1 || record2)) {
                     throw Error('create failed!')
                 }
@@ -334,7 +334,7 @@ describe('1: model default api', () => {
             })
     })
 
-    it('1007: batch update multiple records with same data', (done) => {
+    it('1007: batch update multiple records with same data', done => {
         request(app)
             .post(`/api/v1/test/tests/batch`)
             .send({
@@ -366,7 +366,7 @@ describe('1: model default api', () => {
                     .end((err, res) => {
                         if (err) return done(err)
 
-                        res.body.data.list.forEach((r) => delete r._id)
+                        res.body.data.list.forEach(r => delete r._id)
                         assert.deepEqual(res.body.data.list, [
                             {
                                 p6: {
@@ -402,7 +402,7 @@ describe('1: model default api', () => {
             })
     })
 
-    it('1008: batch update records', (done) => {
+    it('1008: batch update records', done => {
         request(app)
             .post(`/api/v1/test/tests/batch`)
             .send({
@@ -445,7 +445,7 @@ describe('1: model default api', () => {
                     .end((err, res) => {
                         if (err) return done(err)
 
-                        res.body.data.list.forEach((r) => delete r._id)
+                        res.body.data.list.forEach(r => delete r._id)
                         assert.deepEqual(res.body.data.list, [
                             {
                                 p6: {
@@ -479,7 +479,7 @@ describe('1: model default api', () => {
             })
     })
 
-    it('1009: batch delete', (done) => {
+    it('1009: batch delete', done => {
         request(app)
             .delete(`/api/v1/test/tests/batch`)
             .send({ id: [newCreateId1, newCreateId2] })
@@ -498,7 +498,7 @@ describe('1: model default api', () => {
     })
 
     // operations for sub array model
-    it('1020: create sub array record', (done) => {
+    it('1020: create sub array record', done => {
         request(app)
             .post('/api/v1/test/tests')
             .send(getTestData('1001'))
@@ -548,7 +548,7 @@ describe('1: model default api', () => {
             })
     })
 
-    it('1021: modify sub array record (replace)', (done) => {
+    it('1021: modify sub array record (replace)', done => {
         request(app)
             .post(`/api/v1/test/tests/${newCreateId4}/p5/${arrayPropId1}`)
             .send({
@@ -570,7 +570,7 @@ describe('1: model default api', () => {
             })
     })
 
-    it('1022: get sub array record detail', (done) => {
+    it('1022: get sub array record detail', done => {
         request(app)
             .get(`/api/v1/test/tests/${newCreateId4}/p5/${arrayPropId1}`)
             .end((err, res) => {
@@ -595,7 +595,7 @@ describe('1: model default api', () => {
             })
     })
 
-    it('1023: delete sub array record', (done) => {
+    it('1023: delete sub array record', done => {
         request(app)
             .delete(`/api/v1/test/tests/${newCreateId4}/p5/${arrayPropId1}`)
             .end((err, res) => {
@@ -615,7 +615,7 @@ describe('1: model default api', () => {
             })
     })
 
-    it('1024: get sub array records list', (done) => {
+    it('1024: get sub array records list', done => {
         request(app)
             .get(`/api/v1/test/tests/${newCreateId4}/p5`)
             .end((err, res) => {
@@ -640,7 +640,7 @@ describe('1: model default api', () => {
             })
     })
 
-    it('1041: modify sub array record (merge)', (done) => {
+    it('1041: modify sub array record (merge)', done => {
         request(app)
             .post(`/api/v1/test/tests/${newCreateId4}/p6/t3/${arraySubPropId1}/ts3`)
             .send({
@@ -657,7 +657,7 @@ describe('1: model default api', () => {
             })
     })
 
-    it('1042: get sub object detail', (done) => {
+    it('1042: get sub object detail', done => {
         request(app)
             .get(`/api/v1/test/tests/${newCreateId4}/p6/t3/${arraySubPropId1}/ts3`)
             .end((err, res) => {
