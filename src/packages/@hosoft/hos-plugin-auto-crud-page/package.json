@@ -11,11 +11,11 @@
     "@hosoft/hos-admin-common": "^1.0.2",
     "antd": "^4.16.8",
     "dva": "^2.4.1",
-    "moment": "^2.29.1",
     "lodash": "^4.17.11",
+    "moment": "^2.29.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-beautiful-dnd": "^13.1.0"
+    "react-beautiful-dnd": "^13.1.0",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
@@ -23,11 +23,11 @@
     "@babel/preset-react": "^7.14.5",
     "babel-loader": "^8.2.2",
     "babel-plugin-inline-react-svg": "^2.0.1",
-    "style-loader": "^0.23.1",
-    "css-loader": "^2.1.1"
+    "css-loader": "^2.1.1",
+    "style-loader": "^0.23.1"
   },
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "118136697bc312d472da7dd4c6fb74a082a14f40"
+  "gitHead": "09a0e3285c612750dd8bb1b915e0ab6c9258e44d"
 }
