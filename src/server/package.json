@@ -15,7 +15,7 @@
     "axios": "^0.19.1",
     "bluebird": "^3.7.2",
     "body-parser": "^1.19.0",
-    "body-parser-xml": "^1.1.0",
+    "body-parser-xml": "^2.0.3",
     "compromise": "^13.1.1",
     "config": "^3.2.5",
     "cookie-parser": "^1.4.4",
