@@ -1,14 +1,14 @@
 {
   "name": "@hosoft/hos-plugin-payment",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "HoServer plugin support server integration with common used payment services",
   "main": "index.js",
   "dependencies": {
     "alipay-node-sdk": "^1.1.9"
   },
   "devDependencies": {
-    "@hosoft/config": "^1.0.2",
-    "@hosoft/restful-api-framework": "^2.0.5",
+    "@hosoft/config": "^1.0.3",
+    "@hosoft/restful-api-framework": "^2.0.8",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
     "request-promise-any": "^1.0.9",

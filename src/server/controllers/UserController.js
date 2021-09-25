@@ -11,7 +11,7 @@ class UserController {
         router.get(
             '/user/roles/categories',
             t('getRolePermCategories'),
-            ctx => {
+            (ctx) => {
                 return this._getRolePermCategories()
             },
             { model: 'Role', private: true }
@@ -21,40 +21,48 @@ class UserController {
         router.def('Role')
 
         // users
+        // TODO: add it
+        // router.def('Organization', ['list', 'detail', 'delete'])
+        // router.def('Organization', ['update', 'create']).afterProcess((ctx) => UserService.updateOrgParent(ctx))
+
         router.def('User.permissions')
         router.def('User', ['create', 'batch_update'], { permissions: 'user:manage' })
 
         router
             .def('User', 'list', { permissions: 'user:manage' })
-            .outFields('location real_name mobile email is_admin is_active vip_type has_login verified disabled')
+            .outFields('location real_name mobile email is_admin is_active has_login verified disabled')
+            .beforeDbProcess((ctx, dbQuery) => this._checkFilterSuperAdmin(ctx, dbQuery))
 
         router
             .def('User', 'update')
             .beforeDbProcess((ctx, dbQuery, userInfo) => this._removeUnexpectedFields(ctx, dbQuery, userInfo))
 
-        router.get('/user/users/:user_id', t('getUserByUserId'), ctx =>
-            UserService.getUserByUserId(ctx.params.user_id, ctx.isAdmin() ? '' : ctx.currentUserId)
+        router.get('/user/users/:user_id', t('getUserByUserId'), (ctx) =>
+            UserService.getUserByUserId(
+                ctx.params.user_id,
+                ctx.hasPermission('user:manage') ? ctx.params.user_id : ctx.currentUserId
+            )
         )
 
-        router.get('/user/current', t('getCurrentUserInfo'), ctx => this._getCurrentUserInfo(ctx))
+        router.get('/user/current', t('getCurrentUserInfo'), (ctx) => this._getCurrentUserInfo(ctx))
 
         // login/register
-        router.post('/user/register', t('register'), ctx => UserService.register(ctx.body), { open: true })
-        router.post('/user/login', t('login'), ctx => UserService.login(ctx), { open: true })
-        router.post('/user/login_admin', t('loginAdmin'), async ctx => this._loginAdmin(ctx), { open: true })
-        router.post('/user/logout', t('logout'), ctx => UserService.logout(ctx))
+        router.post('/user/register', t('register'), (ctx) => UserService.register(ctx.body), { open: true })
+        router.post('/user/login', t('login'), (ctx) => UserService.login(ctx), { open: true })
+        router.post('/user/login_admin', t('loginAdmin'), async (ctx) => this._loginAdmin(ctx), { open: true })
+        router.post('/user/logout', t('logout'), (ctx) => UserService.logout(ctx))
 
         // modify password
-        router.post('/user/password/change', t('changePassword'), ctx =>
-            UserService.changePassword(ctx.body, ctx.isAdmin() ? '' : ctx.currentUserId)
+        router.post('/user/password/change', t('changePassword'), (ctx) =>
+            UserService.changePassword(ctx.body, ctx.hasPermission('user:manage') ? '' : ctx.currentUserId)
         )
 
-        router.post('/user/password/reset', t('resetPassword'), ctx => UserService.resetPassword(ctx.body), {
+        router.post('/user/password/reset', t('resetPassword'), (ctx) => UserService.resetPassword(ctx.body), {
             open: true
         })
 
         // change user name
-        router.post('/user/user_name/change', t('changeUserName'), ctx =>
+        router.post('/user/user_name/change', t('changeUserName'), (ctx) =>
             UserService.changeUserName(ctx.currentUserId, ctx.body)
         )
     }
@@ -84,8 +92,8 @@ class UserController {
         const roles = await Role.find({}, { distinct: 'category_name' })
         const perms = await Permission.find({}, { distinct: 'category_name' })
 
-        const roleCats = roles.map(r => r.category_name)
-        const permCats = perms.map(r => r.category_name)
+        const roleCats = roles.map((r) => r.category_name)
+        const permCats = perms.map((r) => r.category_name)
 
         for (const cat of permCats) {
             if (!roleCats.includes(cat)) {
@@ -103,6 +111,14 @@ class UserController {
         }
 
         return userInfo
+    }
+
+    _checkFilterSuperAdmin(ctx, dbQuery) {
+        if (ctx.currentUser.user_name !== 'superadmin') {
+            if (!dbQuery.user_name || dbQuery.user_name === 'superadmin') {
+                dbQuery.user_name = { $ne: 'superadmin' }
+            }
+        }
     }
 }
 

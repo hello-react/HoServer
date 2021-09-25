@@ -1,11 +1,11 @@
 {
   "name": "@hosoft/hos-plugin-batch-import-export",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "HoServer plugin for batch import / export model data",
   "main": "index.js",
   "devDependencies": {
-    "@hosoft/config": "^1.0.2",
-    "@hosoft/restful-api-framework": "^2.0.5",
+    "@hosoft/config": "^1.0.3",
+    "@hosoft/restful-api-framework": "^2.0.8",
     "exceljs": "^4.2.1",
     "lodash": "^4.17.21",
     "mkdirp": "^1.0.4",

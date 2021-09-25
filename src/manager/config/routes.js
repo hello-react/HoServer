@@ -140,7 +140,7 @@ export default [
                         path: 'plugin',
                         name: 'plugin',
                         icon: 'appstore',
-                        // authority: 'plugin:manage',
+                        authority: 'plugin:manage',
                         routes: [
                             {
                                 path: '/plugin/installed',

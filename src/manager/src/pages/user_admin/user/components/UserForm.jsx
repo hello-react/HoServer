@@ -72,9 +72,11 @@ const UserForm = LegacyForm.create()(props => {
                         ]
                     })(editMode === 1 ? <Input placeholder="请输入英文字母数字和下划线" /> : <span>{userInfo.user_name}</span>)}
                 </LegacyForm.Item>
+                {/*
                 <LegacyForm.Item label="管理员用户">
                     {getFieldDecorator('is_admin')(<Switch checked={userInfo.is_admin} onChange={val => userInfo.is_admin = val} />)}
                 </LegacyForm.Item>
+                */}
                 <LegacyForm.Item required label="昵称">
                     {getFieldDecorator('nick_name', {
                         rules: [

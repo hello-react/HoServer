@@ -56,9 +56,13 @@ class RouteProxy {
             }
         }
 
-        if (!api.type && api.model) {
-            const model = BaseHelper.getModel(api.model)
-            api.type = model ? model.meta.type : 3 // by default user defined
+        if (!api.type) {
+            if (api.model) {
+                const model = BaseHelper.getModel(api.model)
+                api.type = model ? model.meta.type || 3 : 3 // by default user defined
+            } else {
+                api.type = 3
+            }
         }
 
         if (!api.in_params) {
@@ -163,6 +167,7 @@ class RouteProxy {
 
         const categoryNameDict = await BaseHelper.getSystemDict('sys_category')
         const modelNameMap = await this._getModelNameMap()
+        const modelRouteMap = await this._getModelRouteMap()
 
         const getCategoryDisName = (categoryName, mustExists) => {
             if (categoryName === '_default') {
@@ -179,11 +184,6 @@ class RouteProxy {
 
         let mainCategory = api.category
         let secondCategory = ''
-        if (!mainCategory && api.model) {
-            const model = BaseHelper.getModel(api.model)
-            mainCategory = model ? model.meta.category_name : ''
-            secondCategory = api.model
-        }
 
         let routePath = ''
         const pos = api.path.indexOf(Constants.API_PREFIX)
@@ -194,8 +194,28 @@ class RouteProxy {
             }
         }
 
+        const parts = routePath.split('/')
+        if (parts.length > 2) {
+            routePath = `${parts[0]}/${parts[1]}`
+        }
+
+        // check model
+        if (!mainCategory) {
+            if (api.model) {
+                const model = BaseHelper.getModel(api.model)
+                mainCategory = model ? model.meta.category_name : ''
+                secondCategory = api.model
+            } else if (routePath) {
+                const modelName = modelRouteMap[routePath]
+                if (modelName) {
+                    const model = BaseHelper.getModel(modelName)
+                    mainCategory = model ? model.meta.category_name : ''
+                    secondCategory = modelName
+                }
+            }
+        }
+
         if (routePath) {
-            const parts = routePath.split('/')
             if (parts.length > 0) {
                 // const part1 = pluralize(parts[0], 1) // sns has problem
                 const part0 = categoryNameDict[parts[0]] ? parts[0] : pluralize(parts[0], 1)
@@ -244,6 +264,24 @@ class RouteProxy {
             api.second_catname = tf('defaultCategory')
             api.category_name = '_default'
         }
+    }
+
+    async _getModelRouteMap() {
+        let modelRouteMap = await CacheManager.getCache('', 'ModelRouteMap')
+        if (!modelRouteMap) {
+            modelRouteMap = {}
+
+            const models = BaseHelper.getContainer().getAllModels()
+            const keys = _.keys(models)
+            for (const modelName of keys) {
+                const routePath = models[modelName].getRoutePath()
+                modelRouteMap[routePath.routeName] = modelName
+            }
+
+            await CacheManager.setCache('', 'ModelRouteMap', modelRouteMap)
+        }
+
+        return modelRouteMap
     }
 
     async _getModelNameMap() {

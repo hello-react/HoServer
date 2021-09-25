@@ -362,10 +362,14 @@ class UserManage extends TableLayout {
     }
 
     handleSubmit = async (editMode, newModel, existModel) => {
+        delete newModel.is_admin
+        delete newModel.disabled
+
         let result
         if (editMode === 1) {
             result = await UserService.createUser(newModel)
         } else {
+            delete newModel.user_id
             result = await UserService.updateUser(existModel.user_id, newModel)
         }
 

@@ -34,6 +34,13 @@ const outputResult = (res) => {
             extra: context.extraInfo,
             stack: err.stack
         })
+    } else if (typeof err === 'string') {
+        res.json({
+            code: 500,
+            data: '',
+            message: err,
+            extra: context.extraInfo
+        })
     } else {
         const { code, message } = err
         err.data = err.data || null

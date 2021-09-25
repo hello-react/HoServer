@@ -29,6 +29,10 @@ const UploadFile = props => {
         }
     }
 
+    if (!UploaderComp) {
+        UploaderComp = Uploader
+    }
+
     return (
         <UploaderComp {...props} />
     )

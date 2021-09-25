@@ -14,19 +14,19 @@ import moment from 'moment'
 import React, {useEffect, useRef, useState} from 'react'
 
 import vipIcon from '@/assets/vip.svg'
+
 // TODO: third login plugin
 // import alipayIcon from '@/assets/alipay.svg'
 // import qqIcon from '@/assets/qq.svg'
 // import wechatIcon from '@/assets/wechat.svg'
 // import weiboIcon from '@/assets/weibo.svg'
-
 import UserService from '../../service'
 
 const UserInfo = props => {
     const {children} = props
-    const userInfo = props.modelInstance
 
     const [visible, setVisible] = useState(false)
+    const [userInfo, setUserInfo] = useState(props.modelInstance)
     const roleRef = useRef([])
     const permRef = useRef([])
 
@@ -39,6 +39,12 @@ const UserInfo = props => {
     const loadData = async () => {
         roleRef.current = await UserService.listRole()
         permRef.current = await UserService.listPermission()
+
+        const userId = userInfo.user_id
+        if (userId) {
+            const userDetail = await UserService.getUserDetail(userId)
+            setUserInfo(userDetail)
+        }
     }
 
     const renderGeneralForm = () => {
@@ -140,6 +146,7 @@ const UserInfo = props => {
                             ) : null
                         }) : '未设置'}
                     </Col>
+                    <Col span={24} />
                 </Row>
                 <Row gutter={[10, 20]}>
                     <Col span={6} align="right"><Tooltip title="用户实际权限为角色权限+管理员设置权限"><Icon type="question-circle" /></Tooltip> 权限：</Col>

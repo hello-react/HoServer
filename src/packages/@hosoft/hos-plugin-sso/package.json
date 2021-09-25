@@ -1,11 +1,11 @@
 {
   "name": "@hosoft/hos-plugin-sso",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "HoServer plugin for single sign on",
   "main": "index.js",
   "devDependencies": {
-    "@hosoft/config": "^1.0.2",
-    "@hosoft/restful-api-framework": "^2.0.5",
+    "@hosoft/config": "^1.0.3",
+    "@hosoft/restful-api-framework": "^2.0.8",
     "axios": "^0.21.1",
     "express-session": "^1.17.2",
     "generate-password": "^1.6.1",
@@ -15,5 +15,8 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "09a0e3285c612750dd8bb1b915e0ab6c9258e44d"
+  "gitHead": "d6214cd1e4748c77e110ef47ffc13b7495c47a87",
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
 }

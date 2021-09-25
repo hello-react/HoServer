@@ -232,7 +232,7 @@ class MongoAdapter extends Model {
          * create model
          * @param inputData object data
          */
-        this.create = async (inputData) => {
+        this.create = async (inputData, options) => {
             try {
                 this.makeId(inputData, '', true)
                 const newModel = await this.nativeModel.create(inputData)
@@ -248,7 +248,7 @@ class MongoAdapter extends Model {
             }
         }
 
-        this.createSub = async (propName, query, inputData) => {
+        this.createSub = async (propName, query, inputData, options) => {
             const existRecord = await this.findOne(query, { lean: false })
             if (!existRecord) {
                 return Promise.reject({ message: 'record not found', code: ErrorCodes.GENERAL_ERR_NOT_FOUND })
@@ -308,8 +308,8 @@ class MongoAdapter extends Model {
         /**
          * update model record
          */
-        this.update = async (query, inputData, force) => {
-            if (_.isEmpty(query) && !force) {
+        this.update = async (query, inputData, options) => {
+            if (_.isEmpty(query) && !_.get(options, 'force')) {
                 return Promise.reject({
                     message: 'unsafe update, please set force=true if you really want',
                     code: ErrorCodes.GENERAL_ERR_DELETE_FAIL
@@ -350,7 +350,7 @@ class MongoAdapter extends Model {
         /**
          * update model sub record
          */
-        this.updateSub = async (propName, query, inputData) => {
+        this.updateSub = async (propName, query, inputData, options) => {
             try {
                 const records = await this.find(query, { lean: false })
                 if (records.length === 0) {
@@ -399,7 +399,7 @@ class MongoAdapter extends Model {
         /**
          * batch update model records
          */
-        this.updateMany = async (dataList) => {
+        this.updateMany = async (dataList, options) => {
             const bulkOperate = this._native.collection.initializeOrderedBulkOp()
             const idField = this.getIdField('')
             if (!idField) {
@@ -430,7 +430,7 @@ class MongoAdapter extends Model {
         /**
          * delete model
          */
-        this.delete = async (query) => {
+        this.delete = async (query, options) => {
             try {
                 const { name } = this.getIdField('')
                 if (!(name && query[name])) {
@@ -451,7 +451,7 @@ class MongoAdapter extends Model {
         /**
          * delete model sub record
          */
-        this.deleteSub = async (subModel, query) => {
+        this.deleteSub = async (subModel, query, options) => {
             const existRecord = await this.findOne(query, { lean: false })
             if (!existRecord) {
                 return Promise.reject({ message: 'record not found', code: ErrorCodes.GENERAL_ERR_DELETE_FAIL })
@@ -500,9 +500,9 @@ class MongoAdapter extends Model {
         /**
          * batch delete model
          */
-        this.deleteMany = async (query, force) => {
+        this.deleteMany = async (query, options) => {
             try {
-                if (_.isEmpty(query) && !force) {
+                if (_.isEmpty(query) && !_.get(options, 'force')) {
                     return Promise.reject({
                         message: 'unsafe delete, please set force=true if you really want',
                         code: ErrorCodes.GENERAL_ERR_DELETE_FAIL

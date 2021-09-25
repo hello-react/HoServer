@@ -27,14 +27,14 @@ class Model {
         this.find = async (query, options, outFields) => {}
         this.findOne = async (query, options, outFields) => {}
         this.count = async (query, groupBy) => {}
-        this.create = async (inputData) => {}
-        this.createSub = async (propName, query, inputData) => {}
-        this.update = async (query, inputData, force) => {}
-        this.updateSub = async (propName, query, inputData) => {}
-        this.updateMany = async (dataList) => {}
-        this.delete = async (query, force) => {}
-        this.deleteSub = async (propName, query) => {}
-        this.deleteMany = async (query, force) => {}
+        this.create = async (inputData, options) => {}
+        this.createSub = async (propName, query, inputData, options) => {}
+        this.update = async (query, inputData, options) => {}
+        this.updateSub = async (propName, query, inputData, options) => {}
+        this.updateMany = async (dataList, options) => {}
+        this.delete = async (query, options) => {}
+        this.deleteSub = async (propName, query, options) => {}
+        this.deleteMany = async (query, options) => {}
         this.aggregate = async (query) => {}
         this.sync = async (options) => {}
         this.getDbType = () => {}

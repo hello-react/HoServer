@@ -21,7 +21,7 @@ module.exports = async app => {
 
             // clear test db
             const {Test} = require('@hosoft/restful-api-framework/models')
-            await Test.deleteMany({}, true)
+            await Test.deleteMany({}, { force: true })
 
             console.log('Test app started!')
             resolve('success')

@@ -40,7 +40,7 @@ class CacheManager {
      * @param value cache value
      * @param ttl timeout duration, default is 1 hour
      */
-    static async setCache(keyPrefix, key, value, ttl) {
+    static async setCache(keyPrefix, key = '', value, ttl = 600) {
         try {
             return await CacheManager.getInstance().set(keyPrefix + key, value, ttl)
         } catch (err) {
@@ -52,7 +52,7 @@ class CacheManager {
      * get cache
      * @param key
      */
-    static async getCache(keyPrefix, key) {
+    static async getCache(keyPrefix, key = '') {
         try {
             return await CacheManager.getInstance().get(keyPrefix + key)
         } catch (err) {
@@ -65,7 +65,7 @@ class CacheManager {
      * delete cache
      * @param key
      */
-    static async deleteCache(keyPrefix, key) {
+    static async deleteCache(keyPrefix, key = '') {
         try {
             return await CacheManager.getInstance().del(keyPrefix + key)
         } catch (err) {

@@ -2,7 +2,7 @@ const config = require('@hosoft/config')
 const jwt = require('jsonwebtoken')
 const PasswordValidator = require('password-validator')
 const { BaseHelper, CacheManager, ErrorCodes, PluginManager } = require('@hosoft/restful-api-framework/base')
-const { Role, User } = require('@hosoft/restful-api-framework/models')
+const { Permission, Role, User } = require('@hosoft/restful-api-framework/models')
 const tokenExpireTime = config.get('jwt.expire') || '1d'
 
 // password validate rule
@@ -34,6 +34,8 @@ class UserService {
             return Promise.reject({ message: t('errUserNotExists'), code: ErrorCodes.GENERAL_ERR_NOT_FOUND })
         }
 
+        // check update role, permission
+        await this._checkUpdateUserPermission(userInfo)
         const valid = await userInfo.verifyPassword(password)
         if (valid) {
             if (!userInfo.is_active) {
@@ -285,7 +287,6 @@ class UserService {
             roles: user.roles,
             is_admin: user.is_admin,
             location: user.location,
-            vip_type: user.vip_type,
             token: token
         }
 
@@ -302,12 +303,36 @@ class UserService {
         return result
     }
 
+    async getPermissionByName(permName) {
+        let allPermissions = await CacheManager.getCache('Permissions')
+        if (!allPermissions) {
+            allPermissions = {}
+            const dbPerms = await Permission.find({})
+            for (const perm of dbPerms) {
+                allPermissions[perm.name] = perm
+            }
+            await CacheManager.setCache('Permissions', '', allPermissions, 600)
+        }
+
+        return allPermissions[permName]
+    }
+
     /**
      * get role detail by role name
      * @param roleName
      */
     async getRoleByName(roleName) {
-        return Role.findOne({ name: roleName })
+        let allRoles = await CacheManager.getCache('Roles')
+        if (!allRoles) {
+            allRoles = {}
+            const dbRoles = await Role.find({})
+            for (const role of dbRoles) {
+                allRoles[role.name] = role
+            }
+            await CacheManager.setCache('Roles', '', allRoles)
+        }
+
+        return allRoles[roleName]
     }
 
     /**
@@ -316,7 +341,7 @@ class UserService {
      */
     async setUserRolePermission(userInfo) {
         const permissions = userInfo.permissions || []
-        if (permissions.findIndex(p => p.name === 'site:access') < 0) {
+        if (permissions.findIndex((p) => p.name === 'site:access') < 0) {
             permissions.push({ name: 'site:access', scope: null })
         }
 
@@ -325,7 +350,7 @@ class UserService {
                 const role = await this.getRoleByName(roleName)
                 if (role && role.permissions) {
                     for (const permission of role.permissions) {
-                        const existPerm = permissions.find(p => p.name === permission.name)
+                        const existPerm = permissions.find((p) => p.name === permission.name)
                         if (!existPerm) {
                             permissions.push(permission)
                         }
@@ -337,6 +362,10 @@ class UserService {
         const roles = userInfo.roles || []
         if (roles.indexOf('user') < 0) {
             roles.push('user')
+        }
+
+        if (userInfo.user_name === 'superadmin') {
+            permissions.push({ name: 'plugin:manage', scope: '' })
         }
 
         userInfo.permissions = permissions
@@ -376,6 +405,34 @@ class UserService {
         }
 
         return false
+    }
+
+    async _checkUpdateUserPermission(userInfo) {
+        const permissions = userInfo.permissions || []
+        const roles = userInfo.roles || []
+
+        let updated = false
+        for (let i = permissions.length - 1; i > -1; i--) {
+            const perm = permissions[i]
+            if (!this.getPermissionByName(perm.name)) {
+                permissions.splice(i, 1)
+                updated = true
+            }
+        }
+
+        for (let i = roles.length - 1; i > -1; i--) {
+            const role = roles[i]
+            if (!this.getRoleByName(role.name)) {
+                roles.splice(i, 1)
+                updated = true
+            }
+        }
+
+        if (updated) {
+            userInfo.permissions = permissions
+            userInfo.roles = roles
+            await User.update({ user_id: userId }, { permissions, roles })
+        }
     }
 }
 

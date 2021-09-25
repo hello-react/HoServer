@@ -244,7 +244,6 @@ const populateField = async (srcData, propModel, propFullName, outPropName, relF
                     '',
                     relFields,
                     propModel.relations.rel_query,
-                    outPropName,
                     is_recursive
                 )
             }

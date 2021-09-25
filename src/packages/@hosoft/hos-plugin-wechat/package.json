@@ -1,11 +1,11 @@
 {
   "name": "@hosoft/hos-plugin-wechat",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "HoServer plugin provide wechat server integration",
   "main": "index.js",
   "devDependencies": {
-    "@hosoft/config": "^1.0.2",
-    "@hosoft/restful-api-framework": "^2.0.5",
+    "@hosoft/config": "^1.0.3",
+    "@hosoft/restful-api-framework": "^2.0.8",
     "express": "^4.17.1",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",

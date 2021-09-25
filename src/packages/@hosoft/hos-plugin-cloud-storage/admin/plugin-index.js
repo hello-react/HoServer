@@ -15,6 +15,10 @@ class CloudStorage {
     }
 
     getUploadComponent(impl) {
+        if (!this.pluginManager) {
+            return null;
+        }
+
         if (!impl) {
             impl = this.pluginManager.getDefaultImpl('hos-plugin-cloud-storage')
         }
@@ -22,6 +26,8 @@ class CloudStorage {
         if (!impl || impl === 'ali-oss') {
             return AliOSSUpload
         }
+
+        return null;
     }
 }
 

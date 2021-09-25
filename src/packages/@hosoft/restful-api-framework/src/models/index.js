@@ -11,7 +11,7 @@ let models = null
 
 const getAllModels = () => {
     if (!models) {
-        models = []
+        models = {}
         for (const model of global.DB_MODELS) {
             models[model.name] = model
         }

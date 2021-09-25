@@ -1,5 +1,5 @@
 FOLDER:{{main_cat}}
-FILE:{{EVAL:api.second_cat.toLowerCase()+'.js'}}
+FILE:{{EVAL:this.humpToUnderline(api.second_cat).toLowerCase()+'.js'}}
 /* eslint-disable */
 import { request, message } from "../common/utils"
 import Constants from '../common/constants'

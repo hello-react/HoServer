@@ -222,10 +222,10 @@ class RdbAdapter extends Model {
          * create model
          * @param inputData object data
          */
-        this.create = async (inputData) => {
+        this.create = async (inputData, options) => {
             try {
                 this.makeId(inputData, '', true)
-                const newModel = await this.nativeModel.create(inputData)
+                const newModel = await this.nativeModel.create(inputData, options)
                 const { name } = this.getIdField('')
 
                 return { [name]: newModel[name] }
@@ -238,7 +238,7 @@ class RdbAdapter extends Model {
             }
         }
 
-        this.createSub = async (propName, query, inputData) => {
+        this.createSub = async (propName, query, inputData, options) => {
             const existRecord = await this.findOne(query, { lean: false })
             if (!existRecord) {
                 return Promise.reject({ message: 'record not found', code: ErrorCodes.GENERAL_ERR_NOT_FOUND })
@@ -282,7 +282,7 @@ class RdbAdapter extends Model {
 
             try {
                 existRecord.changed(propPath.split('.')[0], true)
-                await existRecord.save()
+                await existRecord.save(options)
                 return {
                     [idField.name]: existRecord[idField.name],
                     [`${propPath}.${name}`]: inputData[name]
@@ -299,8 +299,8 @@ class RdbAdapter extends Model {
         /**
          * update model record
          */
-        this.update = async (query, inputData, force) => {
-            if (_.isEmpty(query) && !force) {
+        this.update = async (query, inputData, options) => {
+            if (_.isEmpty(query) && !_.get(options, 'force')) {
                 return Promise.reject({
                     message: 'unsafe update, please set force=true if you really want',
                     code: ErrorCodes.GENERAL_ERR_DELETE_FAIL
@@ -322,14 +322,14 @@ class RdbAdapter extends Model {
                     }
 
                     this._setObjectProps(this, existRecord, inputData, true)
-                    let result = await existRecord.save()
+                    let result = await existRecord.save(options)
                     result = _.get(result, '_changed') || {}
 
                     const { name } = this.getIdField('')
                     return { [name]: existRecord[name], result }
                 } else {
                     const dbQuery = this._makeDbQuery(query)
-                    const updatedCount = await this.nativeModel.update(inputData, { where: dbQuery })
+                    const updatedCount = await this.nativeModel.update(inputData, { where: dbQuery }, options)
                     return { nModified: updatedCount[0] }
                 }
             } catch (ex) {
@@ -344,7 +344,7 @@ class RdbAdapter extends Model {
         /**
          * update model sub record
          */
-        this.updateSub = async (propName, query, inputData) => {
+        this.updateSub = async (propName, query, inputData, options) => {
             try {
                 const records = await this.find(query, { lean: false })
                 if (records.length === 0) {
@@ -374,7 +374,7 @@ class RdbAdapter extends Model {
                 this._setObjectProps(property, subRecord, inputData, replace)
 
                 existRecord.changed(propPath.split('.')[0], true)
-                await existRecord.save()
+                await existRecord.save(options)
 
                 // const { name } = this.getIdField(propPath)
                 // const subIdName = name ? `${propPath}.${name}` : propPath
@@ -396,7 +396,7 @@ class RdbAdapter extends Model {
          * batch update model records
          * TODO: update 和 updateMany 这块不清楚，update 还做了更新多个的事情
          */
-        this.updateMany = async (dataList) => {
+        this.updateMany = async (dataList, options) => {
             const idField = this.getIdField('')
             if (!idField) {
                 return Promise.reject({
@@ -414,7 +414,7 @@ class RdbAdapter extends Model {
                     continue
                 }
 
-                this.nativeModel.update(row.data, { where: { [name]: row[name] } })
+                this.nativeModel.update(row.data, { where: { [name]: row[name] } }, options)
                 result.push(row[name])
             }
 
@@ -424,7 +424,7 @@ class RdbAdapter extends Model {
         /**
          * delete model
          */
-        this.delete = async (query) => {
+        this.delete = async (query, options) => {
             try {
                 const { name } = this.getIdField('')
                 if (!(name && query[name])) {
@@ -432,7 +432,7 @@ class RdbAdapter extends Model {
                 }
 
                 const dbQuery = this._makeDbQuery(query)
-                const deletedCount = await nativeModel.destroy({ where: dbQuery })
+                const deletedCount = await nativeModel.destroy({ where: dbQuery }, options)
                 return { [name]: query[name], deletedCount }
             } catch (ex) {
                 logger.error('delete exception: ' + ex.message + ', ' + ex.stack)
@@ -446,7 +446,7 @@ class RdbAdapter extends Model {
         /**
          * delete model sub record
          */
-        this.deleteSub = async (subModel, query) => {
+        this.deleteSub = async (subModel, query, options) => {
             const existRecord = await this.findOne(query, { lean: false })
             if (!existRecord) {
                 return Promise.reject({ message: 'record not found', code: ErrorCodes.GENERAL_ERR_DELETE_FAIL })
@@ -472,7 +472,7 @@ class RdbAdapter extends Model {
 
             try {
                 existRecord.changed(propPath.split('.')[0], true)
-                await existRecord.save()
+                await existRecord.save(options)
 
                 return {
                     [idField.name]: existRecord[idField.name],
@@ -490,9 +490,9 @@ class RdbAdapter extends Model {
         /**
          * batch delete model
          */
-        this.deleteMany = async (query, force) => {
+        this.deleteMany = async (query, options) => {
             try {
-                if (_.isEmpty(query) && !force) {
+                if (_.isEmpty(query) && !_.get(options, 'force')) {
                     return Promise.reject({
                         message: 'unsafe delete, please set force=true if you really want',
                         code: ErrorCodes.GENERAL_ERR_DELETE_FAIL
@@ -500,7 +500,7 @@ class RdbAdapter extends Model {
                 }
 
                 const dbQuery = this._makeDbQuery(query)
-                const deletedCount = await nativeModel.destroy({ where: dbQuery })
+                const deletedCount = await nativeModel.destroy({ where: dbQuery }, options)
                 return { query: query, deletedCount }
             } catch (ex) {
                 logger.error('deleteMany exception: ' + ex.message + ', ' + ex.stack)
