@@ -33,7 +33,7 @@
     "mkdirp": "^0.5.1",
     "mocha": "^7.1.1",
     "mockjs": "^1.1.0",
-    "moment": "2.24.0",
+    "moment": "2.29.2",
     "mongodb": "^3.5.1",
     "mongoose": "^5.9.2",
     "mongoose-bcrypt": "^1.6.0",
