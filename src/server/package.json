@@ -27,7 +27,7 @@
     "exceljs": "^3.7.0",
     "express": "^4.17.1",
     "express-session": "^1.17.0",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "lodash": "^4.17.15",
     "md5": "^2.2.1",
     "mkdirp": "^0.5.1",
